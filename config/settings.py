@@ -172,7 +172,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Cross domain list
-CORS_ORIGIN_WHITELIST = ['localhost:3000']
+CORS_ORIGIN_WHITELIST = ['localhost:3000', '0.0.0.0:8080']
 CORS_ALLOW_HEADERS = default_headers + (
     'cache-control',
 )

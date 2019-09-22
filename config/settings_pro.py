@@ -52,4 +52,5 @@ CORS_ORIGIN_WHITELIST = (
 
 assert all(ALLOWED_HOSTS), 'add allowed hosts'
 
-assert all(CORS_ORIGIN_WHITELIST), 'add remote hosts which will use current server'
+assert all(
+    CORS_ORIGIN_WHITELIST), 'add remote hosts which will use current server'

@@ -1,6 +1,5 @@
 from rest_framework import serializers
 
-from main.models import File
 from main.models.registries import Registries
 from main.serializers.file import FileSerializer
 
@@ -9,6 +8,16 @@ class RegistriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registries
         fields = '__all__'
+        extra_kwargs = dict(
+            area=dict(required=False),
+            number=dict(required=False),
+            code=dict(required=False),
+            email=dict(required=False),
+            address=dict(required=False),
+            text=dict(required=False),
+            form_ownership=dict(required=False),
+            designation_of_the_fundamental_standard=dict(required=False),
+        )
 
     def create(self, validated_data: dict):
         # file = validated_data['file']
@@ -25,8 +34,6 @@ class RegistriesSerializer(serializers.ModelSerializer):
         # f = open("http://localhost:8000/media/%s" % file)
 
         stock = super(RegistriesSerializer, self).create(validated_data)
-        # stock.text = text
-        # stock.save()
         return stock
 
     def to_representation(self, instance):

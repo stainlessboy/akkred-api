@@ -4,7 +4,7 @@ from core.rest_framework.filter import BaseFilter
 from core.utils.helpers import is_int
 from main.models.registries import Registries
 
-
+#test
 class ReestrFilterSet(BaseFilter):
     region = CharFilter(method='filter_region')
     status = CharFilter(method='filter_status')
