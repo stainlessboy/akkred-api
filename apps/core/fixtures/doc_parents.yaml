@@ -1,0 +1,24 @@
+- model: "main.DocParent"
+  pk: 1
+  fields:
+    title: "DOC WEB"
+- model: "main.DocParent"
+  pk: 2
+  fields:
+    title: "DOC Desktop"
+- model: "main.DocParent"
+  pk: 3
+  fields:
+    title: "Mobile"
+- model: "main.DocParent"
+  pk: 4
+  fields:
+    title: "Php"
+- model: "main.DocParent"
+  pk: 5
+  fields:
+    title: "C++"
+- model: "main.DocParent"
+  pk: 6
+  fields:
+    title: "IOS"

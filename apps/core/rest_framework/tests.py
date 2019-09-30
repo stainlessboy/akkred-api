@@ -59,4 +59,6 @@ class BaseTest(TestAuthMixin, APITestCase):
         # TODO: write fixtures here
         'users.yaml',
         'files.yaml',
+        'documents.yaml',
+        'doc_parents.yaml',
     ]
