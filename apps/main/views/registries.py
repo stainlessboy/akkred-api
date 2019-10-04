@@ -15,9 +15,9 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     # search_fields = ['title', 'inn', 'text']
     search_fields = ['title', 'inn']
     # filter_fields = ['region', 'type_organ', 'status']
-    # filter_backends = (DjangoFilterBackend, OrderingFilter)
+    filter_backends = (DjangoFilterBackend, OrderingFilter)
 
-    # filter_class = ReestrFilterSet
+    filter_class = ReestrFilterSet
     ordering_fields = ['id', 'create_date']
 
     def get_permissions(self):

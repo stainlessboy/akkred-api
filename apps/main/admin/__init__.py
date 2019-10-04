@@ -13,6 +13,7 @@ from main.models.static_pages import StaticPage
 from main.models.employees import Employee
 from main.models.documens_parent import DocParent
 from main.models.type_organ import TypeOrgan
+from main.models.sliders import Slider
 
 admin.site.register(Region)
 admin.site.register(Media)
@@ -27,3 +28,4 @@ admin.site.register(StaticPage)
 admin.site.register(Employee)
 admin.site.register(DocParent)
 admin.site.register(TypeOrgan)
+admin.site.register(Slider)
