@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 sudo su root
-export PATH=$PATH:/usr/pgsql-1/bin:/usr/local/bin
-export ENVIRONMENT=~/my_job
+export PATH=$PATH:/usr/pgsql-11/bin:/usr/local/bin
+export ENVIRONMENT=~/akkred
 export API_ROOT="$( cd -P "$( dirname ${BASH_SOURCE[0]} )" && pwd )"
 source ${API_ROOT}/.venv/bin/activate
 
