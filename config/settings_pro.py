@@ -43,14 +43,14 @@ EMAIL_FROM = 'info@localhost'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, os.environ.get('MEDIA_PATH', '../media/'))
 
-CORS_ORIGIN_WHITELIST = (
-    os.environ.get('UI_DOMAIN', None),
-    os.environ.get('LOCAL_TESTER', None)
-)
+# CORS_ORIGIN_WHITELIST = (
+#     os.environ.get('UI_DOMAIN', None),
+#     os.environ.get('LOCAL_TESTER', None)
+# )
 
 # Production Validations
 
-assert all(ALLOWED_HOSTS), 'add allowed hosts'
-
-assert all(
-    CORS_ORIGIN_WHITELIST), 'add remote hosts which will use current server'
+# assert all(ALLOWED_HOSTS), 'add allowed hosts'
+#
+# assert all(
+#     CORS_ORIGIN_WHITELIST), 'add remote hosts which will use current server'
