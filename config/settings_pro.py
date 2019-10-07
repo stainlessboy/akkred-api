@@ -50,7 +50,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, os.environ.get('MEDIA_PATH', '../media/'))
 
 # Production Validations
 
-# assert all(ALLOWED_HOSTS), 'add allowed hosts'
+assert all(ALLOWED_HOSTS), 'add allowed hosts'
 #
 # assert all(
 #     CORS_ORIGIN_WHITELIST), 'add remote hosts which will use current server'
