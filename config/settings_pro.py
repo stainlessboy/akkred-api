@@ -21,7 +21,9 @@ from .settings import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('API_DOMAIN', None)]
+# ALLOWED_HOSTS = [os.environ.get('API_DOMAIN', None)]
+ALLOWED_HOSTS = ['*']
+
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
