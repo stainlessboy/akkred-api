@@ -29,7 +29,7 @@ SECRET_KEY = ')$b!)^*d1p(gy6ot+xgkg)wde%i@t!5e0r(y45vi^p7peoy-@b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', '142.93.232.44']
 
 # Application definition
 
@@ -177,7 +177,6 @@ CORS_ALLOW_HEADERS = default_headers + (
     'cache-control',
 )
 CORS_ORIGIN_ALLOW_ALL = DEBUG
-
 
 # REST FRAMEWORK
 REST_FRAMEWORK = {
