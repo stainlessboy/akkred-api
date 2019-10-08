@@ -93,9 +93,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'akkred',
-        'USER': 'akkred_user',
-        'PASSWORD': 'akkred_password',
+        'NAME': 'akkred1',
+        'USER': 'akkred_user1',
+        'PASSWORD': 'akkred_password1',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     },
