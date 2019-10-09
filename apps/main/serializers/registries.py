@@ -9,7 +9,7 @@ class RegistriesSerializer(serializers.ModelSerializer):
         model = Registries
         fields = '__all__'
         extra_kwargs = dict(
-            area=dict(required=False),
+            area=dict(required=True),
             number=dict(required=False),
             code=dict(required=False),
             email=dict(required=False),
