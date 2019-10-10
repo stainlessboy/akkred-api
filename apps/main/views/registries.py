@@ -13,7 +13,7 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     queryset = Registries.objects.all()
     serializer_class = RegistriesSerializer
     # search_fields = ['title', 'inn', 'text']
-    search_fields = ['title', 'inn']
+    search_fields = ['title', 'inn', 'text']
     # filter_fields = ['region', 'type_organ', 'status']
     filter_backends = (DjangoFilterBackend, OrderingFilter)
 
