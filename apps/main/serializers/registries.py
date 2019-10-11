@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from rest_framework import serializers
 
 from main.models.registries import Registries
@@ -18,6 +20,19 @@ class RegistriesSerializer(serializers.ModelSerializer):
             form_ownership=dict(required=False),
             designation_of_the_fundamental_standard=dict(required=False),
         )
+
+    def validate(self, attrs):
+        errors = defaultdict(list)
+        area = attrs.get('area')
+        if Registries.objects.filter(area=area).exists():
+
+            errors['non_field_errors'].append(
+                'You can not create reestr with area')
+
+        if errors:
+            raise serializers.ValidationError(errors)
+
+        return attrs
 
     def create(self, validated_data: dict):
         # file = validated_data['file']
