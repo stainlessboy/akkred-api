@@ -9,10 +9,10 @@ class Registries(models.Model):
     EXTENDED = 'extended'
 
     STATUS_TYPES = (
-        (ACTIVE, 'Действующий'),
-        (INACTIVE, 'Прекращен'),
-        (PAUSED, 'Приостановлен'),
-        (EXTENDED, 'Продлен'),
+        (ACTIVE, 'active'),
+        (INACTIVE, 'inactive'),
+        (PAUSED, 'paused'),
+        (EXTENDED, 'extended'),
     )
 
     title = models.CharField(max_length=255)
