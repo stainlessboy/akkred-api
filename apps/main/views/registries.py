@@ -19,7 +19,7 @@ class RegistriesViewSet(viewsets.ModelViewSet):
 
     filter_class = ReestrFilterSet
     ordering_fields = ['id', 'create_date']
-    lookup_field = 'area'
+    # lookup_field = 'area'
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
