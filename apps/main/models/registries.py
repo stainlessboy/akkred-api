@@ -36,9 +36,9 @@ class Registries(models.Model):
     accreditation_date = models.DateField(null=True)
     accreditation_duration = models.DateField(null=True)
     form_ownership = models.CharField(max_length=455)
-    designation_of_the_fundamental_standard = models.CharField(max_length=455,null=True)
+    designation_of_the_fundamental_standard = models.CharField(max_length=455, null=True)
     file = models.ForeignKey('main.File', on_delete=CASCADE, null=True,
-                             related_name='registers')
+                             related_name='registers', blank=True)
 
     def __str__(self):
         return self.title

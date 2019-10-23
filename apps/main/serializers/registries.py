@@ -24,8 +24,10 @@ class RegistriesSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         errors = defaultdict(list)
         area = attrs.get('area')
-        if Registries.objects.filter(area=area).exists():
-
+        if not self.instance and Registries.objects.filter(area=area).exists():
+            errors['non_field_errors'].append(
+                'You can not create reestr with area')
+        if self.instance.area != area and Registries.objects.filter(area=area).exists():
             errors['non_field_errors'].append(
                 'You can not create reestr with area')
 
