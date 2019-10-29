@@ -27,7 +27,7 @@ class Registries(models.Model):
     inn = models.CharField(max_length=455, null=True)
     phone = models.CharField(max_length=255, null=True)
     email = models.CharField(max_length=255, null=True)
-    address = models.CharField(max_length=255, null=True)
+    address = models.CharField(max_length=1000, null=True)
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
@@ -35,6 +35,7 @@ class Registries(models.Model):
     status_date = models.DateField(null=True)
     accreditation_date = models.DateField(null=True)
     accreditation_duration = models.DateField(null=True)
+    accreditation_duration_text = models.CharField(max_length=1000,null=True,blank=True)
     form_ownership = models.CharField(max_length=455)
     designation_of_the_fundamental_standard = models.CharField(max_length=455, null=True)
     file = models.ForeignKey('main.File', on_delete=CASCADE, null=True,
