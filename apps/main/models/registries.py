@@ -20,7 +20,7 @@ class Registries(models.Model):
     code = models.CharField(max_length=255, null=True)
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
                               default=INACTIVE)
-    full_name_supervisor = models.CharField(max_length=255, null=True)
+    full_name_supervisor_ao = models.CharField(max_length=255, null=True)
     position_supervisor_legal = models.CharField(max_length=255, null=True)
     address_applicant = models.CharField(max_length=1000, null=True)
     title_applicant = models.CharField(max_length=1000, null=True)
@@ -45,7 +45,7 @@ class Registries(models.Model):
     file = models.ForeignKey('main.File', on_delete=CASCADE, null=True,
                              related_name='registers', blank=True)
 
-    full_name_supervisor_ao = models.CharField(max_length=255, null=True)
+    full_name_supervisor_main = models.CharField(max_length=255, null=True)
     position_supervisor_ao = models.CharField(max_length=255, null=True)
     phone_ao = models.CharField(max_length=255, null=True)
     email_ao = models.CharField(max_length=255, null=True)
