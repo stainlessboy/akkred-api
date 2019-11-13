@@ -14,6 +14,7 @@ from main.models.employees import Employee
 from main.models.documens_parent import DocParent
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
+from main.models.laws import Laws, LawsCategory
 
 admin.site.register(Region)
 admin.site.register(Media)
@@ -29,3 +30,5 @@ admin.site.register(Employee)
 admin.site.register(DocParent)
 admin.site.register(TypeOrgan)
 admin.site.register(Slider)
+admin.site.register(Laws)
+admin.site.register(LawsCategory)

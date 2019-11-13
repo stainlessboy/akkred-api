@@ -16,6 +16,7 @@ from main.views.questions import QuestionViewSet
 from main.views.employees import EmployeeViewSet
 from main.views.registries import RegistriesViewSet
 from main.views.type_organ import TypeOrganViewSet
+from main.views.laws import LawsViewSet,LawsCategoryViewSet
 
 router = DefaultRouter()
 router.register('', UserViewSet, 'user')
@@ -33,7 +34,8 @@ router.register('documents', DocumentViewSet, 'documents')
 router.register('questions', QuestionViewSet, 'questions')
 router.register('employees', EmployeeViewSet, 'employees')
 router.register('type-organ', TypeOrganViewSet, 'type-organ')
-
+router.register('laws', LawsViewSet, 'laws')
+router.register('laws-category', LawsCategoryViewSet, 'laws-category')
 router.register('registries', RegistriesViewSet, 'registries')
 
 urlpatterns = [

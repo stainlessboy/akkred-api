@@ -6,6 +6,7 @@ from main.models.media import Media
 from main.models.review import Review
 from main.models.questions import Question
 from main.models.employees import Employee
+from main.models.laws import Laws
 
 
 class StaticPagesTranslation(TranslationOptions):
@@ -38,6 +39,11 @@ class Employer(TranslationOptions):
     default_translate = False
 
 
+class Lawss(TranslationOptions):
+    fields = ('name', 'name2', 'link')
+    default_translate = False
+
+
 # title
 # text
 # photo
@@ -60,3 +66,4 @@ translator.register(News, NewsMedia)
 translator.register(Review, Reviews)
 translator.register(Question, QA)
 translator.register(Employee, Employer)
+translator.register(Laws, Lawss)
