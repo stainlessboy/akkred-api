@@ -12,6 +12,7 @@ from main.models.review import Review
 from main.models.static_pages import StaticPage
 from main.models.employees import Employee
 from main.models.documens_parent import DocParent
+from main.models.documents_type import DocType
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
 from main.models.laws import Laws, LawsCategory
@@ -32,3 +33,4 @@ admin.site.register(TypeOrgan)
 admin.site.register(Slider)
 admin.site.register(Laws)
 admin.site.register(LawsCategory)
+admin.site.register(DocType)
