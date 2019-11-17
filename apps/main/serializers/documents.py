@@ -4,10 +4,12 @@ from main.serializers.file import FileSerializer
 
 
 class DocumentParentSerializer(serializers.Serializer):
+    id = serializers.ReadOnlyField()
     title = serializers.ReadOnlyField()
 
 
 class DocumentTypeSerializer(serializers.Serializer):
+    id = serializers.ReadOnlyField()
     title = serializers.ReadOnlyField()
 
 
