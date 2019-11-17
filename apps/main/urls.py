@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from main.views.doc_parents import DocParentViewSet
+from main.views.doc_parents import DocParentViewSet, DocTypeViewSet
 from main.views.file import FileViewSet
 from main.views.static_pages import StaticPagesViewSet
 from main.views.user import UserViewSet
@@ -22,6 +22,7 @@ router = DefaultRouter()
 router.register('', UserViewSet, 'user')
 router.register('file', FileViewSet, 'file')
 router.register('doc-parent', DocParentViewSet, 'doc-parent')
+router.register('doc-type', DocTypeViewSet, 'doc-type')
 router.register('news', NewsViewSet, 'news')
 router.register('media', MediaViewSet, 'media')
 router.register('static-pages', StaticPagesViewSet, 'static-pages')
