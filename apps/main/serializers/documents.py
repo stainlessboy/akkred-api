@@ -7,6 +7,10 @@ class DocumentParentSerializer(serializers.Serializer):
     title = serializers.ReadOnlyField()
 
 
+class DocumentTypeSerializer(serializers.Serializer):
+    title = serializers.ReadOnlyField()
+
+
 class DocumentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Document
@@ -15,6 +19,7 @@ class DocumentSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         self.fields['file'] = FileSerializer(context=self.context)
         self.fields['parents'] = DocumentParentSerializer()
+        self.fields['type'] = DocumentTypeSerializer()
         return super(DocumentSerializer, self).to_representation(instance)
 
 
