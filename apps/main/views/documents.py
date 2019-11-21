@@ -15,18 +15,13 @@ class DocumentViewSet(viewsets.ModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
     search_fields = ['title']
-    filter_fields = ['title', 'created_date', 'parents']
+    filter_fields = ['title', 'created_date', 'parents', 'type']
     ordering_fields = ['id', 'created_date']
 
     def get_permissions(self):
         if self.action == 'list':
             return [AllowAny()]
         return super().get_permissions()
-
-
-
-
-
 
 # class DocumentViewSet(ViewSet):
 #     def get_permissions(self):
