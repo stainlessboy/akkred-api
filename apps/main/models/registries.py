@@ -46,9 +46,6 @@ class Registries(models.Model):
     number = models.CharField(max_length=255, null=True)
     inn = models.CharField(max_length=455, null=True)
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
-    # form_ownership = models.CharField(max_length=455, null=True, editable=False)
-    # position_supervisor_legal = models.CharField(max_length=255, null=True, editable=False)
-    # full_name_supervisor_main = models.CharField(max_length=255, null=True, editable=False)
     address_yurd_lisa = models.CharField(max_length=1000, null=True)
     phone = models.CharField(max_length=255, null=True)
     email = models.CharField(max_length=255, null=True)
@@ -57,13 +54,11 @@ class Registries(models.Model):
                                    related_name='registry')
     title_organ = models.CharField(max_length=255)
     address_organ = models.CharField(max_length=1000, null=True)
-    # position_supervisor_ao = models.CharField(max_length=255, null=True, editable=False)
     full_name_supervisor_ao = models.CharField(max_length=255, null=True)
 
     is_fact_address = models.BooleanField(default=False)
     phone_ao = models.CharField(max_length=255, null=True, blank=True)
     email_ao = models.CharField(max_length=255, null=True, blank=True)
-    # web_site_ao = models.CharField(max_length=255, null=True, editable=False)
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
                               default=INACTIVE)
     status_date = models.DateField(null=True)
