@@ -6,7 +6,15 @@ from main.models.registries import Registries
 from main.serializers.file import FileSerializer
 
 
+class OptionsValueSerializer(serializers.Serializer):
+    id = serializers.IntegerField(required=False)
+    status = serializers.CharField(required=False)
+    date = serializers.DateField(required=False)
+
+
 class RegistriesSerializer(serializers.ModelSerializer):
+    reestr_status = OptionsValueSerializer(many=True, required=False)
+
     class Meta:
         model = Registries
         fields = '__all__'
@@ -17,8 +25,6 @@ class RegistriesSerializer(serializers.ModelSerializer):
             email=dict(required=False),
             address=dict(required=False),
             text=dict(required=False),
-            form_ownership=dict(required=False),
-            designation_of_the_fundamental_standard=dict(required=False),
         )
 
     def validate(self, attrs):
@@ -36,23 +42,11 @@ class RegistriesSerializer(serializers.ModelSerializer):
 
         return attrs
 
-    def create(self, validated_data: dict):
-        # file = validated_data['file']
-        # validated_data.pop('text', None)
-        # res = File.objects.filter(name=file).first()
-        # with open(res.file.path, encoding="utf8", errors='ignore') as f:
-        #     # print(f.readlines())
-        #     # text = f.readlines()
-        #     lines = f.readlines()
-        #     text = ''.join(lines)
-        # validated_data['text'] = res
-        # print(validated_data['text'])
-        # print(res)
-        # f = open("http://localhost:8000/media/%s" % file)
+    # def to_representation(self, instance):
+    #     self.fields['file'] = FileSerializer(context=self.context)
+    #     return super(RegistriesSerializer, self).to_representation(instance)
 
-        stock = super(RegistriesSerializer, self).create(validated_data)
-        return stock
 
-    def to_representation(self, instance):
-        self.fields['file'] = FileSerializer(context=self.context)
-        return super(RegistriesSerializer, self).to_representation(instance)
+class RegistriesSearchSerializer(serializers.Serializer):
+    search_name = serializers.CharField(source='title_organ__icontains', required=False)
+    # search_description = serializers.CharField(source='description__icontains', required=False)

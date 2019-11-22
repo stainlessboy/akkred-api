@@ -4,7 +4,7 @@ from rest_framework.filters import OrderingFilter
 from main.filters.reestr import ReestrFilterSet
 from main.models.registries import Registries
 from rest_framework import viewsets, permissions
-from main.serializers.registries import RegistriesSerializer
+from main.serializers.registries import RegistriesSerializer,RegistriesSearchSerializer
 from rest_framework.permissions import AllowAny
 
 
@@ -13,11 +13,8 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     queryset = Registries.objects.all()
     serializer_class = RegistriesSerializer
     # search_fields = ['title', 'inn', 'text']
-    search_fields = ['title', 'inn', 'text']
-    # filter_fields = ['region', 'type_organ', 'status']
-    filter_backends = (DjangoFilterBackend, OrderingFilter)
-
-    filter_class = ReestrFilterSet
+    search_fields = ['title_organ', 'inn', 'text']
+    filter_fields = ['region', 'type_organ', 'status']
     ordering_fields = ['id', 'create_date']
     # lookup_field = 'area'
 
@@ -25,3 +22,11 @@ class RegistriesViewSet(viewsets.ModelViewSet):
         if self.action in ['list', 'retrieve']:
             return [permissions.AllowAny()]
         return super(RegistriesViewSet, self).get_permissions()
+
+    # def get_queryset(self):
+    #     qs = super(RegistriesViewSet, self).get_queryset()
+    #     search_serializer = RegistriesSearchSerializer(self.request.GET)
+    #     search_serializer.is_valid(raise_exception=True)
+    #     if search_serializer.validated_data:
+    #         qs = qs.filter(**search_serializer.validated_data)
+    #     return qs

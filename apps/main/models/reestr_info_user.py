@@ -12,22 +12,25 @@ class CategoryReestrInfoUser(models.Model):
 
 
 class ReestrInfoUser(BaseModel):
-    ACTIVE = 'active'
-    INACTIVE = 'inactive'
-    PAUSED = 'paused'
-    EXTENDED = 'extended'
+    # ACTIVE = 'active'
+    # INACTIVE = 'inactive'
+    # PAUSED = 'paused'
+    # EXTENDED = 'extended'
+    #
+    # STATUS_TYPES = (
+    #     (ACTIVE, 'active'),
+    #     (INACTIVE, 'inactive'),
+    #     (PAUSED, 'paused'),
+    #     (EXTENDED, 'extended'),
+    # )
+    # status = models.CharField(max_length=45, choices=STATUS_TYPES)
 
-    STATUS_TYPES = (
-        (ACTIVE, 'active'),
-        (INACTIVE, 'inactive'),
-        (PAUSED, 'paused'),
-        (EXTENDED, 'extended'),
-    )
     title = models.CharField(max_length=255)
     number = models.CharField(max_length=255)
-    date = models.DateTimeField()
-    status = models.CharField(max_length=45, choices=STATUS_TYPES)
-    type = models.ForeignKey('main.CategoryReestrInfoUser',PROTECT,related_name='info_reestrs')
+    type = models.ForeignKey('main.CategoryReestrInfoUser', PROTECT, related_name='info_reestrs', null=True)
+    date_paused = models.DateField(null=True)
+    date_active = models.DateField(null=True)
+    date_inactive = models.DateField(null=True)
 
     def __str__(self):
         return self.title

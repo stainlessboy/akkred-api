@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import CASCADE
-
+from django.utils.safestring import mark_safe
 from core.django.model import BaseModel
 from ckeditor.fields import RichTextField
 
@@ -41,6 +41,12 @@ class News(BaseModel):
     photo = models.ForeignKey('main.File', CASCADE, null=True,
                               related_name='new', blank=True)
 
+    def admin_photo(self):
+        return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
+
+    admin_photo.short_description = 'Image'
+    admin_photo.allow_tags = True
+
     class Meta:
         ordering = ['-id']
 
@@ -51,3 +57,9 @@ class News(BaseModel):
 class NewsGallery(models.Model):
     news = models.ForeignKey('main.News', CASCADE, related_name='images')
     image = models.ImageField(null=True, blank=True, upload_to=upload_name)
+
+    def admin_photo(self):
+        return mark_safe('<img src="{}" width="100" />'.format(self.image.url))
+
+    admin_photo.short_description = 'Image'
+    admin_photo.allow_tags = True
