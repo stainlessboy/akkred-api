@@ -1,5 +1,33 @@
-from django.db import models
 from django.db.models import PROTECT, CASCADE
+import datetime
+import uuid
+
+from django.core.validators import RegexValidator
+from django.core.validators import ValidationError as Error
+from django.db import models
+from rest_framework.serializers import ValidationError
+
+FILE_TYPES = {
+    r'^(doc|docx)$': 'document',
+    r'^(pdf)$': 'pdf',
+    r'^(htm)$': 'htm',
+    r'^(jpg|jpeg|png|gif)$': 'image',
+    r'^(xls|xlsx)$': 'excel',
+    r'^(zip|rar)$': 'compressed',
+}
+
+
+def upload_name(instance, filename):
+    file_type = filename.split('.')[-1]
+    today = str(datetime.datetime.today())[0:7]
+    for regex, folder in FILE_TYPES.items():
+        try:
+            RegexValidator(regex).__call__(file_type)
+            return 'file/%s/%s/%s.%s' % (
+                folder, today, uuid.uuid4(), file_type)
+        except Error:
+            pass
+    raise ValidationError(detail={'File type is unacceptable'})
 
 
 class Registries(models.Model):
@@ -18,9 +46,9 @@ class Registries(models.Model):
     number = models.CharField(max_length=255, null=True)
     inn = models.CharField(max_length=455, null=True)
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
-    form_ownership = models.CharField(max_length=455, null=True, editable=False)
-    position_supervisor_legal = models.CharField(max_length=255, null=True, editable=False)
-    full_name_supervisor_main = models.CharField(max_length=255, null=True, editable=False)
+    # form_ownership = models.CharField(max_length=455, null=True, editable=False)
+    # position_supervisor_legal = models.CharField(max_length=255, null=True, editable=False)
+    # full_name_supervisor_main = models.CharField(max_length=255, null=True, editable=False)
     address_yurd_lisa = models.CharField(max_length=1000, null=True)
     phone = models.CharField(max_length=255, null=True)
     email = models.CharField(max_length=255, null=True)
@@ -29,11 +57,13 @@ class Registries(models.Model):
                                    related_name='registry')
     title_organ = models.CharField(max_length=255)
     address_organ = models.CharField(max_length=1000, null=True)
-    position_supervisor_ao = models.CharField(max_length=255, null=True,editable=False)
+    # position_supervisor_ao = models.CharField(max_length=255, null=True, editable=False)
     full_name_supervisor_ao = models.CharField(max_length=255, null=True)
-    phone_ao = models.CharField(max_length=255, null=True,blank=True)
-    email_ao = models.CharField(max_length=255, null=True,blank=True)
-    web_site_ao = models.CharField(max_length=255, null=True, editable=False)
+
+    is_fact_address = models.BooleanField(default=False)
+    phone_ao = models.CharField(max_length=255, null=True, blank=True)
+    email_ao = models.CharField(max_length=255, null=True, blank=True)
+    # web_site_ao = models.CharField(max_length=255, null=True, editable=False)
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
                               default=INACTIVE)
     status_date = models.DateField(null=True)
@@ -49,8 +79,7 @@ class Registries(models.Model):
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255)
 
-    file = models.ForeignKey('main.File', on_delete=CASCADE, null=True,
-                             related_name='registers', blank=True)
+    file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
         return self.title_organ

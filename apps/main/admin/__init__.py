@@ -1,7 +1,11 @@
 from django.contrib import admin
 
+import main.admin.news
+import main.admin.reestr
+
+
 from main.models.region import Region
-from main.models.news import News
+# from main.models.news import News
 from main.models.media import Media
 from main.models.registries import Registries
 from main.models.file import File
@@ -19,8 +23,8 @@ from main.models.laws import Laws, LawsCategory
 
 admin.site.register(Region)
 admin.site.register(Media)
-admin.site.register(Registries)
-admin.site.register(News)
+# admin.site.register(Registries)
+# admin.site.register(News)
 admin.site.register(File)
 admin.site.register(Question)
 admin.site.register(Articles)
@@ -31,6 +35,6 @@ admin.site.register(Employee)
 admin.site.register(DocParent)
 admin.site.register(TypeOrgan)
 admin.site.register(Slider)
-admin.site.register(Laws)
-admin.site.register(LawsCategory)
+# admin.site.register(Laws)
+# admin.site.register(LawsCategory)
 admin.site.register(DocType)
