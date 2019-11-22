@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'django_filters',
     'modeltranslation',
-
+    'ckeditor',
     'core',
     'main',
 ]
@@ -110,6 +110,10 @@ if len(DATABASES) == 2:
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
+
+
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 AUTH_PASSWORD_VALIDATORS = [
     {

@@ -78,3 +78,23 @@ class Registries(models.Model):
 
     def __str__(self):
         return self.title_organ
+
+
+class RegistriesStatus(models.Model):
+    reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_status')
+    ACTIVE = 'active'
+    INACTIVE = 'inactive'
+    PAUSED = 'paused'
+    EXTENDED = 'extended'
+    STATUS_TYPES = (
+        (ACTIVE, 'active'),
+        (INACTIVE, 'inactive'),
+        (PAUSED, 'paused'),
+        (EXTENDED, 'extended'),
+    )
+    status = models.CharField(max_length=20, choices=STATUS_TYPES,
+                              default=INACTIVE)
+
+    date = models.DateField(null=True)
+
+

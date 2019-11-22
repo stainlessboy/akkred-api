@@ -5,9 +5,7 @@ import main.admin.reestr
 
 
 from main.models.region import Region
-# from main.models.news import News
 from main.models.media import Media
-from main.models.registries import Registries
 from main.models.file import File
 from main.models.questions import Question
 from main.models.articles import Articles
@@ -19,12 +17,9 @@ from main.models.documens_parent import DocParent
 from main.models.documents_type import DocType
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
-from main.models.laws import Laws, LawsCategory
 
 admin.site.register(Region)
 admin.site.register(Media)
-# admin.site.register(Registries)
-# admin.site.register(News)
 admin.site.register(File)
 admin.site.register(Question)
 admin.site.register(Articles)
@@ -35,6 +30,4 @@ admin.site.register(Employee)
 admin.site.register(DocParent)
 admin.site.register(TypeOrgan)
 admin.site.register(Slider)
-# admin.site.register(Laws)
-# admin.site.register(LawsCategory)
 admin.site.register(DocType)
