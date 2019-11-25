@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from main.models import News
-from main.serializers.file import FileSerializer
 
 
 class NewsModelSerializer(serializers.ModelSerializer):
@@ -15,9 +14,3 @@ class NewsModelSerializer(serializers.ModelSerializer):
             photo=dict(required=False),
 
         )
-
-    def to_representation(self, instance):
-        self.fields['photo'] = FileSerializer(context=self.context)
-        # self.fields['gallery'] = FileSerializer(context=self.context)
-        self.fields['gallery'] = FileSerializer(context=self.context, required=False, many=True)
-        return super().to_representation(instance)
