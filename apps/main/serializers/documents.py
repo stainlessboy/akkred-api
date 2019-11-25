@@ -19,11 +19,9 @@ class DocumentSerializer(serializers.ModelSerializer):
         exclude = ['created_date']
 
     def to_representation(self, instance):
-        self.fields['file'] = FileSerializer(context=self.context)
         self.fields['parents'] = DocumentParentSerializer()
         self.fields['type'] = DocumentTypeSerializer()
         return super(DocumentSerializer, self).to_representation(instance)
-
 
 # class DocumentsSelectSerializer(serializers.Serializer):
 #     id = serializers.ReadOnlyField()
