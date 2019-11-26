@@ -10,7 +10,7 @@ from main.models.laws import Laws
 
 
 class StaticPagesTranslation(TranslationOptions):
-    fields = ('name', 'description', 'body')
+    fields = ('name', 'body')
     default_translate = False
 
 
