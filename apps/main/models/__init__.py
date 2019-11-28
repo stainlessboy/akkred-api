@@ -9,3 +9,4 @@ from main.models.documents_type import DocType
 from main.models.type_organ import TypeOrgan
 from main.models.reestr_info_user import CategoryReestrInfoUser, ReestrInfoUser
 from main.models.laws import Laws, LawsCategory
+from main.models.media_file import MediaFile

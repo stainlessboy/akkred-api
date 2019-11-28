@@ -5,6 +5,7 @@ import main.admin.reestr
 import main.admin.reestr_info
 import main.admin.reestr_info_type
 import main.admin.static_pages
+import main.admin.media_file
 
 
 from main.models.region import Region
