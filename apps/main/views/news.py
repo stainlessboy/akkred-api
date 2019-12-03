@@ -29,6 +29,8 @@ class StandardResultsSetPagination(PageNumberPagination):
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()
     serializer_class = NewsModelSerializer
+    ordering = ['created_date_by_admin']
+
     # pagination_class = StandardResultsSetPagination
 
     def get_permissions(self):

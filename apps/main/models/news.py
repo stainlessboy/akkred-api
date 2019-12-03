@@ -38,6 +38,8 @@ class News(BaseModel):
     title = models.CharField(max_length=255, null=False)
     text = RichTextField(blank=True, null=True)
     image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
+    created_date_by_admin = models.DateTimeField(null=True)
+
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
