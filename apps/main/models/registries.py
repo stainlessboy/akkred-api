@@ -73,7 +73,7 @@ class Registries(models.Model):
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
-    area = models.CharField(max_length=255)
+    area = models.CharField(max_length=255, unique=True)
 
     file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
 

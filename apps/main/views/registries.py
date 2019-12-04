@@ -13,8 +13,9 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     model = Registries
     queryset = Registries.objects.all()
     serializer_class = RegistriesSerializer
-    search_fields = ['title_organ', 'inn', 'text']
-    filter_fields = ['region', 'type_organ', 'status']
+    # search_fields = ['title_organ', 'inn', 'text', 'id']
+    search_fields = ['id']
+    filter_fields = ['region', 'type_organ', 'status','id']
     ordering_fields = ['id', 'create_date']
 
     # lookup_field = 'area'
