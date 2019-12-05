@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from main.models import DocParent,DocType
-from main.serializers.doc_parents import DocParentSerializer,DocTypeSerializer
+from main.models import DocParent, DocType
+from main.serializers.doc_parents import DocParentSerializer, DocTypeSerializer
 
 
 class DocParentViewSet(viewsets.ModelViewSet):
@@ -22,6 +22,7 @@ class DocParentViewSet(viewsets.ModelViewSet):
     model = DocParent
     queryset = DocParent.objects.all()
     serializer_class = DocParentSerializer
+    ordering = ['-id']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:

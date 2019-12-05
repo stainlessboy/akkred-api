@@ -15,7 +15,8 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     serializer_class = RegistriesSerializer
     search_fields = ['title_organ', 'inn', 'text', 'area']
     # search_fields = ['area']
-    filter_fields = ['region', 'type_organ', 'status','id']
+    # filter_fields = ['region', 'type_organ', 'status', 'id']
+    filter_class = ReestrFilterSet
     ordering_fields = ['id', 'create_date']
 
     lookup_field = 'area'
