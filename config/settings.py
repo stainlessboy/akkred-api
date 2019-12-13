@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'modeltranslation',
     'ckeditor',
+    'ckeditor_uploader',
     'core',
     'main',
 ]
