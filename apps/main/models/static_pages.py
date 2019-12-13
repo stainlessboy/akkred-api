@@ -1,4 +1,5 @@
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 from core.django.model import BaseModel
@@ -23,7 +24,7 @@ class StaticPage(BaseModel):
 
     key_name = models.CharField(max_length=200, unique=True)
     name = models.CharField(max_length=255, null=True, blank=True)
-    body = RichTextField(blank=True, null=True)
+    body = RichTextUploadingField(blank=True, null=True)
     type = models.CharField(max_length=255, choices=STATUS_TYPES,
                             default=ABOUT)
 
