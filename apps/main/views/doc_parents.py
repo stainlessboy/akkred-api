@@ -22,7 +22,7 @@ class DocParentViewSet(viewsets.ModelViewSet):
     model = DocParent
     queryset = DocParent.objects.all()
     serializer_class = DocParentSerializer
-    ordering = ['-id']
+    ordering = ['id']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
