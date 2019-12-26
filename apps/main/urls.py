@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 from main.views.doc_parents import DocParentViewSet, DocTypeViewSet
 from main.views.file import FileViewSet
 from main.views.reestr_info import ReestrInfoUserViewSet
+from main.views.sat_uestionnaire import SatisfactionQuestionnaireViewSet
 from main.views.static_pages import StaticPagesViewSet
 from main.views.user import UserViewSet
 from main.views.news import NewsViewSet
@@ -40,6 +41,7 @@ router.register('laws', LawsViewSet, 'laws')
 router.register('laws-category', LawsCategoryViewSet, 'laws-category')
 router.register('registries', RegistriesViewSet, 'registries')
 router.register('reestr-info', ReestrInfoUserViewSet, 'reestr-info')
+router.register('sat-quest', SatisfactionQuestionnaireViewSet, 'sat-quest')
 
 urlpatterns = [
     path('', include(router.urls)),
