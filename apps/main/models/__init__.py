@@ -11,3 +11,4 @@ from main.models.reestr_info_user import CategoryReestrInfoUser, ReestrInfoUser
 from main.models.laws import Laws, LawsCategory
 from main.models.media_file import MediaFile
 from main.models.satisfaction_questionnaire import SatisfactionQuestionnaire
+# from main.models.confirm_reestr import ConfirmReestr
