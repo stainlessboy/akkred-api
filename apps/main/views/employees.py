@@ -7,7 +7,7 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     model = Employee
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    ordering_fields = ['-order', 'modified_date']
+    ordering = ['-order']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
