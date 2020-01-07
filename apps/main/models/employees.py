@@ -41,6 +41,7 @@ class Employee(BaseModel):
     phone = models.CharField(max_length=255, blank=True, null=True)
     email = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(null=True, blank=True, upload_to=upload_name)
+    order = models.PositiveIntegerField(default=0)
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.image.url))
