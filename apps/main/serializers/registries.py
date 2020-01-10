@@ -6,14 +6,14 @@ from main.models.registries import Registries
 from main.serializers.file import FileSerializer
 
 
-class OptionsValueSerializer(serializers.Serializer):
+class StatusValueSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=False)
     status = serializers.CharField(required=False)
     date = serializers.DateField(required=False)
 
 
 class RegistriesSerializer(serializers.ModelSerializer):
-    reestr_status = OptionsValueSerializer(many=True, required=False)
+    reestr_status = StatusValueSerializer(many=True, required=False)
 
     class Meta:
         model = Registries

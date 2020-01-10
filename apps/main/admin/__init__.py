@@ -7,10 +7,9 @@ import main.admin.reestr_info_type
 import main.admin.static_pages
 import main.admin.media_file
 import main.admin.sat_ques
-
+import main.admin.reestr_conf
 
 from main.models.region import Region
-from main.models.media import Media
 from main.models.file import File
 from main.models.questions import Question
 from main.models.documents import Document

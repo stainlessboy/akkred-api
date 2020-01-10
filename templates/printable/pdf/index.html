@@ -8,50 +8,157 @@
     <title>Document</title>
 
 </head>
-<body style="
-        {#border-style: dotted;#}
-             margin: 0;
-                    color: #0b0c66;
-
-             {#padding: 0;#}
-             {#box-sizing: border-box;#}
-">
-{#<h1>My first{{ title }} template </h1>#}
-<img style="width: 200px;
-            height: 100px;
-           "
-     src="{% static "/pdf/assets/PNG/OZAS-1.png" %}" alt="Image"/>
-<h1>
-    MAQULLASH TO'G'RISIDA GUVOHNOMA
-</h1>
 
 
-<div style="display: flex;"            >
-    Ushbu hujjat
+<style>
+    * {
+        -webkit-print-color-adjust: exact;
+        box-sizing: border-box;
+    }
 
+    pre {
+        display: none;
+    }
+
+    #background {
+        width: 22cm;
+        height: 30cm;
+        background: #eff5f7;
+        position: absolute;
+        margin: 0 -3cm;
+        top: 0;
+        margin-top: -2cm;
+    }
+
+    body {
+        margin: 0;
+        color: #0b0c66;
+        height: 100%;
+        position: relative;
+    }
+
+    .wrapper {
+        border: 3px solid #1a2cff;
+        padding: 20px;
+        position: fixed;
+        top: -1cm;
+        left: -1cm;
+        right: -1cm;
+        bottom: -1cm;
+    }
+
+    .first {
+        text-align: center;
+    }
+
+    .podpis {
+        text-align: right;
+        margin-top: 50px;
+        margin-bottom: 100px;
+
+    }
+
+    .second {
+        text-align: left;
+    }
+
+    .main {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        text-align: center;
+
+    }
+
+    .firstL {
+        margin-top: 50px;
+        text-align: center;
+
+    }
+
+    .third {
+        text-align: center;
+        margin-bottom: 100px;
+
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 0;
+
+
+    }
+
+</style>
+<body>
+<div id="background">
+    <div class="wrapper">
+        <div class="main">
+            <h1>
+                Akkreditasiya Markazi Davlat
+            </h1>
+        </div>
+
+
+        <div class="first">
+            <h2>
+                MAQULLASH
+            </h2>
+        </div>
+        <div class="first">
+            <h2>
+                TO'G'RISIDA GUVOHNOMA
+            </h2>
+        </div>
+
+
+        <div class="firstL">
+            Ushbu hujjat
+
+        </div>
+
+
+        <div class="title">
+            <h2>"{{ title_organ }}"</h2>
+        </div>
+
+        <div class="first">
+            <h3>mas'ulat cheklangan jamiyatning </h3>
+        </div>
+
+
+        <div class="third">
+            <h4>ilova keltirilgan maqullash sohasiga asosan sinov o'tkazish uchun O'z DSt standart talablariga muvofiq
+                baholaganligini
+                va texnik </h4>
+            <h4>Maqullash sohasi ushbu maqullash to'g'risida guvohnomaning ajralmas qismi hisoblanadi</h4>
+        </div>
+
+
+        <div class="second">
+            <p>Reestrida ro'yxat raqami O'ZAK.10.0001</p>
+            <p>Maqullashdan o'tagan sana: 24.05.2019 yil</p>
+            <p>Guvohnoma rasmiylashtirilgan sana: 24.05.2019 yil</p>
+            <p>Amal qilish muddati: 24.05.2019 yil</p>
+        </div>
+
+
+        <div class="podpis">
+
+            <h3>A.ZAKIROV</h3>
+
+        </div>
+
+        <div class="first">
+            <h5>
+                Maqullash to'g'risida guvohnomaning amaldagi holati amaldagi holati haqidagi ma'lumot "Akkreditasiya
+                markazazi"
+                DUK
+                rasmiy veb-saytida (www.akkred.uz)
+                keltirilgan
+            </h5>
+
+        </div>
+    </div>
 </div>
-
-<h3>
-    GOOOD
-</h3>
-<h4>GOOOD</h4>
-<h4>GOOOD</h4>
-<h4>GOOOD</h4>
-<h4>GOOOD</h4>
-
-
-<h5>
-    Reestrida ro'yxat raqami O'ZAK.10.0001
-</h5>
-<h5>Maqullashdan o'tagan sana: 24.05.2019 yil</h5>
-<h5>Guvohnoma rasmiylashtirilgan sana: 24.05.2019 yil</h5>
-<h5>Amal qilish muddati: 24.05.2019 yil</h5>
-
-
-<h3>A.ZAKIROV</h3>
-<h5>
-    Maqullash  to'g'risida guvohnomaning amaldagi holati amaldagi holati haqidagi ma'lumot "Akkreditasiya markazazi" DUK rasmiy veb-saytida (www.akkred.uz)
-    keltirilgan
-</h5>
 </body>
 </html>

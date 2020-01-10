@@ -6,7 +6,8 @@ from weasyprint import HTML, CSS
 
 from django.conf import settings
 from django.template import loader
-from main.models.registries import Registries
+
+from main.models import ConfirmReestr
 from core.utils.attribute import get_attribute
 
 
@@ -18,7 +19,7 @@ class AkkredPDF(object):
 
     def __init__(self, akkred, request):
         self.request = request
-        self.akkred: Registries = akkred
+        self.akkred: ConfirmReestr = akkred
         self.content = None
         self.data = dict()
         self.styles = self.get_stylesheets()
@@ -32,7 +33,7 @@ class AkkredPDF(object):
 
     def merge_info(self):
         self.data.update(
-            title=self.akkred.title_yurd_lisa,
+            title_organ=self.akkred.title_organ,
         )
 
     def generate(self):

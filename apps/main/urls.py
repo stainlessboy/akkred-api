@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
+from main.views.confirm_reestr import ConfirmReestrViewSet
 from main.views.doc_parents import DocParentViewSet, DocTypeViewSet
 from main.views.file import FileViewSet
 from main.views.reestr_info import ReestrInfoUserViewSet
@@ -18,7 +19,7 @@ from main.views.questions import QuestionViewSet
 from main.views.employees import EmployeeViewSet
 from main.views.registries import RegistriesViewSet
 from main.views.type_organ import TypeOrganViewSet
-from main.views.laws import LawsViewSet,LawsCategoryViewSet
+from main.views.laws import LawsViewSet, LawsCategoryViewSet
 
 router = DefaultRouter()
 router.register('', UserViewSet, 'user')
@@ -42,6 +43,7 @@ router.register('laws-category', LawsCategoryViewSet, 'laws-category')
 router.register('registries', RegistriesViewSet, 'registries')
 router.register('reestr-info', ReestrInfoUserViewSet, 'reestr-info')
 router.register('sat-quest', SatisfactionQuestionnaireViewSet, 'sat-quest')
+router.register('reestr-conf', ConfirmReestrViewSet, 'reestr-conf')
 
 urlpatterns = [
     path('', include(router.urls)),
