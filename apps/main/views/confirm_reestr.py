@@ -15,7 +15,7 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
     ordering_fields = ['id']
 
     def get_permissions(self):
-        if self.action in ['list', 'retrieve']:
+        if self.action in ['list', 'retrieve', 'pdf']:
             return [permissions.AllowAny()]
         return super(ConfirmReestrViewSet, self).get_permissions()
 
