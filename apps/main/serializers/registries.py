@@ -4,6 +4,7 @@ from rest_framework import serializers
 
 from main.models.registries import Registries
 from main.serializers.file import FileSerializer
+from main.serializers.type_organ import TypeOrganModelSerializer
 
 
 class StatusValueSerializer(serializers.Serializer):
@@ -42,9 +43,9 @@ class RegistriesSerializer(serializers.ModelSerializer):
 
         return attrs
 
-    # def to_representation(self, instance):
-    #     self.fields['file'] = FileSerializer(context=self.context)
-    #     return super(RegistriesSerializer, self).to_representation(instance)
+    def to_representation(self, instance):
+        self.fields['type_organ'] = TypeOrganModelSerializer()
+        return super(RegistriesSerializer, self).to_representation(instance)
 
 
 class RegistriesSearchSerializer(serializers.Serializer):
