@@ -52,7 +52,9 @@ class ConfirmReestr(BaseModel):
     type_organ = models.ForeignKey('main.TypeOrgan', PROTECT,
                                    related_name='confirm_reestrs')
     title_organ = models.CharField(max_length=255)
+    type_organ_title = None
     address_organ = models.CharField(max_length=1000, null=True)
+    addres_organ_yurdn_lisa = None
     accreditation_date = models.DateField(null=True)
     full_name_supervisor_ao = models.CharField(max_length=255, null=True)
     status = models.CharField(max_length=20, choices=STATUS_TYPES,

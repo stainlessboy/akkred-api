@@ -1,15 +1,12 @@
 from __future__ import print_function
 
-import datetime
-from io import BytesIO
 from weasyprint import HTML, CSS
 
 from django.conf import settings
 from django.template import loader
 
 from main.models import ConfirmReestr
-from core.utils.attribute import get_attribute
-
+import datetime
 
 class AkkredPDF(object):
     is_choice = {
@@ -32,8 +29,11 @@ class AkkredPDF(object):
         ]
 
     def merge_info(self):
+        from datetime import datetime as data
+        created_date = data.date(data.now())
         self.data.update(
             title_organ=self.akkred.title_organ,
+            created_date=created_date
         )
 
     def generate(self):
