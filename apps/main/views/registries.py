@@ -8,11 +8,13 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     model = Registries
     queryset = Registries.objects.all()
     serializer_class = RegistriesSerializer
-    search_fields = ['title_organ', 'inn', 'text', 'area']
+    search_fields = ['number', 'inn', 'title_yurd_lisa', 'address_yurd_lisa', 'phone', 'email', 'web_site',
+                     'title_organ', 'address_organ',
+                     'full_name_supervisor_ao', 'phone_ao', 'email_ao', 'code', 'keywords', 'text', 'area']
     filter_class = ReestrFilterSet
     ordering_fields = ['id', 'create_date']
 
-    # lookup_field = 'area'
+    lookup_field = 'area'
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve', 'pdf']:

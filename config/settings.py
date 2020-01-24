@@ -112,18 +112,7 @@ if len(DATABASES) == 2:
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': [["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker"],
-                    ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
-                     'JustifyRight', 'JustifyBlock'],
-                    ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"],
-                    ['Undo', 'Redo'], ["Source"],
-                    ["Maximize"]],
-    },
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -189,6 +178,23 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            ["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "TextColor", 'Styles',
+             'FontSize'],
+            ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+             'JustifyRight', 'JustifyBlock'],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"],
+            ['Undo', 'Redo'], ["Source"],
+            ["Maximize"]],
+    },
+}
 
 # Cross domain list
 CORS_ORIGIN_WHITELIST = []
