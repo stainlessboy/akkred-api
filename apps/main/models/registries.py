@@ -5,7 +5,6 @@ import uuid
 from django.core.validators import RegexValidator
 from django.core.validators import ValidationError as Error
 from django.db import models
-from django.utils.safestring import mark_safe
 from rest_framework.serializers import ValidationError
 
 FILE_TYPES = {

@@ -1,9 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
+from main.views.calculcation import Calculation
 from main.views.confirm_reestr import ConfirmReestrViewSet
 from main.views.doc_parents import DocParentViewSet, DocTypeViewSet
 from main.views.file import FileViewSet
+from main.views.inspection_control import ICCategoryViewSet, InspectionControlViewSet
 from main.views.reestr_info import ReestrInfoUserViewSet
 from main.views.sat_uestionnaire import SatisfactionQuestionnaireViewSet
 from main.views.static_pages import StaticPagesViewSet
@@ -44,6 +46,9 @@ router.register('registries', RegistriesViewSet, 'registries')
 router.register('reestr-info', ReestrInfoUserViewSet, 'reestr-info')
 router.register('sat-quest', SatisfactionQuestionnaireViewSet, 'sat-quest')
 router.register('reestr-conf', ConfirmReestrViewSet, 'reestr-conf')
+router.register('calculation', Calculation, 'calculation')
+router.register('inspection-category', ICCategoryViewSet, 'inspection-category')
+router.register('inspection', InspectionControlViewSet, 'inspection')
 
 urlpatterns = [
     path('', include(router.urls)),

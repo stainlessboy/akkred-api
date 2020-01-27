@@ -1,4 +1,3 @@
-from django.db import models
 from django.db.models import PROTECT
 
 from core.django.model import BaseModel
@@ -9,7 +8,6 @@ import uuid
 from django.core.validators import RegexValidator
 from django.core.validators import ValidationError as Error
 from django.db import models
-from django.utils.safestring import mark_safe
 from rest_framework.serializers import ValidationError
 
 FILE_TYPES = {
@@ -55,6 +53,16 @@ class Document(BaseModel):
     number = models.CharField(max_length=300, null=True)
     link = models.CharField(max_length=300, null=True, blank=True)
 
+    file = models.FileField(upload_to=upload_name, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
+class DocumentForm(models.Model):
+    document = models.ForeignKey('main.Document', PROTECT,
+                                 related_name='document_forms')
+    title = models.CharField(max_length=255)
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):

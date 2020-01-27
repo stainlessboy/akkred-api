@@ -13,16 +13,3 @@ class DocumentsTest(BaseTest):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK,
                          response.data)
-
-        print(response.data)
-
-
-    # def test_list_parent(self):
-    #     response = self.client.get(reverse(self.list_parent_url), format='json')
-    #
-    #     self.assertEqual(response.status_code, status.HTTP_200_OK,
-    #                      response.data)
-    #
-    #
-    #     for  results in response.data['results']:
-    #         print(results)

@@ -1,10 +1,8 @@
 from rest_framework import viewsets, permissions
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.response import Response
 
 from main.models import News
 from main.serializers.news import NewsModelSerializer
-from rest_framework.permissions import AllowAny
 
 
 class StandardResultsSetPagination(PageNumberPagination):
