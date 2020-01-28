@@ -36,4 +36,7 @@ class TypeOrganViewSet(viewsets.ModelViewSet):
         queryset = self.get_queryset()
         queryset = queryset.filter(id__in=[1, 2, 3, 5, 6]).all()
         serializer = TypeOrganModelSerializer(queryset, many=True)
-        return Response(serializer.data)
+        data={
+            'results':serializer.data
+        }
+        return Response(data)
