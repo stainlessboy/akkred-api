@@ -6,3 +6,7 @@ class TypeOrgan(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Орган'
+        verbose_name_plural = 'Орган'

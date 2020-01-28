@@ -66,3 +66,7 @@ class ConfirmReestr(BaseModel):
 
     def __str__(self):
         return self.title_organ
+
+    class Meta:
+        verbose_name = 'Реестр одобренных лабораторий'
+        verbose_name_plural = 'Реестр одобренных лабораторий'

@@ -8,3 +8,7 @@ class Question(BaseModel):
 
     def __str__(self):
         return self.question
+
+    class Meta:
+        verbose_name = 'Вопрос-ответ'
+        verbose_name_plural = 'Вопрос-ответы'

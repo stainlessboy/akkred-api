@@ -6,3 +6,7 @@ class DocParent(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Категория Документа'
+        verbose_name_plural = 'Категории Документов'

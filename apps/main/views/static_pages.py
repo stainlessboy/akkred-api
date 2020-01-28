@@ -23,7 +23,6 @@ class StaticPagesViewSet(viewsets.ModelViewSet):
     queryset = StaticPage.objects.all()
     serializer_class = StaticPageModelSerializer
     lookup_field = 'key_name'
-    filterset_fields = ('created_date', 'key_name')
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:

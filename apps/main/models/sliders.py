@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models import PROTECT
 from core.django.model import BaseModel
 
-
 from django.utils.safestring import mark_safe
 from core.django.model import BaseModel
 from ckeditor.fields import RichTextField
@@ -37,7 +36,6 @@ def upload_name(instance, filename):
     raise ValidationError(detail={'File type is unacceptable'})
 
 
-
 class Slider(BaseModel):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
@@ -53,3 +51,7 @@ class Slider(BaseModel):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Слайдер'
+        verbose_name_plural = 'Слайдеры'

@@ -50,3 +50,7 @@ class MediaFile(models.Model):
 
     def __str__(self):
         return f'id={self.id}'
+
+    class Meta:
+        verbose_name = 'Библиотека файлов'
+        verbose_name_plural = 'Библиотека фалов'

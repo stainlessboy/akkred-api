@@ -79,6 +79,10 @@ class Registries(models.Model):
     def __str__(self):
         return self.title_organ
 
+    class Meta:
+        verbose_name = 'Государственный реестр аккредитованных ООС и МС'
+        verbose_name_plural = 'Государственный реестр аккредитованных ООС и МС'
+
 
 class RegistriesStatus(models.Model):
     reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_status')

@@ -33,3 +33,5 @@ class StaticPage(BaseModel):
 
     class Meta:
         ordering = ['-id']
+        verbose_name = 'Страница'
+        verbose_name_plural = 'Страницы'

@@ -41,7 +41,6 @@ class News(BaseModel):
     image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
     created_date_by_admin = models.DateTimeField(null=True)
 
-
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
 
@@ -50,6 +49,8 @@ class News(BaseModel):
 
     class Meta:
         ordering = ['-id']
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
 
     def __str__(self):
         return self.title

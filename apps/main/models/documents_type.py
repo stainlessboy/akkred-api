@@ -6,3 +6,7 @@ class DocType(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Тип Документа'
+        verbose_name_plural = 'Типы Документов'

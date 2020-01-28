@@ -99,3 +99,8 @@ class SatisfactionQuestionnaire(models.Model):
 
     def __str__(self):
         return self.questionnaire
+
+    class Meta:
+        ordering = ['-id']
+        verbose_name = 'Оценка удовлетворенности потребителей'
+        verbose_name_plural = 'Оценка удовлетворенности потребителей'

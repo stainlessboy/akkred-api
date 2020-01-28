@@ -29,7 +29,3 @@ class Admin(admin.ModelAdmin):
     readonly_fields = ['admin_photo']
 
 
-@admin.register(NewsGallery)
-class Admin(admin.ModelAdmin):
-    fields = ['news']
-    # inlines = [NewsGalleryInline]

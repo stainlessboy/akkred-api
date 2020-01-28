@@ -10,21 +10,12 @@ class CategoryReestrInfoUser(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Категория П.П.В'
+        verbose_name_plural = 'Категория П.П.В'
+
 
 class ReestrInfoUser(BaseModel):
-    # ACTIVE = 'active'
-    # INACTIVE = 'inactive'
-    # PAUSED = 'paused'
-    # EXTENDED = 'extended'
-    #
-    # STATUS_TYPES = (
-    #     (ACTIVE, 'active'),
-    #     (INACTIVE, 'inactive'),
-    #     (PAUSED, 'paused'),
-    #     (EXTENDED, 'extended'),
-    # )
-    # status = models.CharField(max_length=45, choices=STATUS_TYPES)
-
     title = models.CharField(max_length=255)
     number = models.CharField(max_length=255)
     type = models.ForeignKey('main.CategoryReestrInfoUser', PROTECT, related_name='info_reestrs', null=True)
@@ -34,3 +25,7 @@ class ReestrInfoUser(BaseModel):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Информация о приостановленных, прекрашенных и возобновленных свидетельствах об аккредитации'
+        verbose_name_plural = 'Информация о приостановленных, прекрашенных и возобновленных свидетельствах об аккредитации'

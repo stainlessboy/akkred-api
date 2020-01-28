@@ -51,3 +51,7 @@ class Employee(BaseModel):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Сотрудник'
+        verbose_name_plural = 'Сотрудники'

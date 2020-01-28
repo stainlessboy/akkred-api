@@ -58,6 +58,10 @@ class Document(BaseModel):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Документ'
+        verbose_name_plural = 'Документы'
+
 
 class DocumentForm(models.Model):
     document = models.ForeignKey('main.Document', PROTECT,
@@ -67,3 +71,7 @@ class DocumentForm(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Форма Документа '
+        verbose_name_plural = 'Форма Документа'
