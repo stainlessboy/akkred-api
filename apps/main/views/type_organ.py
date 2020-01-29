@@ -23,7 +23,7 @@ class TypeOrganViewSet(viewsets.ModelViewSet):
        """
 
     model = TypeOrgan
-    queryset = TypeOrgan.objects.filter(id__in=[1, 2, 3, 5, 6])
+    queryset = TypeOrgan.objects.all()
     serializer_class = TypeOrganModelSerializer
 
     def get_permissions(self):

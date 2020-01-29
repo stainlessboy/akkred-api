@@ -53,3 +53,15 @@ class CalculationTest(BaseTest):
         response = self.client.post(reverse(self.list_url), data)
         self.assertEqual(response.status_code, status.HTTP_200_OK,
                          response.data)
+
+
+    def test_inspection_control(self):
+        data = dict(
+            type='inspection_control',
+            number=200,
+            number_inspection=14001,
+            calculation_type='site',
+        )
+        response = self.client.post(reverse(self.list_url), data)
+        self.assertEqual(response.status_code, status.HTTP_200_OK,
+                         response.data)
