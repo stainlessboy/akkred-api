@@ -49,6 +49,13 @@ class CalculationSerializers(serializers.Serializer):
                 else:
                     time = t
                     num_day_total = time + 2
+                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                        bal = 0.5
+                    elif (num_day_total % 1) >= 0.75:
+                        bal = 1
+                    else:
+                        bal = 0
+                    num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t = number / 50
