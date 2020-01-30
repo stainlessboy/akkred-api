@@ -35,7 +35,7 @@ class CalculationSerializers(serializers.Serializer):
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / 40
-                if t <= 1:
+                if t <= 0.5:
                     time = 0.5
                     num_day_total = time + 2
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
