@@ -75,6 +75,7 @@ class Registries(models.Model):
     area = models.CharField(max_length=255, unique=True)
 
     file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
+    certificate = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
         return self.title_organ
