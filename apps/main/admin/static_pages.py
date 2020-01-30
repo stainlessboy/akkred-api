@@ -6,6 +6,7 @@ from main.models import StaticPage
 class Admin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
+    list_filter = ['type']
     fields = [
         'key_name',
         'name_en',
