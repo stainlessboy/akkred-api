@@ -38,13 +38,13 @@ class CalculationSerializers(serializers.Serializer):
                 if t <= 0.5:
                     time = 0.5
                     num_day_total = time + 2
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
+                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                    #     bal = 0.5
+                    # elif (num_day_total % 1) >= 0.75:
+                    #     bal = 1
+                    # else:
+                    #     bal = 0
+                    # num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
                 else:
                     time = t
@@ -62,13 +62,13 @@ class CalculationSerializers(serializers.Serializer):
                 if t <= 1:
                     time = 1
                     num_day_total = time + 3  ##num_day_total = time + 2 + (t / 32) + 1
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
+                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                    #     bal = 0.5
+                    # elif (num_day_total % 1) >= 0.75:
+                    #     bal = 1
+                    # else:
+                    #     bal = 0
+                    # num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
                 else:
                     time = t
@@ -135,7 +135,7 @@ class CalculationSerializers(serializers.Serializer):
         # TODO actualization
         if validated_data['type'] == 'actualization':
             t = number / 240
-            if t <= 1:
+            if t <= 0.5:
                 time = 0.5
                 num_day_total = time + 0.5
                 if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
@@ -162,7 +162,6 @@ class CalculationSerializers(serializers.Serializer):
             t = number / 10
 
             from math import ceil
-
             if num_test <= 200:
                 num_day_rec = 1.5
             elif num_test > 200 and num_test <= 500:
