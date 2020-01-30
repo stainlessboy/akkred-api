@@ -61,7 +61,7 @@ class CalculationSerializers(serializers.Serializer):
                 t = number / 50
                 if t <= 1:
                     time = 1
-                    num_day_total = time + 2 + (t / 32)
+                    num_day_total = time + 2 + (t / 32) + 1
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
@@ -72,7 +72,7 @@ class CalculationSerializers(serializers.Serializer):
                     sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time + 2 + (t / 32)
+                    num_day_total = time + 2 + (t / 32) + 1
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
