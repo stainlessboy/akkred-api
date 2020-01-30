@@ -88,14 +88,14 @@ class CalculationSerializers(serializers.Serializer):
                 if t <= 0.5:
                     time = 0.5
                     num_day_total = time
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
-                    sum = num_day_total * c
+                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                    #     bal = 0.5
+                    # elif (num_day_total % 1) >= 0.75:
+                    #     bal = 1
+                    # else:
+                    #     bal = 0
+                    # num_day_total = int(num_day_total) + bal
+                    # sum = num_day_total * c
                 else:
                     time = t
                     num_day_total = time
@@ -108,21 +108,21 @@ class CalculationSerializers(serializers.Serializer):
                     num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t = number / 50
+                t = (number / 50) + (number / 28.24)  # t = number / 50
                 if t <= 1:
                     time = 1
-                    num_day_total = time + 1 + (t / 28.24)
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
+                    num_day_total = time + 1  # num_day_total = time + 1 + (t / 28.24)
+                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                    #     bal = 0.5
+                    # elif (num_day_total % 1) >= 0.75:
+                    #     bal = 1
+                    # else:
+                    #     bal = 0
+                    # num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time + 1 + (t / 28.24)
+                    num_day_total = time + 1  # num_day_total = time + 1 + (t / 28.24)
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
