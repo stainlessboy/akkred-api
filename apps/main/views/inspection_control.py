@@ -17,6 +17,7 @@ class ICCategoryViewSet(viewsets.ModelViewSet):
 class InspectionControlViewSet(viewsets.ModelViewSet):
     queryset = InspectionControl.objects.all()
     serializer_class = InspectionControlSerializer
+    filter_fields = ['category']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
