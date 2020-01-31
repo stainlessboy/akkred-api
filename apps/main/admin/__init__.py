@@ -10,6 +10,8 @@ import main.admin.sat_ques
 import main.admin.reestr_conf
 import main.admin.document
 import main.admin.type_organ
+import main.admin.inspection_control
+import main.admin.inspection_control_category
 
 from main.models.region import Region
 from main.models.questions import Question
