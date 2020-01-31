@@ -35,7 +35,7 @@ class CalculationSerializers(serializers.Serializer):
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 17)
-                if (t % 1) > 0 and (t % 1) < 0.5:
+                if (t % 1) > 0 and (t % 1) <= 0.5:
                     bal = 0.5
                 elif (t % 1) == 0:
                     bal = 0
@@ -46,7 +46,7 @@ class CalculationSerializers(serializers.Serializer):
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = (number / (480 / 25))
-                if (t1 % 1) > 0 and (t1 % 1) < 0.5:
+                if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
                     bal = 0.5
                 elif (t1 % 1) == 0:
                     bal = 0
@@ -54,7 +54,7 @@ class CalculationSerializers(serializers.Serializer):
                     bal = 1
                 t1 = int(t1) + bal
                 t2 = (number / 50)
-                if (t2 % 1) > 0 and (t2 % 1) < 0.5:
+                if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
                     bal = 0.5
                 elif (t2 % 1) == 0:
                     bal = 0
@@ -68,7 +68,7 @@ class CalculationSerializers(serializers.Serializer):
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 17)
-                if (t % 1) > 0 and (t % 1) < 0.5:
+                if (t % 1) > 0 and (t % 1) <= 0.5:
                     bal = 0.5
                 elif (t % 1) == 0:
                     bal = 0
@@ -79,7 +79,7 @@ class CalculationSerializers(serializers.Serializer):
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = (number / (480 / 25))
-                if (t1 % 1) > 0 and (t1 % 1) < 0.5:
+                if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
                     bal = 0.5
                 elif (t1 % 1) == 0:
                     bal = 0
@@ -87,7 +87,7 @@ class CalculationSerializers(serializers.Serializer):
                     bal = 1
                 t1 = int(t1) + bal
                 t2 = (number / 50)
-                if (t2 % 1) > 0 and (t2 % 1) < 0.5:
+                if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
                     bal = 0.5
                 elif (t2 % 1) == 0:
                     bal = 0
@@ -100,7 +100,7 @@ class CalculationSerializers(serializers.Serializer):
         # TODO actualization
         if validated_data['type'] == 'actualization':
             t = number / (480 / 2)
-            if (t % 1) > 0 and (t % 1) < 0.5:
+            if (t % 1) > 0 and (t % 1) <= 0.5:
                 bal = 0.5
             elif (t % 1) == 0:
                 bal = 0
@@ -112,7 +112,7 @@ class CalculationSerializers(serializers.Serializer):
         # TODO inspection_control
         if validated_data['type'] == 'inspection_control':
             t = number / 10
-            if (t % 1) > 0 and (t % 1) < 0.5:
+            if (t % 1) > 0 and (t % 1) <= 0.5:
                 bal = 0.5
             elif (t % 1) == 0:
                 bal = 0
