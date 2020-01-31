@@ -35,96 +35,75 @@ class CalculationSerializers(serializers.Serializer):
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 17)
-                if t <= 1:
-                    time = 1
-                    num_day_total = time + 3
-                    sum = num_day_total * c
+                if (t % 1) > 0 and (t % 1) < 0.5:
+                    bal = 0.5
                 else:
-                    time = t
-                    num_day_total = time + 3
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
-                    sum = num_day_total * c
+                    bal = 1
+                t = int(t) + bal
+                num_day_total = t + 3
+                sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t = (number / 19.2) + (number / 50)
-                if t <= 1:
-                    time = 1
-                    num_day_total = time + 4
-                    sum = num_day_total * c
+                t1 = (number / (480 / 25))
+                if (t1 % 1) > 0 and (t1 % 1) < 0.5:
+                    bal = 0.5
                 else:
-                    time = t
-                    num_day_total = time + 4
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
-                    sum = num_day_total * c
+                    bal = 1
+                t1 = int(t1) + bal
+                t2 = (number / 50)
+                if (t2 % 1) > 0 and (t2 % 1) < 0.5:
+                    bal = 0.5
+                else:
+                    bal = 1
+                t2 = int(t2) + bal
+                num_day_total = t1 + t2 + 4
+                sum = num_day_total * c
+
         # TODO expansion
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 17)
-                if t <= 0.5:
-                    time = 1
-                    num_day_total = time + 1
-                    sum = num_day_total * c
+                if (t % 1) > 0 and (t % 1) < 0.5:
+                    bal = 0.5
                 else:
-                    time = t
-                    num_day_total = time + 1
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
-                    sum = num_day_total * c
+                    bal = 1
+                t = int(t) + bal
+                num_day_total = t + 1
+                sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t = (number / 19.2) + (number / 50)
-                if t <= 1:
-                    time = 1
-                    num_day_total = time + 2
-                    sum = num_day_total * c
+                t1 = (number / (480 / 25))
+                if (t1 % 1) > 0 and (t1 % 1) < 0.5:
+                    bal = 0.5
                 else:
-                    time = t
-                    num_day_total = time + 2
-                    if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                        bal = 0.5
-                    elif (num_day_total % 1) >= 0.75:
-                        bal = 1
-                    else:
-                        bal = 0
-                    num_day_total = int(num_day_total) + bal
-                    sum = num_day_total * c
+                    bal = 1
+                t1 = int(t1) + bal
+                t2 = (number / 50)
+                if (t2 % 1) > 0 and (t2 % 1) < 0.5:
+                    bal = 0.5
+                else:
+                    bal = 1
+                t2 = int(t2) + bal
+                num_day_total = t1 + t2 + 2
+                sum = num_day_total * c
 
         # TODO actualization
         if validated_data['type'] == 'actualization':
-            t = number / 240
-            if t <= 0.5:
-                time = 0.5
-                num_day_total = time + 1
-                sum = num_day_total * c
+            t = number / (480 / 2)
+            if (t % 1) > 0 and (t % 1) < 0.5:
+                bal = 0.5
             else:
-                time = t
-                num_day_total = time + 1
-                if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    bal = 0.5
-                elif (num_day_total % 1) >= 0.75:
-                    bal = 1
-                else:
-                    bal = 0
-                num_day_total = int(num_day_total) + bal
-                sum = num_day_total * c
+                bal = 1
+            t = int(t) + bal
+            num_day_total = t + 1
+            sum = num_day_total * c
         # TODO inspection_control
         if validated_data['type'] == 'inspection_control':
             t = number / 10
+            if (t % 1) > 0 and (t % 1) < 0.5:
+                bal = 0.5
+            else:
+                bal = 1
+            t = int(t) + bal
+
             from math import ceil
             if num_test <= 200:
                 num_day_rec = 1.5
@@ -142,14 +121,8 @@ class CalculationSerializers(serializers.Serializer):
                 num_day_rec = 4.5
             else:
                 num_day_rec = 4.5 + ceil((num_test - 8000) / 3000) / 2
+
             num_day_total = t + num_day_rec + 4
-            if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                bal = 0.5
-            elif (num_day_total % 1) >= 0.75:
-                bal = 1
-            else:
-                bal = 0
-            num_day_total = int(num_day_total) + bal
             sum = num_day_total * c
 
         validated_data.update(sum=sum)
