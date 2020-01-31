@@ -111,7 +111,7 @@ class CalculationSerializers(serializers.Serializer):
             sum = num_day_total * c
         # TODO inspection_control
         if validated_data['type'] == 'inspection_control':
-            t = number / 10
+            t = number / 50
             if (t % 1) > 0 and (t % 1) <= 0.5:
                 bal = 0.5
             elif (t % 1) == 0:
