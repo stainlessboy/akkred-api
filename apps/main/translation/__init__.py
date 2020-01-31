@@ -1,2 +1,1 @@
-
 import main.translation.static_pages_translation

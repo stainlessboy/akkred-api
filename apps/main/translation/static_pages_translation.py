@@ -7,6 +7,7 @@ from main.models.review import Review
 from main.models.questions import Question
 from main.models.employees import Employee
 from main.models.laws import Laws
+from main.models.type_organ import TypeOrgan
 
 
 class StaticPagesTranslation(TranslationOptions):
@@ -43,6 +44,12 @@ class Lawss(TranslationOptions):
     fields = ('name', 'name2', 'link')
     default_translate = False
 
+class TypeOrgans(TranslationOptions):
+    fields = ['name']
+    default_translate = False
+
+
+
 
 # title
 # text
@@ -67,3 +74,4 @@ translator.register(Review, Reviews)
 translator.register(Question, QA)
 translator.register(Employee, Employer)
 translator.register(Laws, Lawss)
+translator.register(TypeOrgan, TypeOrgans)
