@@ -142,20 +142,15 @@ class CalculationSerializers(serializers.Serializer):
                 num_day_rec = 4.5
             else:
                 num_day_rec = 4.5 + ceil((num_test - 8000) / 3000) / 2
-            if t <= 1:
-                time = 1
-                num_day_total = time + num_day_rec + 4
-                sum = num_day_total * c
+            num_day_total = t + num_day_rec + 4
+            if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
+                bal = 0.5
+            elif (num_day_total % 1) >= 0.75:
+                bal = 1
             else:
-                time = t
-                num_day_total = time + num_day_rec + 4
-                if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    bal = 0.5
-                elif (num_day_total % 1) >= 0.75:
-                    bal = 1
-                else:
-                    bal = 0
-                num_day_total = int(num_day_total) + bal
-                sum = num_day_total * c
+                bal = 0
+            num_day_total = int(num_day_total) + bal
+            sum = num_day_total * c
+
         validated_data.update(sum=sum)
         return validated_data
