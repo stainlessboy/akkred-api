@@ -37,6 +37,8 @@ class CalculationSerializers(serializers.Serializer):
                 t = number / (480 / 17)
                 if (t % 1) > 0 and (t % 1) < 0.5:
                     bal = 0.5
+                elif (t % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t = int(t) + bal
@@ -46,12 +48,16 @@ class CalculationSerializers(serializers.Serializer):
                 t1 = (number / (480 / 25))
                 if (t1 % 1) > 0 and (t1 % 1) < 0.5:
                     bal = 0.5
+                elif (t1 % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t1 = int(t1) + bal
                 t2 = (number / 50)
                 if (t2 % 1) > 0 and (t2 % 1) < 0.5:
                     bal = 0.5
+                elif (t2 % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t2 = int(t2) + bal
@@ -64,6 +70,8 @@ class CalculationSerializers(serializers.Serializer):
                 t = number / (480 / 17)
                 if (t % 1) > 0 and (t % 1) < 0.5:
                     bal = 0.5
+                elif (t % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t = int(t) + bal
@@ -73,12 +81,16 @@ class CalculationSerializers(serializers.Serializer):
                 t1 = (number / (480 / 25))
                 if (t1 % 1) > 0 and (t1 % 1) < 0.5:
                     bal = 0.5
+                elif (t1 % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t1 = int(t1) + bal
                 t2 = (number / 50)
                 if (t2 % 1) > 0 and (t2 % 1) < 0.5:
                     bal = 0.5
+                elif (t2 % 1) == 0:
+                    bal = 0
                 else:
                     bal = 1
                 t2 = int(t2) + bal
@@ -90,6 +102,8 @@ class CalculationSerializers(serializers.Serializer):
             t = number / (480 / 2)
             if (t % 1) > 0 and (t % 1) < 0.5:
                 bal = 0.5
+            elif (t % 1) == 0:
+                bal = 0
             else:
                 bal = 1
             t = int(t) + bal
@@ -100,6 +114,8 @@ class CalculationSerializers(serializers.Serializer):
             t = number / 10
             if (t % 1) > 0 and (t % 1) < 0.5:
                 bal = 0.5
+            elif (t % 1) == 0:
+                bal = 0
             else:
                 bal = 1
             t = int(t) + bal
