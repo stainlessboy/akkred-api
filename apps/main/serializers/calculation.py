@@ -34,21 +34,14 @@ class CalculationSerializers(serializers.Serializer):
         # TODO accreditation
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / 40
-                if t <= 0.5:
-                    time = 0.5
-                    num_day_total = time + 2
-                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    #     bal = 0.5
-                    # elif (num_day_total % 1) >= 0.75:
-                    #     bal = 1
-                    # else:
-                    #     bal = 0
-                    # num_day_total = int(num_day_total) + bal
+                t = number / 28.24  # t = number / 40
+                if t <= 1:  # t <= 0.5:
+                    time = 1  # time = 0.5
+                    num_day_total = time + 3  # num_day_total = time + 2
                     sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time + 2
+                    num_day_total = time + 3  # num_day_total = time + 2
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
@@ -58,21 +51,14 @@ class CalculationSerializers(serializers.Serializer):
                     num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t = (number / 50) + (number / 28.24)  ##t = number / 50
+                t = (number / 19.2) + (number / 50)  # t = (number / 50) + (number / 28.24)  ##t = number / 50
                 if t <= 1:
                     time = 1
-                    num_day_total = time + 3  ##num_day_total = time + 2 + (t / 32) + 1
-                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    #     bal = 0.5
-                    # elif (num_day_total % 1) >= 0.75:
-                    #     bal = 1
-                    # else:
-                    #     bal = 0
-                    # num_day_total = int(num_day_total) + bal
+                    num_day_total = time + 4 #num_day_total = time + 3  ##num_day_total = time + 2 + (t / 32) + 1
                     sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time + 3  # num_day_total = time + 2 + (t / 32) + 1
+                    num_day_total = time + 4  # num_day_total = time + 2 + (t / 32) + 1
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
@@ -84,21 +70,14 @@ class CalculationSerializers(serializers.Serializer):
         # TODO expansion
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / 40
+                t = number / 28.24
                 if t <= 0.5:
-                    time = 0.5
-                    num_day_total = time
-                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    #     bal = 0.5
-                    # elif (num_day_total % 1) >= 0.75:
-                    #     bal = 1
-                    # else:
-                    #     bal = 0
-                    # num_day_total = int(num_day_total) + bal
-                    # sum = num_day_total * c
+                    time = 1
+                    num_day_total = time + 1
+                    sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time
+                    num_day_total = time + 1 #num_day_total = time
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
@@ -108,21 +87,14 @@ class CalculationSerializers(serializers.Serializer):
                     num_day_total = int(num_day_total) + bal
                     sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t = (number / 50) + (number / 28.24)  # t = number / 50
+                t = (number / 19.2) + (number / 50)  #t = (number / 50) + (number / 28.24)  # t = number / 50
                 if t <= 1:
                     time = 1
-                    num_day_total = time + 1  # num_day_total = time + 1 + (t / 28.24)
-                    # if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    #     bal = 0.5
-                    # elif (num_day_total % 1) >= 0.75:
-                    #     bal = 1
-                    # else:
-                    #     bal = 0
-                    # num_day_total = int(num_day_total) + bal
+                    num_day_total = time + 2  # num_day_total = time + 1 + (t / 28.24)
                     sum = num_day_total * c
                 else:
                     time = t
-                    num_day_total = time + 1  # num_day_total = time + 1 + (t / 28.24)
+                    num_day_total = time + 2  # num_day_total = time + 1 + (t / 28.24)
                     if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                         bal = 0.5
                     elif (num_day_total % 1) >= 0.75:
@@ -137,18 +109,11 @@ class CalculationSerializers(serializers.Serializer):
             t = number / 240
             if t <= 0.5:
                 time = 0.5
-                num_day_total = time + 0.5
-                if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    bal = 0.5
-                elif (num_day_total % 1) >= 0.75:
-                    bal = 1
-                else:
-                    bal = 0
-                num_day_total = int(num_day_total) + bal
+                num_day_total = time + 1
                 sum = num_day_total * c
             else:
                 time = t
-                num_day_total = time + 0.5
+                num_day_total = time + 1
                 if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                     bal = 0.5
                 elif (num_day_total % 1) >= 0.75:
@@ -181,18 +146,11 @@ class CalculationSerializers(serializers.Serializer):
 
             if t <= 1:
                 time = 1
-                num_day_total = time + 0.5 + num_day_rec
-                if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
-                    bal = 0.5
-                elif (num_day_total % 1) >= 0.75:
-                    bal = 1
-                else:
-                    bal = 0
-                num_day_total = int(num_day_total) + bal
+                num_day_total = time + num_day_rec + 4
                 sum = num_day_total * c
             else:
                 time = t
-                num_day_total = time + 0.5 + num_day_rec
+                num_day_total = time + num_day_rec + 4
                 if (num_day_total % 1) >= 0.25 and (num_day_total % 1) < 0.75:
                     bal = 0.5
                 elif (num_day_total % 1) >= 0.75:
