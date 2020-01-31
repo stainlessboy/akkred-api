@@ -16,42 +16,9 @@ class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
     search_fields = ['title']
     filter_fields = ['title', 'created_date', 'parents', 'type']
-    ordering_fields = ['id', 'created_date']
+    ordering = ['-order']
 
     def get_permissions(self):
         if self.action == 'list':
             return [AllowAny()]
         return super().get_permissions()
-
-# class DocumentViewSet(ViewSet):
-#     def get_permissions(self):
-#         permissions = super(DocumentViewSet, self).get_permissions()
-#         if self.action in ['list']:
-#             permissions = [AllowAny()]
-#         return permissions
-#
-#     # @action(['GET'], detail=False)
-#     def list(self, request, **__):
-#
-#
-#         queryset = Document.objects.all()
-#         queryset = queryset.order_by()
-#         queryset = queryset.values(
-#             'parents__title',
-#             'parents_id',
-#             # 'parents__documents_id'
-#         )
-#         queryset = queryset.annotate(count=Count('*'))
-#
-#         queryset = queryset.values(
-#             'parents__title',
-#             'parents_id',
-#             # 'id',
-#             # 'title',
-#
-#             'count',
-#         )
-#         serializer = DocuemtnsListSerializer(
-#             queryset, many=True)
-#
-#         return Response(serializer.data)
