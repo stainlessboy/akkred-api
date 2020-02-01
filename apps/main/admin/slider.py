@@ -7,6 +7,7 @@ class Admin(admin.ModelAdmin):
     list_display = ['id', 'title']
     search_fields = ['title', 'title_uz', 'title_ru', 'title_en']
     fields = [
+        'admin_photo',
         'title_en',
         'title_ru',
         'title_uz',
