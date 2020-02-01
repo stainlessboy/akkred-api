@@ -1,7 +1,10 @@
+from rest_framework.decorators import action
+
 from main.filters.reestr import ReestrFilterSet
 from main.models.registries import Registries
 from rest_framework import viewsets, permissions
 from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer
+from rest_framework.response import Response
 
 
 class RegistriesViewSet(viewsets.ModelViewSet):
@@ -28,3 +31,13 @@ class RegistriesViewSet(viewsets.ModelViewSet):
         if search_serializer.validated_data:
             qs = qs.filter(**search_serializer.validated_data)
         return qs
+
+    @action(['GET'], detail=False, permission_classes=[permissions.AllowAny])
+    def static(self, request):
+        queryset = self.get_queryset()
+        queryset = queryset.filter(status__in=['paused', 'extended']).all()
+        serializer = RegistriesSerializer(queryset, many=True)
+        data = {
+            'results': serializer.data
+        }
+        return Response(data)
