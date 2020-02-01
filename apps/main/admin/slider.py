@@ -11,6 +11,7 @@ class Admin(admin.ModelAdmin):
         'title_en',
         'title_ru',
         'title_uz',
-        'image'
+        'image',
+        'link',
     ]
     readonly_fields = ['admin_photo']
