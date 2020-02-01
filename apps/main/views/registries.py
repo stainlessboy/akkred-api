@@ -32,12 +32,12 @@ class RegistriesViewSet(viewsets.ModelViewSet):
             qs = qs.filter(**search_serializer.validated_data)
         return qs
 
-    @action(['GET'], detail=False, permission_classes=[permissions.AllowAny])
-    def static(self, request):
-        queryset = self.get_queryset()
-        queryset = queryset.filter(status__in=['paused', 'extended']).all()
-        serializer = RegistriesSerializer(queryset, many=True)
-        data = {
-            'results': serializer.data
-        }
-        return Response(data)
+    # @action(['GET'], detail=False, permission_classes=[permissions.AllowAny])
+    # def static(self, request):
+    #     queryset = self.get_queryset()
+    #     queryset = queryset.filter(status__in=['paused', 'extended']).all()
+    #     serializer = RegistriesSerializer(queryset, many=True)
+    #     data = {
+    #         'results': serializer.data,
+    #     }
+    #     return Response(data)
