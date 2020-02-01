@@ -9,7 +9,7 @@ class DocumentFormInline(admin.TabularInline):
 
 @admin.register(Document)
 class Admin(admin.ModelAdmin):
-    list_display = ['title']
+    list_display = ['title', 'number']
     search_fields = ['title']
     list_filter = ['parents', 'type']
     inlines = [DocumentFormInline]

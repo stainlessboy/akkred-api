@@ -16,7 +16,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
     serializer_class = DocumentSerializer
     search_fields = ['title']
     filter_fields = ['title', 'created_date', 'parents', 'type']
-    ordering = ['-order']
+    ordering = ['order']
 
     def get_permissions(self):
         if self.action == 'list':
