@@ -73,8 +73,6 @@ class DocumentForm(models.Model):
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
-        if self.title:
-            return self.title
         return str(self.id)
 
     class Meta:
