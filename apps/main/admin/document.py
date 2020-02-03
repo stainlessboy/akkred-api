@@ -16,7 +16,7 @@ class DocumentFormInline(admin.TabularInline):
 
 @admin.register(Document)
 class Admin(admin.ModelAdmin):
-    list_display = ['title', 'number']
+    list_display = ['title', 'number', 'description']
     search_fields = ['name_en', 'name_ru', 'name_uz']
     list_filter = ['parents', 'type']
     inlines = [DocumentFormInline]
