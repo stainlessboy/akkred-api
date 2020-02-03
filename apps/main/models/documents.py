@@ -58,7 +58,7 @@ class Document(BaseModel):
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.id)
 
     class Meta:
         verbose_name = 'Документ'
@@ -73,7 +73,7 @@ class DocumentForm(models.Model):
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
-        return str(self.id)
+        return self.title
 
     class Meta:
         ordering = ['order']
