@@ -51,13 +51,14 @@ class Document(BaseModel):
 
     title = models.CharField(max_length=255)
     name = models.CharField(max_length=255, null=True)
+    description = models.CharField(max_length=255, null=True)
     number = models.CharField(max_length=300, null=True)
     link = models.CharField(max_length=300, null=True, blank=True)
     order = models.PositiveIntegerField(default=0)
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     class Meta:
         verbose_name = 'Документ'

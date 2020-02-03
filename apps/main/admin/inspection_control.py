@@ -4,7 +4,7 @@ from main.models import InspectionControl
 
 @admin.register(InspectionControl)
 class Admin(admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['id', 'name']
 
     fields = [
         'name_en',

@@ -61,7 +61,7 @@ class Sliders(TranslationOptions):
 
 
 class Documents(TranslationOptions):
-    fields = ['name']
+    fields = ['name', 'description']
     default_translate = False
 
 
