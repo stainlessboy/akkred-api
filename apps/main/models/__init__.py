@@ -15,3 +15,4 @@ from main.models.confirm_reestr import ConfirmReestr
 from main.models.inspection_control import ICCategory, InspectionControl
 from main.models.documents import Document, DocumentForm
 from main.models.sliders import Slider
+from main.models.employees import Employee
