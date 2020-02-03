@@ -1,10 +1,5 @@
-from django.db.models import QuerySet
 from rest_framework import viewsets
-from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
-from rest_framework.viewsets import ViewSet
-from rest_framework.response import Response
-from django.db.models import Count
 
 from main.serializers.documents import DocumentSerializer
 from main.models.documents import Document
@@ -19,6 +14,6 @@ class DocumentViewSet(viewsets.ModelViewSet):
     ordering = ['order']
 
     def get_permissions(self):
-        if self.action == 'list':
+        if self.action in ['list', 'retrieve']:
             return [AllowAny()]
         return super().get_permissions()
