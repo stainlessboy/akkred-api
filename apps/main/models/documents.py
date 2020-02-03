@@ -68,6 +68,7 @@ class Document(BaseModel):
 class DocumentForm(models.Model):
     document = models.ForeignKey('main.Document', PROTECT,
                                  related_name='document_forms')
+    order = models.PositiveIntegerField(default=0)
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
 
@@ -75,5 +76,6 @@ class DocumentForm(models.Model):
         return self.title
 
     class Meta:
+        ordering = ['order']
         verbose_name = 'Форма Документа '
         verbose_name_plural = 'Форма Документа'

@@ -10,6 +10,7 @@ class DocumentFormInline(admin.TabularInline):
         'title_ru',
         'title_uz',
         'file',
+        'order',
     ]
 
 
