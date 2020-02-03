@@ -11,5 +11,5 @@ class Admin(admin.ModelAdmin):
         'name_ru',
         'name_uz',
         'category',
-        'file:wq',
+        'file',
     ]
