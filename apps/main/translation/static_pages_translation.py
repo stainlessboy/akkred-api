@@ -9,6 +9,9 @@ from main.models.employees import Employee
 from main.models.laws import Laws
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
+from main.models.documents import Document, DocumentForm
+from main.models.documens_parent import DocParent
+from main.models.documents_type import DocType
 
 
 class StaticPagesTranslation(TranslationOptions):
@@ -45,32 +48,36 @@ class Lawss(TranslationOptions):
     fields = ('name', 'name2', 'link')
     default_translate = False
 
+
 class TypeOrgans(TranslationOptions):
     fields = ['name']
     default_translate = False
+
 
 class Sliders(TranslationOptions):
     fields = ['title']
     default_translate = False
 
 
+class Documents(TranslationOptions):
+    fields = ['name']
+    default_translate = False
 
 
-# title
-# text
-# photo
+class DocumentForms(TranslationOptions):
+    fields = ['title']
+    default_translate = False
 
-# author = mo
-# position =
-# description
-# image = mod
 
-# question
-# answer =
+class DocParents(TranslationOptions):
+    fields = ['name']
+    default_translate = False
 
-# name = mode
-# position =
-# description
+
+class DocTypes(TranslationOptions):
+    fields = ['name']
+    default_translate = False
+
 
 translator.register(StaticPage, StaticPagesTranslation)
 translator.register(Media, Medias)
@@ -81,3 +88,7 @@ translator.register(Employee, Employer)
 translator.register(Laws, Lawss)
 translator.register(TypeOrgan, TypeOrgans)
 translator.register(Slider, Sliders)
+translator.register(Document, Documents)
+translator.register(DocumentForm, DocumentForms)
+translator.register(DocParent, DocParents)
+translator.register(DocType, DocTypes)

@@ -13,15 +13,13 @@ import main.admin.type_organ
 import main.admin.inspection_control
 import main.admin.inspection_control_category
 import main.admin.slider
+import main.admin.doc_parents
+import main.admin.doc_type
 
 from main.models.region import Region
 from main.models.questions import Question
 from main.models.employees import Employee
-from main.models.documens_parent import DocParent
-from main.models.documents_type import DocType
 
 admin.site.register(Region)
 admin.site.register(Question)
 admin.site.register(Employee)
-admin.site.register(DocParent)
-admin.site.register(DocType)

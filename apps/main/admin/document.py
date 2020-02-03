@@ -5,11 +5,30 @@ from main.models import Document \
 
 class DocumentFormInline(admin.TabularInline):
     model = DocumentForm
+    fields = [
+        'title_en',
+        'title_ru',
+        'title_uz',
+        'file',
+    ]
 
 
 @admin.register(Document)
 class Admin(admin.ModelAdmin):
     list_display = ['title', 'number']
-    search_fields = ['title']
+    search_fields = ['name_en', 'name_ru', 'name_uz']
     list_filter = ['parents', 'type']
     inlines = [DocumentFormInline]
+    fields = [
+        'name_en',
+        'name_ru',
+        'name_uz',
+        'link',
+        'order',
+        'number',
+        'title',
+        'parents',
+        'type',
+        'status',
+        'file',
+    ]

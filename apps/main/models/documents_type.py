@@ -2,7 +2,8 @@ from django.db import models
 
 
 class DocType(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    name = models.CharField(max_length=255, null=True)
     order = models.PositiveIntegerField(default=0)
 
     def __str__(self):

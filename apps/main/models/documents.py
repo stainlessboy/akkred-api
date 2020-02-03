@@ -50,6 +50,7 @@ class Document(BaseModel):
                              related_name='documents', default=None, null=True, blank=True)
 
     title = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, null=True)
     number = models.CharField(max_length=300, null=True)
     link = models.CharField(max_length=300, null=True, blank=True)
     order = models.PositiveIntegerField(default=0)

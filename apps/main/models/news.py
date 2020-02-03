@@ -16,7 +16,7 @@ FILE_TYPES = {
     r'^(doc|docx)$': 'document',
     r'^(pdf)$': 'pdf',
     r'^(htm)$': 'htm',
-    r'^(jpg|jpeg|png|gif)$': 'image',
+    r'^(jpg|jpeg|png|gif|JPG)$': 'image',
     r'^(xls|xlsx)$': 'excel',
     r'^(zip|rar)$': 'compressed',
 }
