@@ -17,6 +17,10 @@ class DocumentFormSerializer(serializers.Serializer):
     title = serializers.ReadOnlyField()
     file = serializers.FileField()
 
+    def to_representation(self, instance):
+        self.fields['category'] = DocumentTypeSerializer()
+        return super(DocumentFormSerializer, self).to_representation(instance)
+
 
 class DocumentSerializer(serializers.ModelSerializer):
     document_forms = DocumentFormSerializer(required=False, many=True)
