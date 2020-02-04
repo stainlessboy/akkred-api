@@ -6,7 +6,7 @@ from main.models import Document \
 class DocumentFormInline(admin.TabularInline):
     model = DocumentForm
     fields = [
-        'title_en',
+        'category',
         'title_ru',
         'title_uz',
         'file',
