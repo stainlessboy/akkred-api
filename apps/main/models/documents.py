@@ -71,8 +71,11 @@ class CategoryDocumentForm(models.Model):
 
     class Meta:
         ordering = ['order']
-        verbose_name = 'Форма Документа Категория'
-        verbose_name_plural = 'Форма Документа Категория'
+        verbose_name = 'Категория Форма Документа '
+        verbose_name_plural = 'Категория Форма Документа '
+
+    def __str__(self):
+        return self.title
 
 
 class DocumentForm(models.Model):
