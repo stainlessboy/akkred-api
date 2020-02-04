@@ -5,6 +5,7 @@ from main.models import TypeOrgan, Registries
 
 class TypeSelectSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
+    title = serializers.ReadOnlyField()
     name_en = serializers.ReadOnlyField()
     name_ru = serializers.ReadOnlyField()
     name_uz = serializers.ReadOnlyField()
