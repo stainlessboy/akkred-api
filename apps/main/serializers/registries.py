@@ -51,5 +51,5 @@ class RegistriesSerializer(serializers.ModelSerializer):
 class RegistriesSearchSerializer(serializers.Serializer):
     search_number = serializers.CharField(source='number__icontains', required=False)
     search_inn = serializers.CharField(source='inn__icontains', required=False)
-
-    # search_description = serializers.CharField(source='description__icontains', required=False)
+    search_code = serializers.CharField(source='code__icontains', required=False)
+    search_title = serializers.CharField(source='title_organ__icontains', required=False)

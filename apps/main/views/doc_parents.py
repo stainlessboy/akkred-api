@@ -1,8 +1,9 @@
 from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 
-from main.models import DocParent, DocType
+from main.models import DocParent, DocType, CategoryDocumentForm
 from main.serializers.doc_parents import DocParentSerializer, DocTypeSerializer
+from main.serializers.document_form_category import CategoryDocumentFormSerializer
 
 
 class DocParentViewSet(viewsets.ModelViewSet):
@@ -47,6 +48,18 @@ class DocTypeViewSet(viewsets.ModelViewSet):
     model = DocType
     queryset = DocType.objects.all()
     serializer_class = DocTypeSerializer
+    ordering = ['order']
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [AllowAny()]
+        return super().get_permissions()
+
+
+class CategoryDocumentFormViewSet(viewsets.ModelViewSet):
+    model = CategoryDocumentForm
+    queryset = CategoryDocumentForm.objects.all()
+    serializer_class = CategoryDocumentFormSerializer
     ordering = ['order']
 
     def get_permissions(self):

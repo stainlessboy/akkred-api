@@ -9,7 +9,7 @@ from main.models.employees import Employee
 from main.models.laws import Laws
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
-from main.models.documents import Document, DocumentForm
+from main.models.documents import Document, DocumentForm, CategoryDocumentForm
 from main.models.documens_parent import DocParent
 from main.models.documents_type import DocType
 from main.models.inspection_control import InspectionControl, ICCategory
@@ -90,6 +90,11 @@ class ICCategorys(TranslationOptions):
     default_translate = False
 
 
+class CategoryDocumentForms(TranslationOptions):
+    fields = ['title']
+    default_translate = False
+
+
 translator.register(StaticPage, StaticPagesTranslation)
 translator.register(Media, Medias)
 translator.register(News, NewsMedia)
@@ -105,3 +110,4 @@ translator.register(DocParent, DocParents)
 translator.register(DocType, DocTypes)
 translator.register(InspectionControl, InspectionControls)
 translator.register(ICCategory, ICCategorys)
+translator.register(CategoryDocumentForm, CategoryDocumentForms)

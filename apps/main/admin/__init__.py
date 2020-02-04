@@ -15,6 +15,7 @@ import main.admin.inspection_control_category
 import main.admin.slider
 import main.admin.doc_parents
 import main.admin.doc_type
+from main.models import CategoryDocumentForm
 
 from main.models.region import Region
 from main.models.questions import Question
@@ -23,3 +24,4 @@ from main.models.employees import Employee
 admin.site.register(Region)
 admin.site.register(Question)
 admin.site.register(Employee)
+admin.site.register(CategoryDocumentForm)

@@ -65,9 +65,21 @@ class Document(BaseModel):
         verbose_name_plural = 'Документы'
 
 
+class CategoryDocumentForm(models.Model):
+    order = models.PositiveIntegerField(default=0)
+    title = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'Форма Документа Категория'
+        verbose_name_plural = 'Форма Документа Категория'
+
+
 class DocumentForm(models.Model):
     document = models.ForeignKey('main.Document', PROTECT,
                                  related_name='document_forms')
+    category = models.ForeignKey('main.CategoryDocumentForm', PROTECT,
+                                 related_name='document_forms', null=True, blank=True)
     order = models.PositiveIntegerField(default=0)
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to=upload_name, null=True, blank=True)

@@ -13,6 +13,6 @@ from main.models.media_file import MediaFile
 from main.models.satisfaction_questionnaire import SatisfactionQuestionnaire
 from main.models.confirm_reestr import ConfirmReestr
 from main.models.inspection_control import ICCategory, InspectionControl
-from main.models.documents import Document, DocumentForm
+from main.models.documents import Document, DocumentForm, CategoryDocumentForm
 from main.models.sliders import Slider
 from main.models.employees import Employee
