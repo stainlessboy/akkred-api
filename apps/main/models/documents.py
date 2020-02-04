@@ -36,10 +36,12 @@ def upload_name(instance, filename):
 class Document(BaseModel):
     FILE = 'file'
     LINK = 'link'
+    FORM = 'form'
     STATUS_TYPES = (
 
         (FILE, 'file'),
         (LINK, 'link'),
+        (FORM, 'form'),
     )
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
                               default=LINK)
