@@ -10,6 +10,9 @@ class DocumentParentSerializer(serializers.Serializer):
 class DocumentTypeSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     title = serializers.ReadOnlyField()
+    name_en = serializers.ReadOnlyField()
+    name_ru = serializers.ReadOnlyField()
+    name_uz = serializers.ReadOnlyField()
 
 
 class DocumentFormSerializer(serializers.Serializer):
