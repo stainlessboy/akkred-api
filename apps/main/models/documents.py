@@ -72,7 +72,7 @@ class CategoryDocumentForm(models.Model):
     title = models.CharField(max_length=255)
 
     class Meta:
-        ordering = ['order']
+        ordering = ['-order']
         verbose_name = 'Категория Форма Документа '
         verbose_name_plural = 'Категория Форма Документа '
 
