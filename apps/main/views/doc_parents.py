@@ -60,7 +60,7 @@ class CategoryDocumentFormViewSet(viewsets.ModelViewSet):
     model = CategoryDocumentForm
     queryset = CategoryDocumentForm.objects.all()
     serializer_class = CategoryDocumentFormSerializer
-    ordering = ['order']
+    ordering = ['-order']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
