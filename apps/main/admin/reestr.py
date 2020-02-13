@@ -6,9 +6,9 @@ from main.models import Registries \
 class RegistriesStatusInline(admin.TabularInline):
     model = RegisterStatusLog
     fields = [
+        'paused_date',
         'restore_date',
         'inactive_date',
-        'paused_date',
         'case_type',
         'note',
 
