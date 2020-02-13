@@ -2,7 +2,7 @@ from rest_framework.decorators import action
 
 from main.filters.reestr import ReestrFilterSet
 from main.models.registries import Registries
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
 from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer
 from rest_framework.response import Response
 
@@ -31,6 +31,15 @@ class RegistriesViewSet(viewsets.ModelViewSet):
         if search_serializer.validated_data:
             qs = qs.filter(**search_serializer.validated_data)
         return qs
+
+    def destroy(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def create(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def update(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
     # @action(['GET'], detail=False, permission_classes=[permissions.AllowAny])
     # def static(self, request):

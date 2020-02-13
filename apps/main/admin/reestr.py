@@ -1,10 +1,10 @@
 from django.contrib import admin
 from main.models import Registries \
-    , RegistriesStatus
+    ,RegisterStatusLog
 
 
 class RegistriesStatusInline(admin.TabularInline):
-    model = RegistriesStatus
+    model = RegisterStatusLog
 
 
 @admin.register(Registries)

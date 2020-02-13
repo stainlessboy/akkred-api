@@ -85,6 +85,17 @@ class Registries(models.Model):
         verbose_name_plural = 'Государственный реестр аккредитованных ООС и МС'
 
 
+class RegisterStatusLog(models.Model):
+    reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_logs')
+    case = models.TextField()
+    restore_date = models.DateField(null=True, blank=True)
+    inactive_date = models.DateField(null=True, blank=True)
+    paused_date = models.DateField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-id']
+
+
 class RegistriesStatus(models.Model):
     reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_status')
     ACTIVE = 'active'
