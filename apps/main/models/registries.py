@@ -85,9 +85,21 @@ class Registries(models.Model):
         verbose_name_plural = 'Государственный реестр аккредитованных ООС и МС'
 
 
+class CaseType(models.Model):
+    name = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Причина'
+        verbose_name_plural = 'Причина'
+
+
 class RegisterStatusLog(models.Model):
     reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_logs')
-    case = models.TextField()
+    note = models.CharField(max_length=500, null=True, blank=True)
+    case_type = models.ForeignKey('main.CaseType', CASCADE, related_name='reestr_logs', null=True)
     restore_date = models.DateField(null=True, blank=True)
     inactive_date = models.DateField(null=True, blank=True)
     paused_date = models.DateField(null=True, blank=True)

@@ -20,8 +20,10 @@ from main.models import CategoryDocumentForm
 from main.models.region import Region
 from main.models.questions import Question
 from main.models.employees import Employee
+from main.models.registries import CaseType
 
 admin.site.register(Region)
 admin.site.register(Question)
 admin.site.register(Employee)
 admin.site.register(CategoryDocumentForm)
+admin.site.register(CaseType)
