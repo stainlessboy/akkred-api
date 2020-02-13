@@ -103,6 +103,8 @@ class RegisterStatusLog(models.Model):
     restore_date = models.DateField(null=True, blank=True)
     inactive_date = models.DateField(null=True, blank=True)
     paused_date = models.DateField(null=True, blank=True)
+    extended_date = models.DateField(null=True, blank=True)
+    renewal_date = models.DateField(null=True, blank=True)
 
     class Meta:
         ordering = ['-id']

@@ -9,6 +9,8 @@ class RegistriesStatusInline(admin.TabularInline):
         'paused_date',
         'restore_date',
         'inactive_date',
+        'extended_date',
+        'renewal_date',
         'case_type',
         'note',
 
