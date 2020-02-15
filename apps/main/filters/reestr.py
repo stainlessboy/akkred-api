@@ -1,3 +1,5 @@
+import datetime
+
 from django_filters.rest_framework import CharFilter, NumberFilter, DateFilter
 
 from core.rest_framework.filter import BaseFilter
@@ -11,6 +13,7 @@ class ReestrFilterSet(BaseFilter):
     type_organ = NumberFilter(method='filter_type_organ')
     status = CharFilter(method='filter_status')
     info = CharFilter(method='filter_info')
+    month = CharFilter(method='filter_month')
 
     class Meta:
         model = Registries
@@ -35,3 +38,16 @@ class ReestrFilterSet(BaseFilter):
         if value == 0:
             return queryset.all()
         return queryset.filter(region=value)
+
+    def filter_month(self, queryset, name, value):
+        if value == '1':
+            present_month = datetime.date.today()
+            prev_month = present_month.month - 3
+            if prev_month >= 0:
+                prev_month = prev_month
+            else:
+                prev_month = 1
+            prev_date = datetime.date(2020, prev_month, 1)
+            return queryset.filter(reestr_logs__paused_date__gte=prev_date,
+                                   reestr_logs__paused_date__lte=present_month)
+        return queryset.all()
