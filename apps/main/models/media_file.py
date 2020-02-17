@@ -37,7 +37,7 @@ class MediaFile(models.Model):
     name = models.CharField(max_length=255, null=True)
 
     def link(self):
-        return mark_safe('<a>http://test.akkred.uz/{}</a>'.format(self.file.url))
+        return mark_safe('<a>http://akkred.uz/{}</a>'.format(self.file.url))
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.file.url))
