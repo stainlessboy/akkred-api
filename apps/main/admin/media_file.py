@@ -4,9 +4,10 @@ from main.models import MediaFile
 
 @admin.register(MediaFile)
 class Admin(admin.ModelAdmin):
-    list_display = ['id']
+    list_display = ['id','name']
     fields = [
         'link',
+        'name',
         'admin_photo',
         'file',
 
