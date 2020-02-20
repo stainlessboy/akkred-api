@@ -15,7 +15,7 @@ class RegistriesViewSet(viewsets.ModelViewSet):
                      'title_organ', 'address_organ',
                      'full_name_supervisor_ao', 'phone_ao', 'email_ao', 'code', 'keywords', 'text', 'area']
     filter_class = ReestrFilterSet
-    ordering_fields = ['reestr_logs__restore_date', 'reestr_logs__inactive_date', 'reestr_logs__paused_date']
+    ordering_fields = ['reestr_logs__inactive_date', 'reestr_logs__paused_date', 'reestr_logs__restore_date']
 
     lookup_field = 'area'
 
