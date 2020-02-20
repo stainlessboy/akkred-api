@@ -14,6 +14,7 @@ class ReestrFilterSet(BaseFilter):
     status = CharFilter(method='filter_status')
     info = CharFilter(method='filter_info')
     month = CharFilter(method='filter_month')
+    stif = CharFilter(method='filter_info_status')
 
     class Meta:
         model = Registries
@@ -38,6 +39,15 @@ class ReestrFilterSet(BaseFilter):
         if value == 0:
             return queryset.all()
         return queryset.filter(region=value)
+
+    def filter_info_status(self, queryset, name, value):
+        if value == 'active':
+            return queryset.filter(reestr_logs__restore_date__isnull=False)
+        if value == 'inactive':
+            return queryset.filter(reestr_logs__inactive_date__isnull=False)
+        if value == 'paused':
+            return queryset.filter(reestr_logs__paused_date__isnull=False)
+        return queryset.all()
 
     def filter_month(self, queryset, name, value):
         if value == '1':

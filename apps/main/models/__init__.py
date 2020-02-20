@@ -2,7 +2,7 @@ from main.models.file import File
 from main.models.user import User
 from main.models.news import News, NewsGallery
 from main.models.registries import Registries \
-    , RegistriesStatus, RegisterStatusLog,CaseType
+    , RegistriesStatus, RegisterStatusLog, CaseType
 from main.models.static_pages import StaticPage
 from main.models.documens_parent import DocParent
 from main.models.documents_type import DocType
@@ -16,3 +16,4 @@ from main.models.inspection_control import ICCategory, InspectionControl
 from main.models.documents import Document, DocumentForm, CategoryDocumentForm
 from main.models.sliders import Slider
 from main.models.employees import Employee
+from main.models.cooperation import Cooperation_one, Cooperation_two

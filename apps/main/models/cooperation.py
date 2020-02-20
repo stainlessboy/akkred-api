@@ -1,7 +1,6 @@
-from ckeditor_uploader.fields import RichTextUploadingField
-from django.db import models
-from django.db.models import CASCADE
 from django.utils.safestring import mark_safe
+
+from django.db import models
 from core.django.model import BaseModel
 
 import datetime
@@ -34,11 +33,12 @@ def upload_name(instance, filename):
     raise ValidationError(detail={'File type is unacceptable'})
 
 
-class News(BaseModel):
-    title = models.CharField(max_length=255, null=False)
-    text = RichTextUploadingField(blank=True, null=True)
+class Cooperation_one(BaseModel):
+    organ_accreditation = models.CharField(max_length=255)
+    name_document = models.CharField(max_length=255)
+    date = models.DateField()
+    place = models.CharField(max_length=255)
     image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
-    created_date_by_admin = models.DateTimeField(null=True)
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
@@ -46,21 +46,20 @@ class News(BaseModel):
     admin_photo.short_description = 'Image'
     admin_photo.allow_tags = True
 
-    class Meta:
-        ordering = ['-id']
-        verbose_name = 'Новость'
-        verbose_name_plural = 'Новости'
-
     def __str__(self):
-        return self.title
+        return self.organ_accreditation
 
 
-class NewsGallery(models.Model):
-    news = models.ForeignKey('main.News', CASCADE, related_name='images')
-    image = models.ImageField(null=True, blank=True, upload_to=upload_name)
+class Cooperation_two(BaseModel):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
 
     def admin_photo(self):
-        return mark_safe('<img src="{}" width="100" />'.format(self.image.url))
+        return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
 
     admin_photo.short_description = 'Image'
     admin_photo.allow_tags = True
+
+    def __str__(self):
+        return self.name
