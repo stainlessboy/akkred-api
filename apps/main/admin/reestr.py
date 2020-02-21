@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from reportlab import xrange
 
 from main.models import Registries \
-    , RegisterStatusLog
+    , RegisterStatusLog, RegistriesStatus
 
 
 def export_csv(modeladmin, request, queryset):
@@ -71,18 +71,23 @@ def export_xls(modeladmin, request, queryset):
 export_xls.short_description = u"Export XLS"
 
 
-class RegistriesStatusInline(admin.TabularInline):
-    model = RegisterStatusLog
-    fields = [
-        'paused_date',
-        'restore_date',
-        'inactive_date',
-        'extended_date',
-        'renewal_date',
-        'case_type',
-        'note',
+# class RegistriesStatusInline(admin.TabularInline):
+#     model = RegisterStatusLog
+#     fields = [
+#         'paused_date',
+#         'restore_date',
+#         'inactive_date',
+#         'extended_date',
+#         'renewal_date',
+#         'case_type',
+#         'note',
+#
+#     ]
 
-    ]
+
+class RegistriesStatusInline(admin.TabularInline):
+    model = RegistriesStatus
+
 
 
 @admin.register(Registries)

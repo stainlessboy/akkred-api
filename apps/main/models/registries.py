@@ -126,3 +126,5 @@ class RegistriesStatus(models.Model):
                               default=INACTIVE)
 
     date = models.DateField(null=True)
+    note = models.CharField(max_length=500, null=True, blank=True)
+    case_type = models.ForeignKey('main.CaseType', CASCADE, related_name='reestr_status', null=True)
