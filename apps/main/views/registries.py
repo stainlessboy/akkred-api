@@ -1,9 +1,9 @@
 from rest_framework.decorators import action
 
 from main.filters.reestr import ReestrFilterSet
-from main.models.registries import Registries
+from main.models.registries import Registries, RegistriesStatus
 from rest_framework import viewsets, permissions, status
-from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer
+from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer, RegistriesStatusSerializer
 from rest_framework.response import Response
 
 
@@ -49,3 +49,24 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     #         'results': serializer.data,
     #     }
     #     return Response(data)
+
+
+class ReestrStatusViewSet(viewsets.ModelViewSet):
+    model = RegistriesStatus
+    queryset = RegistriesStatus.objects.all()
+    serializer_class = RegistriesStatusSerializer
+    filter_fields = ['status']
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            return [permissions.AllowAny()]
+        return super(ReestrStatusViewSet, self).get_permissions()
+
+    def destroy(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def create(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+    def update(self, request, *args, **kwargs):
+        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)

@@ -19,7 +19,7 @@ from main.views.review import ReviewViewSet
 from main.views.documents import DocumentViewSet
 from main.views.questions import QuestionViewSet
 from main.views.employees import EmployeeViewSet
-from main.views.registries import RegistriesViewSet
+from main.views.registries import RegistriesViewSet, ReestrStatusViewSet
 from main.views.type_organ import TypeOrganViewSet
 from main.views.laws import LawsViewSet, LawsCategoryViewSet
 
@@ -50,6 +50,7 @@ router.register('calculation', Calculation, 'calculation')
 router.register('inspection-category', ICCategoryViewSet, 'inspection-category')
 router.register('inspection', InspectionControlViewSet, 'inspection')
 router.register('form-category', CategoryDocumentFormViewSet, 'form-category')
+router.register('reestr-status', ReestrStatusViewSet, 'reestr-status')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -2,7 +2,7 @@ from collections import defaultdict
 
 from rest_framework import serializers
 
-from main.models.registries import Registries, RegisterStatusLog
+from main.models.registries import Registries, RegisterStatusLog, RegistriesStatus
 from main.serializers.file import FileSerializer
 from main.serializers.type_organ import TypeOrganModelSerializer, TypeSelectSerializer
 
@@ -11,6 +11,11 @@ class StatusValueSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=False)
     status = serializers.CharField(required=False)
     date = serializers.DateField(required=False)
+
+
+class RegistriesSelectSerializer(serializers.Serializer):
+    id = serializers.ReadOnlyField()
+    title_organ = serializers.ReadOnlyField()
 
 
 class RegistriesSerializer(serializers.ModelSerializer):
@@ -66,3 +71,13 @@ class RegistriesSearchSerializer(serializers.Serializer):
     search_inn = serializers.CharField(source='inn__icontains', required=False)
     search_code = serializers.CharField(source='text__icontains', required=False)
     search_title = serializers.CharField(source='title_organ__icontains', required=False)
+
+
+class RegistriesStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RegistriesStatus
+        fields = '__all__'
+
+    def to_representation(self, instance):
+        self.fields['reestr'] = RegistriesSelectSerializer()
+        return super(RegistriesStatusSerializer, self).to_representation(instance)
