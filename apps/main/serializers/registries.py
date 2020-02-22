@@ -16,6 +16,7 @@ class StatusValueSerializer(serializers.Serializer):
 class RegistriesSelectSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     title_organ = serializers.ReadOnlyField()
+    number = serializers.ReadOnlyField()
 
 
 class RegistriesSerializer(serializers.ModelSerializer):
