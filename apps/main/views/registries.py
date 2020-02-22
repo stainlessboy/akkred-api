@@ -58,7 +58,6 @@ class ReestrStatusViewSet(viewsets.ModelViewSet):
     filter_fields = ['status']
     ordering = ['-date']
 
-
     def get_queryset(self):
         qs = super(ReestrStatusViewSet, self).get_queryset()
         search_serializer = RegistriesStatusSearchSerializer(data=self.request.GET)
