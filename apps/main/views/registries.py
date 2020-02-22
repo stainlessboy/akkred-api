@@ -15,7 +15,6 @@ class RegistriesViewSet(viewsets.ModelViewSet):
                      'title_organ', 'address_organ',
                      'full_name_supervisor_ao', 'phone_ao', 'email_ao', 'code', 'keywords', 'text', 'area']
     filter_class = ReestrFilterSet
-    ordering = ['reestr_logs__inactive_date', 'reestr_logs__paused_date', 'reestr_logs__restore_date']
     lookup_field = 'area'
 
     def get_permissions(self):
@@ -56,6 +55,7 @@ class ReestrStatusViewSet(viewsets.ModelViewSet):
     queryset = RegistriesStatus.objects.all()
     serializer_class = RegistriesStatusSerializer
     filter_fields = ['status']
+    ordering = ['-date']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
