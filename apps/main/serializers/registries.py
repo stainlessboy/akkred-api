@@ -74,6 +74,9 @@ class RegistriesSearchSerializer(serializers.Serializer):
     search_title = serializers.CharField(source='title_organ__icontains', required=False)
 
 
+class RegistriesStatusSearchSerializer(serializers.Serializer):
+    search_number = serializers.CharField(source='reestr_number__icontains', required=False)
+    search_title = serializers.CharField(source='reestr_title_organ__icontains', required=False)
 class RegistriesStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = RegistriesStatus

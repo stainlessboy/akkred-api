@@ -3,7 +3,8 @@ from rest_framework.decorators import action
 from main.filters.reestr import ReestrFilterSet
 from main.models.registries import Registries, RegistriesStatus
 from rest_framework import viewsets, permissions, status
-from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer, RegistriesStatusSerializer
+from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer, RegistriesStatusSerializer, \
+    RegistriesStatusSearchSerializer
 from rest_framework.response import Response
 
 
@@ -56,6 +57,15 @@ class ReestrStatusViewSet(viewsets.ModelViewSet):
     serializer_class = RegistriesStatusSerializer
     filter_fields = ['status']
     ordering = ['-date']
+
+
+    def get_queryset(self):
+        qs = super(ReestrStatusViewSet, self).get_queryset()
+        search_serializer = RegistriesStatusSearchSerializer(data=self.request.GET)
+        search_serializer.is_valid(raise_exception=True)
+        if search_serializer.validated_data:
+            qs = qs.filter(**search_serializer.validated_data)
+        return qs
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
