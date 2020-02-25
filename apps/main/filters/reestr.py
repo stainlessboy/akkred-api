@@ -61,3 +61,16 @@ class ReestrFilterSet(BaseFilter):
             return queryset.filter(reestr_logs__paused_date__gte=prev_date,
                                    reestr_logs__paused_date__lte=present_month)
         return queryset.all()
+
+
+class ReestrStatusFilterSet(BaseFilter):
+    status = CharFilter(method='filter_status')
+
+    class Meta:
+        model = Registries
+        fields = []
+
+    def filter_status(self, queryset, name, value):
+        if value == '0':
+            return queryset.all()
+        return queryset.filter(status=value)

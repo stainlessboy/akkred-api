@@ -1,6 +1,4 @@
-from rest_framework.decorators import action
-
-from main.filters.reestr import ReestrFilterSet
+from main.filters.reestr import ReestrFilterSet, ReestrStatusFilterSet
 from main.models.registries import Registries, RegistriesStatus
 from rest_framework import viewsets, permissions, status
 from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer, RegistriesStatusSerializer, \
@@ -56,7 +54,7 @@ class ReestrStatusViewSet(viewsets.ModelViewSet):
     queryset = RegistriesStatus.objects.filter(
         status__in=[RegistriesStatus.PAUSED, RegistriesStatus.ACTIVE, RegistriesStatus.INACTIVE])
     serializer_class = RegistriesStatusSerializer
-    filter_fields = ['status']
+    filter_class = ReestrStatusFilterSet
     ordering = ['-date']
 
     def get_queryset(self):
