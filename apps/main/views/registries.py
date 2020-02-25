@@ -53,7 +53,8 @@ class RegistriesViewSet(viewsets.ModelViewSet):
 
 class ReestrStatusViewSet(viewsets.ModelViewSet):
     model = RegistriesStatus
-    queryset = RegistriesStatus.objects.all()
+    queryset = RegistriesStatus.objects.filter(
+        status__in=[RegistriesStatus.PAUSED, RegistriesStatus.ACTIVE, RegistriesStatus.INACTIVE])
     serializer_class = RegistriesStatusSerializer
     filter_fields = ['status']
     ordering = ['-date']

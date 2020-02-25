@@ -34,7 +34,7 @@ class CalculationSerializers(serializers.Serializer):
         # TODO accreditation
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / (480 / 17)
+                t = number / (480 / 12)
                 if (t % 1) > 0 and (t % 1) <= 0.5:
                     bal = 0.5
                 elif (t % 1) == 0:
@@ -45,7 +45,7 @@ class CalculationSerializers(serializers.Serializer):
                 num_day_total = t + 3
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / (480 / 25))
+                t1 = (number / (480 / 18))
                 if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
                     bal = 0.5
                 elif (t1 % 1) == 0:
@@ -53,7 +53,7 @@ class CalculationSerializers(serializers.Serializer):
                 else:
                     bal = 1
                 t1 = int(t1) + bal
-                t2 = (number / 50)
+                t2 = (number / 60)
                 if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
                     bal = 0.5
                 elif (t2 % 1) == 0:
@@ -67,7 +67,7 @@ class CalculationSerializers(serializers.Serializer):
         # TODO expansion
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / (480 / 17)
+                t = number / (480 / 12)
                 if (t % 1) > 0 and (t % 1) <= 0.5:
                     bal = 0.5
                 elif (t % 1) == 0:
@@ -78,7 +78,7 @@ class CalculationSerializers(serializers.Serializer):
                 num_day_total = t + 1
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / (480 / 25))
+                t1 = (number / (480 / 18))
                 if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
                     bal = 0.5
                 elif (t1 % 1) == 0:
@@ -86,7 +86,7 @@ class CalculationSerializers(serializers.Serializer):
                 else:
                     bal = 1
                 t1 = int(t1) + bal
-                t2 = (number / 50)
+                t2 = (number / 60)
                 if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
                     bal = 0.5
                 elif (t2 % 1) == 0:
@@ -111,7 +111,7 @@ class CalculationSerializers(serializers.Serializer):
             sum = num_day_total * c
         # TODO inspection_control
         if validated_data['type'] == 'inspection_control':
-            t = number / 50
+            t = number / 60
             if (t % 1) > 0 and (t % 1) <= 0.5:
                 bal = 0.5
             elif (t % 1) == 0:

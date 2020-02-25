@@ -87,7 +87,10 @@ export_xls.short_description = u"Export XLS"
 
 class RegistriesStatusInline(admin.TabularInline):
     model = RegistriesStatus
-
+    fields = ['date',
+              'status',
+              'case_type',
+              'note']
 
 
 @admin.register(Registries)
