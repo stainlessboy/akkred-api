@@ -4,7 +4,7 @@ from django_filters.rest_framework import CharFilter, NumberFilter, DateFilter
 
 from core.rest_framework.filter import BaseFilter
 from core.utils.helpers import is_int
-from main.models.registries import Registries
+from main.models.registries import Registries, RegistriesStatus
 
 
 # test
@@ -67,7 +67,7 @@ class ReestrStatusFilterSet(BaseFilter):
     status = CharFilter(method='filter_status')
 
     class Meta:
-        model = Registries
+        model = RegistriesStatus
         fields = []
 
     def filter_status(self, queryset, name, value):
