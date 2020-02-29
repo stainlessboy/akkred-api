@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 import main.admin.news
+import main.admin.code
 import main.admin.reestr
 import main.admin.reestr_info
 import main.admin.reestr_info_type

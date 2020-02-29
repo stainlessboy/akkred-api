@@ -2,7 +2,7 @@ from main.models.file import File
 from main.models.user import User
 from main.models.news import News, NewsGallery
 from main.models.registries import Registries \
-    , RegistriesStatus, RegisterStatusLog, CaseType
+    , RegistriesStatus, RegisterStatusLog, CaseType, Code
 from main.models.static_pages import StaticPage
 from main.models.documens_parent import DocParent
 from main.models.documents_type import DocType

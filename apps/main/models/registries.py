@@ -70,6 +70,7 @@ class Registries(models.Model):
     code = models.CharField(max_length=255, null=True)
 
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
+    code_nd = models.ManyToManyField('main.Code', related_name='registries')
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255, unique=True)
@@ -130,3 +131,10 @@ class RegistriesStatus(models.Model):
     date = models.DateField(null=True)
     note = models.CharField(max_length=500, null=True, blank=True)
     case_type = models.ForeignKey('main.CaseType', CASCADE, related_name='reestr_status', null=True)
+
+
+class Code(models.Model):
+    name = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.name
