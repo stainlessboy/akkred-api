@@ -70,7 +70,7 @@ class Registries(models.Model):
     code = models.CharField(max_length=255, null=True)
 
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
-    code_nd = models.ManyToManyField('main.Code', related_name='registries')
+    code_nd = models.ManyToManyField('main.Code', related_name='registries',blank=True)
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255, unique=True)
