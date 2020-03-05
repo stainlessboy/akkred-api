@@ -96,6 +96,7 @@ class RegistriesStatusInline(admin.TabularInline):
 @admin.register(Registries)
 class Admin(admin.ModelAdmin):
     actions = [export_xls, export_csv]
+    filter_horizontal = ('code_nd',)
     list_display = ['title_organ', 'type_organ', 'number']
     search_fields = ['number', 'title_organ', 'inn', 'id']
     list_filter = ['region', 'type_organ', 'status', 'is_fact_address', 'accreditation_date']
