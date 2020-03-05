@@ -15,7 +15,7 @@ django-filter==2.0.0
 django-import-export==2.0.2
 django-js-asset==1.2.2
 django-modeltranslation==0.13b3
-djangorestframework==3.9.0
+djangorestframework==3.9.1
 djangorestframework-yaml==1.0.3
 easy-thumbnails==2.5
 et-xmlfile==1.0.1
