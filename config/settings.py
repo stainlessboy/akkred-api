@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'core',
     'main',
+    'import_export'
 ]
 
 AUTH_USER_MODEL = 'main.User'
