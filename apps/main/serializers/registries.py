@@ -19,6 +19,12 @@ class RegistriesSelectSerializer(serializers.Serializer):
     number = serializers.ReadOnlyField()
 
 
+class CodeNvdSelectSerializer(serializers.Serializer):
+    id = serializers.ReadOnlyField()
+    cod_tnved = serializers.ReadOnlyField()
+    organ_number = serializers.ReadOnlyField()
+
+
 class RegistriesSerializer(serializers.ModelSerializer):
     reestr_status = StatusValueSerializer(many=True, required=False)
 
@@ -50,6 +56,7 @@ class RegistriesSerializer(serializers.ModelSerializer):
         return attrs
 
     def to_representation(self, instance):
+        self.fields['code_nd'] = CodeNvdSelectSerializer(many=True, required=False)
         self.fields['type_organ'] = TypeSelectSerializer()
         self.fields['reestr_logs'] = serializers.SerializerMethodField()
         return super(RegistriesSerializer, self).to_representation(instance)
