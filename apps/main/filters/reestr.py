@@ -4,7 +4,7 @@ from django_filters.rest_framework import CharFilter, NumberFilter, DateFilter
 
 from core.rest_framework.filter import BaseFilter
 from core.utils.helpers import is_int
-from main.models.registries import Registries, RegistriesStatus
+from main.models.registries import Registries, RegistriesStatus, Code
 
 
 # test
@@ -15,6 +15,8 @@ class ReestrFilterSet(BaseFilter):
     info = CharFilter(method='filter_info')
     month = CharFilter(method='filter_month')
     stif = CharFilter(method='filter_info_status')
+
+    code_exist = CharFilter(method='filter_code')
 
     class Meta:
         model = Registries
@@ -61,6 +63,19 @@ class ReestrFilterSet(BaseFilter):
             return queryset.filter(reestr_logs__paused_date__gte=prev_date,
                                    reestr_logs__paused_date__lte=present_month)
         return queryset.all()
+
+    def filter_code(self, queryset, name, value):
+        if value == 'true':
+            codes = Code.STATUS_TYPES
+            code_list = []
+            for code in codes:
+                code_list.append(code[0])
+            queryset = queryset.filter(area__in=code_list)
+            return queryset
+        if value == 'false':
+            return queryset.filter(code_nd=None)
+        else:
+            return queryset
 
 
 class ReestrStatusFilterSet(BaseFilter):
