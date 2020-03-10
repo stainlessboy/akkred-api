@@ -20,7 +20,9 @@ class ReestrFilterSet(BaseFilter):
 
     class Meta:
         model = Registries
-        fields = []
+        fields = [
+            'code_nd__cod_tnved'
+        ]
 
     def filter_type_organ(self, queryset, name, value):
         if value == 0:

@@ -43,6 +43,7 @@ class Registries(models.Model):
         (EXTENDED, 'extended'),
     )
 
+    itt_cd = models.CharField(max_length=255, null=True)
     number = models.CharField(max_length=255, null=True)
     inn = models.CharField(max_length=455, null=True)
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
