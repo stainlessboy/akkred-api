@@ -198,7 +198,7 @@ CKEDITOR_CONFIGS = {
 }
 
 # Cross domain list
-CORS_ORIGIN_WHITELIST = []
+CORS_ORIGIN_WHITELIST = ['localhost:8000']
 CORS_ALLOW_HEADERS = default_headers + (
     'cache-control',
 )
