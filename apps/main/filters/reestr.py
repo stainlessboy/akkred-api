@@ -21,7 +21,7 @@ class ReestrFilterSet(BaseFilter):
     class Meta:
         model = Registries
         fields = [
-            'code_nd__cod_tnved'
+            'code_nd__cod_tnved', 'itt_cd'
         ]
 
     def filter_type_organ(self, queryset, name, value):

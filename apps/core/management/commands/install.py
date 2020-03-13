@@ -9,7 +9,7 @@ from main.models import Registries, Code
 
 class Command(BaseCommand):
     help = 'Command for first required data'
-    all = ['regions', 'currencies', 'groups', 'find']
+    all = ['regions', 'currencies', 'groups', 'find_fail']
 
     @transaction.atomic
     def handle(self, *args, **options):
@@ -46,3 +46,10 @@ class Command(BaseCommand):
         for registrie in registries:
             registrie.itt_cd = None
             registrie.save()
+
+    def find_fail(self, **_):
+        registries = Registries.objects.all()
+        for registrie in registries:
+            res = Code.objects.filter(organ_number=registrie.area)
+            if res.exists():
+                registrie.code_nd.set(res)
