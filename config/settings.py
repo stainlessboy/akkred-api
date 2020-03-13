@@ -113,8 +113,6 @@ if len(DATABASES) == 2:
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 
-
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -173,13 +171,11 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'public')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
 
 CKEDITOR_IMAGE_BACKEND = "pillow"
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -275,3 +271,4 @@ EMAIL_HOST_USER = 'wienerdamingtelegram@gmail.com'
 EMAIL_FROM = 'noreply.myjob@gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = 'wienerdaming20172018'
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
