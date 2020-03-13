@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core.management import BaseCommand
 from django.db import DatabaseError, transaction
 
-from main.models import Registries,Code
+from main.models import Registries, Code
 
 
 class Command(BaseCommand):
@@ -44,10 +44,5 @@ class Command(BaseCommand):
     def find(self, **_):
         registries = Registries.objects.all()
         for registrie in registries:
-            res = Code.objects.filter(organ_number=registrie.area)
-            if res.exists():
-                registrie.code_nd.set(res)
-
-
-
-
+            registrie.itt_cd = None
+            registrie.save()
