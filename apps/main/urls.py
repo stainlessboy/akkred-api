@@ -6,6 +6,7 @@ from main.views.confirm_reestr import ConfirmReestrViewSet
 from main.views.doc_parents import DocParentViewSet, DocTypeViewSet, CategoryDocumentFormViewSet
 from main.views.file import FileViewSet
 from main.views.inspection_control import ICCategoryViewSet, InspectionControlViewSet
+from main.views.reestr_for_tamojnya import RegistriesForTamojnyaViewSet
 from main.views.reestr_info import ReestrInfoUserViewSet
 from main.views.sat_uestionnaire import SatisfactionQuestionnaireViewSet
 from main.views.static_pages import StaticPagesViewSet
@@ -51,6 +52,7 @@ router.register('inspection-category', ICCategoryViewSet, 'inspection-category')
 router.register('inspection', InspectionControlViewSet, 'inspection')
 router.register('form-category', CategoryDocumentFormViewSet, 'form-category')
 router.register('reestr-status', ReestrStatusViewSet, 'reestr-status')
+router.register('reestr-tamojnya', RegistriesForTamojnyaViewSet, 'reestr-tamojnya')
 
 urlpatterns = [
     path('', include(router.urls)),

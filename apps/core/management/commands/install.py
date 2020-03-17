@@ -9,7 +9,7 @@ from main.models import Registries, Code
 
 class Command(BaseCommand):
     help = 'Command for first required data'
-    all = ['regions', 'currencies', 'groups', 'find_fail']
+    all = ['regions', 'currencies', 'groups', 'find_all_area', 'find_all_wrong_area']
 
     @transaction.atomic
     def handle(self, *args, **options):
@@ -47,9 +47,16 @@ class Command(BaseCommand):
             registrie.itt_cd = None
             registrie.save()
 
-    def find_fail(self, **_):
+    def find_all_area(self, **_):
         registries = Registries.objects.all()
         for registrie in registries:
             res = Code.objects.filter(organ_number=registrie.area)
             if res.exists():
                 registrie.code_nd.set(res)
+
+    def find_all_wrong_area(self, **_):
+        registries = Registries.objects.filter(itt_cd__isnull=False)
+        registries = registries.exclude(type_organ=2)
+        for registrie in registries:
+            registrie.itt_cd = None
+            registrie.save()
