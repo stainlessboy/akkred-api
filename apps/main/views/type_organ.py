@@ -27,7 +27,7 @@ class TypeOrganViewSet(viewsets.ModelViewSet):
     serializer_class = TypeOrganModelSerializer
 
     def get_permissions(self):
-        if self.action in ['list']:
+        if self.action in ['list', 'retrieve']:
             return [AllowAny()]
         return super().get_permissions()
 
