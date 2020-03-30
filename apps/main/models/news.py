@@ -35,10 +35,11 @@ def upload_name(instance, filename):
 
 
 class News(BaseModel):
-    title = models.CharField(max_length=255, null=False)
+    title = models.CharField(max_length=500, null=False)
     text = RichTextUploadingField(blank=True, null=True)
     image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
     created_date_by_admin = models.DateTimeField(null=True)
+    url = models.CharField(max_length=500, null=False, blank=True)
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
