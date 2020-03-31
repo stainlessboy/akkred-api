@@ -187,7 +187,7 @@ CKEDITOR_CONFIGS = {
              'FontSize'],
             ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
              'JustifyRight', 'JustifyBlock'],
-            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript", "Iframe"],
             ['Undo', 'Redo'], ["Source"],
             ["Maximize"]],
     },
