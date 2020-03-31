@@ -22,7 +22,8 @@ class Admin(admin.ModelAdmin):
         'text_ru',
         'text_uz',
         'image_main',
-        'created_date_by_admin'
+        'created_date_by_admin',
+        'url'
 
     ]
     inlines = [NewsGalleryInline]
