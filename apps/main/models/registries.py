@@ -35,12 +35,14 @@ class Registries(models.Model):
     INACTIVE = 'inactive'
     PAUSED = 'paused'
     EXTENDED = 'extended'
+    TEMPORARILY_RESUMED= 'temporarily_resumed'
 
     STATUS_TYPES = (
-        (ACTIVE, 'active'),
-        (INACTIVE, 'inactive'),
-        (PAUSED, 'paused'),
-        (EXTENDED, 'extended'),
+        (ACTIVE, 'Действующий'),
+        (INACTIVE, 'Прекращен'),
+        (PAUSED, 'Приостановлен'),
+        (EXTENDED, 'Продлен'),
+        (TEMPORARILY_RESUMED, 'Временно возобновлен'),
     )
 
     itt_cd = models.CharField(max_length=255, null=True, blank=True, unique=True)
