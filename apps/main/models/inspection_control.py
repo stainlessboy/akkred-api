@@ -37,6 +37,11 @@ class ICCategory(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['-id']
+        verbose_name = 'Инспекционный контроль Категория'
+        verbose_name_plural = 'Инспекционный контроль Категория'
+
 
 class InspectionControl(models.Model):
     name = models.CharField(max_length=500)
