@@ -24,7 +24,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -39,7 +39,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -54,7 +54,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -68,7 +68,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -84,7 +84,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -99,7 +99,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -114,7 +114,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -129,7 +129,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -144,7 +144,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
@@ -159,7 +159,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    # url=form.file,
+                    url=form.file,
                     external=True,
 
                 ))
