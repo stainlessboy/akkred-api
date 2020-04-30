@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from main.models.documents import Document
+from main.models.documents import Document, CategoryDocumentForm
 
 
 class DocumentParentSerializer(serializers.Serializer):
@@ -30,7 +30,11 @@ class DocumentFormSerializer(serializers.Serializer):
 
 class DocumentSerializer(serializers.ModelSerializer):
     document_forms = DocumentFormSerializer(required=False, many=True)
+    forms = serializers.SerializerMethodField(required=False)
 
+    # TODO: 11 Для инспекционных органов
+    # TODO: 3 Для провайдеров программ проверки квалификации
+    # TODO: 1 Для лабораторий
     class Meta:
         model = Document
         exclude = ['created_date']
@@ -39,3 +43,33 @@ class DocumentSerializer(serializers.ModelSerializer):
         self.fields['parents'] = DocumentParentSerializer()
         self.fields['type'] = DocumentTypeSerializer()
         return super(DocumentSerializer, self).to_representation(instance)
+
+    def get_forms(self, obj: Document):
+        response = list()
+
+        categories = CategoryDocumentForm.objects.all()
+        # categories = categories.exclude(id__in=[8, 9, 10, 11, 3, 1])
+        all_forms = obj.document_forms.all()
+        for category in categories:
+            forms = all_forms.filter(category=category.id)
+
+            if forms:
+                form_list = list()
+                for form in forms:
+                    form_list.append(dict(
+                        id=form.id,
+                        title=form.title,
+                        category=form.category.id,
+                    ))
+
+                response.append(
+                    dict(
+                        category=dict(
+                            id=category.id,
+                            title=category.title,
+                        ),
+                        childrens=form_list
+                    )
+
+                )
+        return response

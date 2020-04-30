@@ -26,5 +26,7 @@ export_csv.short_description = u"Done all"
 @admin.register(Code)
 class Admin(ImportExportModelAdmin):
     actions = [export_csv]
+    list_filter = ['organ_number']
+
     list_display = ['cod_tnved', 'organ_number']
     search_fields = ['cod_tnved', 'organ_number']
