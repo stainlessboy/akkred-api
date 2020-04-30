@@ -173,46 +173,46 @@ class LanguageViewSet(GenericViewSet):
 
                 children=[
                     dict(
-                        url='about',
+                        url='/static/about',
                         title_en='Об аккредитации',
                         title_uz='Akkreditatsiya toʻgʻrisida',
                         title_ru='Akkreditatsiya toʻgʻrisida',
 
                     ),
                     dict(
-                        url='center',
+                        url='/static/center',
                         title_en='Markaz haqida',
                         title_uz='Markaz haqida',
                         title_ru='О Центре',
 
                     ),
                     dict(
-                        url='financing',
+                        url='/static/financing',
                         title_ru='Информация об источниках финансирования',
                         title_en='Moliyalashtirish manbalari toʻgʻrisida maʻlumot',
                         title_uz='Moliyalashtirish manbalari toʻgʻrisida maʻlumot',
 
                     ),
                     dict(
-                        url='rightsObligations',
+                        url='/static/rightsObligations',
                         title_ru='Права и обязанности органа по аккредитации',
                         title_en='Akkreditatsiya organining huquqlari va majburiyatlari',
                         title_uz='Akkreditatsiya organining huquqlari va majburiyatlari',
                     ),
                     dict(
-                        url='structure',
+                        url='/static/structure',
                         title_ru='Организационная структура',
                         title_en='Tashkiliy tuzilma',
                         title_uz='Tashkiliy tuzilma',
                     ),
                     dict(
-                        url='rukovod',
+                        url='/rukovod',
                         title_ru='Руководство',
                         title_en='Rahbariyat',
                         title_uz='Rahbariyat',
                     ),
                     dict(
-                        url='advice',
+                        url='/static/advice',
                         title_ru='Совет по аккредитации',
                         title_en='Akkreditatsiya boʻyicha kengashi',
                         title_uz='Akkreditatsiya boʻyicha kengashi',
@@ -376,37 +376,37 @@ class LanguageViewSet(GenericViewSet):
                         title_uz='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
                         children=[
                             dict(
-                                url='service1',
+                                url='/static/service1',
                                 title_ru='Органы по сертификации продукции по OʻzDSt ISO/IEC 17065',
                                 title_en='OʻzDSt ISO/IEC 17065 boʻyicha sertifikatlashtirish organlari',
                                 title_uz='OʻzDSt ISO/IEC 17065 boʻyicha sertifikatlashtirish organlari',
                             ),
                             dict(
-                                url='service2',
+                                url='/static/service2',
                                 title_ru='Органы по сертификации систем менеджмента по OʻzDSt ISO/IEC 17021',
                                 title_en='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
                                 title_uz='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
                             ),
                             dict(
-                                url='service3',
+                                url='/static/service3',
                                 title_ru='Органы по сертификации персонала по OʻzDSt ISO/IEC 17024',
                                 title_en='OʻzDSt ISO / IEC 17024 boʻyicha xodimlarni sertifikatlashtirish organlari',
                                 title_uz='OʻzDSt ISO / IEC 17024 boʻyicha xodimlarni sertifikatlashtirish organlari',
                             ),
                             dict(
-                                url='service4',
+                                url='/static/service4',
                                 title_ru='Испытательные лаборатории по OʻzDSt ISO/IEC 17025',
                                 title_en='OʻzDSt ISO / IEC 17025 boʻyicha sinov laboratoriyalari',
                                 title_uz='OʻzDSt ISO / IEC 17025 boʻyicha sinov laboratoriyalari',
                             ),
                             dict(
-                                url='service5',
+                                url='/static/service5',
                                 title_ru='Инспекционные органы по OʻzDSt ISO/IEC 17020 ',
                                 title_en='OʻzDSt ISO / IEC 17020 boʻyicha inspeksiya organlari',
                                 title_uz='OʻzDSt ISO / IEC 17020 boʻyicha inspeksiya organlari',
                             ),
                             dict(
-                                url='service6',
+                                url='/static/service6',
                                 title_ru='Провайдеры программ проверки квалификации по OʻzDSt ISO/IEC 17043',
                                 title_en='OʻzDSt ISO / IEC 17043 boʻyicha malakani tekshirish dasturlari provayderlari',
                                 title_uz='OʻzDSt ISO / IEC 17043 boʻyicha malakani tekshirish dasturlari provayderlari',
