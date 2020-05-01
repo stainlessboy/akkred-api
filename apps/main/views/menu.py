@@ -206,7 +206,7 @@ class LanguageViewSet(GenericViewSet):
                         title_uz='Tashkiliy tuzilma',
                     ),
                     dict(
-                        url='/rukovod',
+                        url='/management',
                         title_ru='Руководство',
                         title_en='Rahbariyat',
                         title_uz='Rahbariyat',
@@ -421,13 +421,13 @@ class LanguageViewSet(GenericViewSet):
                         title_uz='Inspeksiya nazorati',
                     ),
                     dict(
-                        url='/reestr-info',
+                        url='/registry-info',
                         title_ru='Информация о приостановленных, прекращенных и возобновленных свидетельствах об аккредитации',
                         title_en='Amal qilishi muddati toʻxtatib qoʻyilgan, tugatilgan va qayta tiklangan akkreditatsiya guvohnomalari toʻgʻrisida maʻlumot',
                         title_uz='Amal qilishi muddati toʻxtatib qoʻyilgan, tugatilgan va qayta tiklangan akkreditatsiya guvohnomalari toʻgʻrisida maʻlumot',
                     ),
                     dict(
-                        url='/reestr',
+                        url='/registry',
                         title_ru='Государственный реестр аккредитованных ООС и МС',
                         title_en='Akkreditatsiya qilingan MBO va MX davlat reestri',
                         title_uz='Akkreditatsiya qilingan MBO va MX davlat reestri',
@@ -448,7 +448,7 @@ class LanguageViewSet(GenericViewSet):
                         title_uz='Aloqa ma`lumotlari',
                     ),
                     dict(
-                        url='/anketa',
+                        url='/satisfaction-rating',
                         title_ru='Оценка удовлетворенности',
                         title_en='Mijozlarning qoniqish darajasini baholash',
                         title_uz='Mijozlarning qoniqish darajasini baholash',
@@ -463,7 +463,7 @@ class LanguageViewSet(GenericViewSet):
                 title_uz='Buyurtma taqdim etish',
                 children=[
                     dict(
-                        url='/all-calculation',
+                        url='/calculate',
                         title_ru='Расчет стоимости работ по аккредитации',
                         title_en='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
                         title_uz='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
