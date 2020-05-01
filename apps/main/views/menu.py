@@ -26,7 +26,7 @@ class LanguageViewSet(GenericViewSet):
                     title_en=form.title,
                     title_uz=form.title,
                     # url=form.file,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -42,7 +42,7 @@ class LanguageViewSet(GenericViewSet):
                     title_en=form.title,
                     title_uz=form.title,
                     # url=form.file,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -57,7 +57,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -71,7 +71,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/'+str(form.file)),
                     external=True,
 
                 ))
@@ -87,7 +87,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -102,7 +102,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/'+str(form.file)),
                     external=True,
 
                 ))
@@ -117,7 +117,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -132,7 +132,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/' + str(form.file)),
                     external=True,
 
                 ))
@@ -147,7 +147,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/'+str(form.file)),
                     external=True,
 
                 ))
@@ -162,7 +162,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+form.file),
+                    url=str('http://akkred.uz:8081/'+str(form.file)),
                     external=True,
 
                 ))
