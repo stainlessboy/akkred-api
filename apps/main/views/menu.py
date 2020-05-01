@@ -177,9 +177,9 @@ class LanguageViewSet(GenericViewSet):
                 children=[
                     dict(
                         url='/static/about',
-                        title_en='Об аккредитации',
+                        title_en='Akkreditatsiya toʻgʻrisida',
                         title_uz='Akkreditatsiya toʻgʻrisida',
-                        title_ru='Akkreditatsiya toʻgʻrisida',
+                        title_ru='Об аккредитации',
 
                     ),
                     dict(
