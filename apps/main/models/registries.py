@@ -121,11 +121,13 @@ class RegistriesStatus(models.Model):
     PAUSED = 'paused'
     DONE = 'done'
     RENEWED = 'renewed'
+    EXTENDED = 'extended'
     STATUS_TYPES = (
         (ACTIVE, 'Возобновлено'),
         (INACTIVE, 'Прекращено'),
         (PAUSED, 'Приостановлено'),
         (DONE, 'Подтверждено'),
+        (EXTENDED, 'Продлен'),
         (RENEWED, 'Переоформлено'),
     )
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
