@@ -285,8 +285,8 @@ class Code(models.Model):
         (NMS0017, 'ms0017'),
         (NMS0018, 'ms0018'),
         (NMS0019, 'ms0019'),
-        (NMS0019, 'ms0020'),
-        (NMS0019, 'ms0021'),
+        (NMS0020, 'ms0020'),
+        (NMS0021, 'ms0021'),
 
     )
 
