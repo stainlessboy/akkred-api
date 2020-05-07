@@ -16,6 +16,7 @@ import main.admin.inspection_control_category
 import main.admin.slider
 import main.admin.doc_parents
 import main.admin.doc_type
+import main.admin.directions
 from main.models import CategoryDocumentForm
 
 from main.models.region import Region

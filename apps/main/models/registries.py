@@ -74,9 +74,12 @@ class Registries(models.Model):
 
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
     code_nd = models.ManyToManyField('main.Code', related_name='registries', blank=True)
+    directions = models.ManyToManyField('main.Directions', related_name='registries', blank=True)
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255, unique=True)
+    oked = models.CharField(max_length=255, null=True)
+    okonx = models.CharField(max_length=255, null=True)
 
     file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
     certificate = models.FileField(upload_to=upload_name, null=True, blank=True)
@@ -211,6 +214,8 @@ class Code(models.Model):
     NMS0017 = 'ms0017'
     NMS0018 = 'ms0018'
     NMS0019 = 'ms0019'
+    NMS0020 = 'ms0020'
+    NMS0021 = 'ms0021'
     N60368 = '60368'
     N060167 = '060167'
 
@@ -280,6 +285,8 @@ class Code(models.Model):
         (NMS0017, 'ms0017'),
         (NMS0018, 'ms0018'),
         (NMS0019, 'ms0019'),
+        (NMS0019, 'ms0020'),
+        (NMS0019, 'ms0021'),
 
     )
 
