@@ -78,8 +78,8 @@ class Registries(models.Model):
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255, unique=True)
-    oked = models.CharField(max_length=255, null=True)
-    okonx = models.CharField(max_length=255, null=True)
+    oked = models.CharField(max_length=255, null=True, blank=True)
+    okonx = models.CharField(max_length=255, null=True, blank=True)
 
     file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
     certificate = models.FileField(upload_to=upload_name, null=True, blank=True)
