@@ -430,7 +430,7 @@ class LanguageViewSet(GenericViewSet):
                         title_uz='Amal qilishi muddati toʻxtatib qoʻyilgan, tugatilgan va qayta tiklangan akkreditatsiya guvohnomalari toʻgʻrisida maʻlumot',
                     ),
                     dict(
-                        url='/registry',
+                        url='/reestr',
                         title_ru='Государственный реестр аккредитованных ООС и МС',
                         title_en='Akkreditatsiya qilingan MBO va MX davlat reestri',
                         title_uz='Akkreditatsiya qilingan MBO va MX davlat reestri',
