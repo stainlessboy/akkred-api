@@ -148,6 +148,6 @@ class Admin(admin.ModelAdmin):
     actions = [export_csv]
     filter_horizontal = ('code_nd', 'directions')
     list_display = ['title_organ', 'type_organ', 'number']
-    search_fields = ['number', 'title_organ', 'inn', 'id', 'code', 'code_nd']
+    search_fields = ['number', 'title_organ', 'inn', 'id', 'code']
     list_filter = ['region', 'type_organ', 'status', 'is_fact_address', 'accreditation_date']
     inlines = [RegistriesStatusInline]
