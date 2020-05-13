@@ -26,7 +26,7 @@ class LanguageViewSet(GenericViewSet):
                     title_en=form.title,
                     title_uz=form.title,
                     # url=form.file,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -42,7 +42,7 @@ class LanguageViewSet(GenericViewSet):
                     title_en=form.title,
                     title_uz=form.title,
                     # url=form.file,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -57,7 +57,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -71,7 +71,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
                     external=True,
 
                 ))
@@ -87,7 +87,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -102,7 +102,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
                     external=True,
 
                 ))
@@ -117,7 +117,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -132,7 +132,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/' + str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -147,7 +147,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
                     external=True,
 
                 ))
@@ -162,7 +162,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
                     external=True,
 
                 ))
@@ -347,9 +347,9 @@ class LanguageViewSet(GenericViewSet):
                         children=[
                             dict(
                                 url='https://www.iaf.nu/articles/Mandatory_Documents_/38',
-                                title_ru='IAF hujjatlari',
-                                title_en='Документы IAF',
-                                title_uz='Документы IAF',
+                                title_ru='Документы IAF',
+                                title_en='IAF hujjatlarF',
+                                title_uz='IAF hujjatlari',
                                 external=True,
                             ),
                             dict(
