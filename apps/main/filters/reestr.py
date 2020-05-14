@@ -13,10 +13,7 @@ class ReestrFilterSet(BaseFilter):
     type_organ = NumberFilter(method='filter_type_organ')
     status = CharFilter(method='filter_status')
     info = CharFilter(method='filter_info')
-    month = CharFilter(method='filter_month')
     stif = CharFilter(method='filter_info_status')
-
-    code_exist = CharFilter(method='filter_code')
 
     class Meta:
         model = Registries
@@ -24,25 +21,31 @@ class ReestrFilterSet(BaseFilter):
             'code_nd__cod_tnved', 'itt_cd'
         ]
 
-    def filter_type_organ(self, queryset, name, value):
-        if value == 0:
-            return queryset.all()
-        return queryset.filter(type_organ=value)
+    def filter_type_organ(self, query, name, value: str):
 
-    def filter_status(self, queryset, name, value):
-        if value == '0':
-            return queryset.all()
-        return queryset.filter(status=value)
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(type_organ__in=value_list)
+        return query
+
+    def filter_status(self, query, name, value: str):
+
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(status__in=value_list)
+        return query
+
+    def filter_region(self, query, name, value: str):
+
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(region__in=value_list)
+        return query
 
     def filter_info(self, queryset, name, value):
         if value == '0':
             return queryset.filter(status__in=['paused', 'inactive']).all()
         return queryset.all()
-
-    def filter_region(self, queryset, name, value):
-        if value == 0:
-            return queryset.all()
-        return queryset.filter(region=value)
 
     def filter_info_status(self, queryset, name, value):
         if value == 'active':
@@ -52,32 +55,6 @@ class ReestrFilterSet(BaseFilter):
         if value == 'paused':
             return queryset.filter(reestr_logs__paused_date__isnull=False)
         return queryset.all()
-
-    def filter_month(self, queryset, name, value):
-        if value == '1':
-            present_month = datetime.date.today()
-            prev_month = present_month.month - 3
-            if prev_month >= 0:
-                prev_month = prev_month
-            else:
-                prev_month = 1
-            prev_date = datetime.date(2020, prev_month, 1)
-            return queryset.filter(reestr_logs__paused_date__gte=prev_date,
-                                   reestr_logs__paused_date__lte=present_month)
-        return queryset.all()
-
-    def filter_code(self, queryset, name, value):
-        if value == 'true':
-            codes = Code.STATUS_TYPES
-            code_list = []
-            for code in codes:
-                code_list.append(code[0])
-            queryset = queryset.filter(area__in=code_list)
-            return queryset
-        if value == 'false':
-            return queryset.filter(code_nd=None)
-        else:
-            return queryset
 
 
 class ReestrStatusFilterSet(BaseFilter):
