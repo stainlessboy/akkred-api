@@ -9,8 +9,8 @@ from main.models.registries import Registries, RegistriesStatus, Code
 
 # test
 class ReestrFilterSet(BaseFilter):
-    region = NumberFilter(method='filter_region')
-    type_organ = NumberFilter(method='filter_type_organ')
+    region = CharFilter(method='filter_region')
+    type_organ = CharFilter(method='filter_type_organ')
     status = CharFilter(method='filter_status')
     info = CharFilter(method='filter_info')
     stif = CharFilter(method='filter_info_status')
@@ -22,21 +22,18 @@ class ReestrFilterSet(BaseFilter):
         ]
 
     def filter_type_organ(self, query, name, value: str):
-
         value_list = value.split('-')
         if all(is_int(val) for val in value_list):
             return query.filter(type_organ__in=value_list)
         return query
 
     def filter_status(self, query, name, value: str):
-
         value_list = value.split('-')
         if all(is_int(val) for val in value_list):
             return query.filter(status__in=value_list)
         return query
 
     def filter_region(self, query, name, value: str):
-
         value_list = value.split('-')
         if all(is_int(val) for val in value_list):
             return query.filter(region__in=value_list)
