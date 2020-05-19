@@ -309,12 +309,12 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Hamkorlik',
                         title_uz='Hamkorlik',
                     ),
-                    dict(
-                        url='/news',
-                        title_ru='Все новости',
-                        title_en='Barcha yangiliklar',
-                        title_uz='Barcha yangiliklar',
-                    )
+                    # dict(
+                    #     url='/news',
+                    #     title_ru='Все новости',
+                    #     title_en='Barcha yangiliklar',
+                    #     title_uz='Barcha yangiliklar',
+                    # )
 
                 ]
 
@@ -434,6 +434,12 @@ class LanguageViewSet(GenericViewSet):
                         title_ru='Государственный реестр аккредитованных ООС и МС',
                         title_en='Akkreditatsiya qilingan MBO va MX davlat reestri',
                         title_uz='Akkreditatsiya qilingan MBO va MX davlat reestri',
+                    ),
+                    dict(
+                        url='/news',
+                        title_ru='Все новости',
+                        title_en='Barcha yangiliklar',
+                        title_uz='Barcha yangiliklar',
                     )
 
                 ]
