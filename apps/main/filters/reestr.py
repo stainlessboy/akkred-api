@@ -21,38 +21,38 @@ class ReestrFilterSet(BaseFilter):
             'code_nd__cod_tnved', 'itt_cd'
         ]
 
-    # def filter_type_organ(self, query, name, value: str):
-    #     value_list = value.split('-')
-    #     if all(is_int(val) for val in value_list):
-    #         return query.filter(type_organ__in=value_list)
-    #     return query
+    def filter_type_organ(self, query, name, value: str):
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(type_organ__in=value_list)
+        return query
+
+    def filter_status(self, query, name, value: str):
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(status__in=value_list)
+        return query
+
+    def filter_region(self, query, name, value: str):
+        value_list = value.split('-')
+        if all(is_int(val) for val in value_list):
+            return query.filter(region__in=value_list)
+        return query
+
+    # def filter_type_organ(self, queryset, name, value):
+    #     if value == 0:
+    #         return queryset.all()
+    #     return queryset.filter(type_organ=value)
     #
-    # def filter_status(self, query, name, value: str):
-    #     value_list = value.split('-')
-    #     if all(is_int(val) for val in value_list):
-    #         return query.filter(status__in=value_list)
-    #     return query
+    # def filter_status(self, queryset, name, value):
+    #     if value == '0':
+    #         return queryset.all()
+    #     return queryset.filter(status=value)
     #
-    # def filter_region(self, query, name, value: str):
-    #     value_list = value.split('-')
-    #     if all(is_int(val) for val in value_list):
-    #         return query.filter(region__in=value_list)
-    #     return query
-
-    def filter_type_organ(self, queryset, name, value):
-        if value == 0:
-            return queryset.all()
-        return queryset.filter(type_organ=value)
-
-    def filter_status(self, queryset, name, value):
-        if value == '0':
-            return queryset.all()
-        return queryset.filter(status=value)
-
-    def filter_region(self, queryset, name, value):
-        if value == 0:
-            return queryset.all()
-        return queryset.filter(region=value)
+    # def filter_region(self, queryset, name, value):
+    #     if value == 0:
+    #         return queryset.all()
+    #     return queryset.filter(region=value)
 
     def filter_info(self, queryset, name, value):
         if value == '0':
