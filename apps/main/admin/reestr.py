@@ -121,20 +121,6 @@ export_csv.short_description = u"Export CSV"
 # export_xls.short_description = u"Export XLS"
 
 
-# class RegistriesStatusInline(admin.TabularInline):
-#     model = RegisterStatusLog
-#     fields = [
-#         'paused_date',
-#         'restore_date',
-#         'inactive_date',
-#         'extended_date',
-#         'renewal_date',
-#         'case_type',
-#         'note',
-#
-#     ]
-
-
 class RegistriesStatusInline(admin.TabularInline):
     model = RegistriesStatus
     fields = ['date',
