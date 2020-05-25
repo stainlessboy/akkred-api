@@ -341,6 +341,13 @@ class LanguageViewSet(GenericViewSet):
 
                     ),
                     dict(
+                        url='/documents?parents=6',
+                        title_ru='Методики расчета стоимости работ по аккредитации',
+                        title_en='Методики расчета стоимости работ по аккредитации',
+                        title_uz='Методики расчета стоимости работ по аккредитации',
+
+                    ),
+                    dict(
                         title_ru='Международные документы',
                         title_en='Xalqaro hujjatlar',
                         title_uz='Xalqaro hujjatlar',
