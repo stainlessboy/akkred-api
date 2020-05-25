@@ -36,7 +36,7 @@ def export_csv(modeladmin, request, queryset):
         smart_str(u"accreditation_duration_text"),
         smart_str(u"designation_of_the_fundamental_standard"),
         smart_str(u"oked"),
-        smart_str(u"okonx"),
+        smart_str(u"soogu"),
 
         smart_str(u"Branches"),
     ])
@@ -68,7 +68,7 @@ def export_csv(modeladmin, request, queryset):
             smart_str(obj.accreditation_duration_text),
             smart_str(obj.designation_of_the_fundamental_standard),
             smart_str(obj.oked),
-            smart_str(obj.okonx),
+            smart_str(obj.soogu),
 
             smart_str(directions_list),
         ])
