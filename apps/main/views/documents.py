@@ -9,8 +9,7 @@ class DocumentViewSet(viewsets.ModelViewSet):
     model = Document
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
-    search_fields = ['title']
-    filter_fields = ['title', 'created_date', 'parents', 'type']
+    filter_fields = [ 'created_date', 'parents', 'type']
     ordering = ['order']
 
     def get_permissions(self):
