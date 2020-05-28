@@ -84,7 +84,7 @@ class CalculationTwoSerializers(serializers.Serializer):
 
         type = attrs.get('type', None)
         calculation_type = attrs.get('calculation_type', None)
-        num_test = attrs.get('num_test', None)
+        num_test = attrs.get('number_inspection', None)
         if type == 'accreditation' and not calculation_type:
             errors['calculation_type'].append('Error')
         if type == 'expansion' and not calculation_type:
