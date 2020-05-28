@@ -75,8 +75,8 @@ def numberRecPL(value):
 class CalculationTwoSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
     calculation_type = serializers.CharField(write_only=True)
-    numSI = serializers.FloatField(write_only=True)
-    num_test = serializers.FloatField(write_only=True, required=False)
+    number = serializers.FloatField(write_only=True)
+    number_inspection = serializers.FloatField(write_only=True, required=False)
     sum = serializers.FloatField(required=False)
 
     def validate(self, attrs):
@@ -96,11 +96,11 @@ class CalculationTwoSerializers(serializers.Serializer):
         return attrs
 
     def create(self, validated_data: dict):
-        numSI = validated_data['numSI']
+        numSI = validated_data['number']
 
         sum = 0
         c = 1050000
-        num_test = validated_data.get('num_test', None)
+        num_test = validated_data.get('number_inspection', None)
 
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
