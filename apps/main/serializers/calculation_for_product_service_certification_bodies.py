@@ -94,20 +94,43 @@ def numberRecOS(value):
 # ДЛЯ ОРГАНОВ ПО СЕРТИФИКАЦИИ ПРОДУКЦИИ И УСЛУГ
 class CalculationFourSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
-    calculation_type = serializers.CharField(write_only=True)
-    number = serializers.FloatField(write_only=True)
-    number_inspection = serializers.FloatField(write_only=True, required=False)
+    calculation_type = serializers.CharField(write_only=True, required=False)
+    numND = serializers.FloatField(write_only=True, required=False)
+    numObj = serializers.FloatField(write_only=True, required=False)
+    numStaff = serializers.FloatField(write_only=True, required=False)
+    num_test = serializers.FloatField(write_only=True, required=False)
     sum = serializers.FloatField(required=False)
 
+    def validate(self, attrs):
+        errors = defaultdict(list)
+
+        type = attrs.get('type', None)
+        numND = attrs.get('numND', None)
+        numStaff = attrs.get('numStaff', None)
+        calculation_type = attrs.get('calculation_type', None)
+        num_test = attrs.get('num_test', None)
+
+        if type != 'inspection_control' and not numND:
+            errors['numND'].append('numND is required')
+        if type == 'inspection_control' and not num_test:
+            errors['num_test'].append('num_test is required')
+
+        if type != 'actualization' and not numStaff:
+            errors['numStaff'].append('numStaff is required')
+        if errors:
+            raise serializers.ValidationError(errors)
+        return attrs
+
     def create(self, validated_data: dict):
-        numObj = validated_data['numObj']
-        numND = validated_data['numND']
-        numStaff = validated_data['numStaff']
+        numObj = validated_data.pop('numObj', [])
+        numND = validated_data.pop('numND', [])
+        numStaff = validated_data.pop('numStaff', [])
 
         sum = 0
         c = 1050000
-        num_test = validated_data.get('number_inspection', None)
+        num_test = validated_data.get('num_test', None)
 
+        # TODO accreditation // входные данные - numObj, numND, numStaff
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
                 t = (numObj * 3 + numND * 10) / 480
