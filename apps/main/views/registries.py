@@ -18,7 +18,7 @@ class RegistriesViewSet(viewsets.ModelViewSet):
                      'keywords', 'text', 'area']
     filter_class = ReestrFilterSet
     lookup_field = 'area'
-    ordering = ['-created_date']
+    ordering = ['-number']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve', 'pdf']:
