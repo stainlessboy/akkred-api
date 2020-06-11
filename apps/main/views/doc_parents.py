@@ -48,7 +48,7 @@ class DocTypeViewSet(viewsets.ModelViewSet):
     model = DocType
     queryset = DocType.objects.all()
     serializer_class = DocTypeSerializer
-    ordering = ['-order']
+    # ordering = ['-order']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
