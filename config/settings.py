@@ -183,11 +183,14 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [
-            ["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker", "TextColor", 'Styles',
+            ["Format", "Bold", "Italic", "Underline", "Strike", "SpellChecker",
+             "TextColor", 'Styles',
              'FontSize'],
-            ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter',
+            ['NumberedList', 'BulletedList', "Indent", "Outdent",
+             'JustifyLeft', 'JustifyCenter',
              'JustifyRight', 'JustifyBlock'],
-            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript", "Iframe"],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink",
+             "Subscript", "Superscript", "Iframe"],
             ['Undo', 'Redo'], ["Source"],
             ["Maximize"]],
     },
@@ -228,8 +231,7 @@ REST_FRAMEWORK = {
         'rest_framework.filters.OrderingFilter',
         'rest_framework.filters.SearchFilter',
     ),
-    'DEFAULT_PAGINATION_CLASS':
-        'core.rest_framework.paging.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'core.rest_framework.paging.PageNumberPagination',
     'PAGE_SIZE': 8
 }
 

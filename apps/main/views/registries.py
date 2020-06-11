@@ -1,7 +1,8 @@
 from main.filters.reestr import ReestrFilterSet, ReestrStatusFilterSet
 from main.models.registries import Registries, RegistriesStatus
 from rest_framework import viewsets, permissions, status
-from main.serializers.registries import RegistriesSerializer, RegistriesSearchSerializer, RegistriesStatusSerializer, \
+from main.serializers.registries import RegistriesSerializer, \
+    RegistriesSearchSerializer, RegistriesStatusSerializer, \
     RegistriesStatusSearchSerializer
 from rest_framework.response import Response
 
@@ -10,11 +11,14 @@ class RegistriesViewSet(viewsets.ModelViewSet):
     model = Registries
     queryset = Registries.objects.all()
     serializer_class = RegistriesSerializer
-    search_fields = ['number', 'inn', 'title_yurd_lisa', 'address_yurd_lisa', 'phone', 'email', 'web_site',
+    search_fields = ['number', 'inn', 'title_yurd_lisa', 'address_yurd_lisa',
+                     'phone', 'email', 'web_site',
                      'title_organ', 'address_organ',
-                     'full_name_supervisor_ao', 'phone_ao', 'email_ao', 'code', 'keywords', 'text', 'area']
+                     'full_name_supervisor_ao', 'phone_ao', 'email_ao', 'code',
+                     'keywords', 'text', 'area']
     filter_class = ReestrFilterSet
     lookup_field = 'area'
+    ordering = ['-created_date']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve', 'pdf']:
@@ -22,7 +26,7 @@ class RegistriesViewSet(viewsets.ModelViewSet):
         return super(RegistriesViewSet, self).get_permissions()
 
     def get_queryset(self):
-        qs = super(RegistriesViewSet, self).get_queryset()
+        qs = super().get_queryset()
         search_serializer = RegistriesSearchSerializer(data=self.request.GET)
         search_serializer.is_valid(raise_exception=True)
         if search_serializer.validated_data:
@@ -52,14 +56,16 @@ class RegistriesViewSet(viewsets.ModelViewSet):
 class ReestrStatusViewSet(viewsets.ModelViewSet):
     model = RegistriesStatus
     queryset = RegistriesStatus.objects.filter(
-        status__in=[RegistriesStatus.PAUSED, RegistriesStatus.ACTIVE, RegistriesStatus.INACTIVE])
+        status__in=[RegistriesStatus.PAUSED, RegistriesStatus.ACTIVE,
+                    RegistriesStatus.INACTIVE])
     serializer_class = RegistriesStatusSerializer
     filter_class = ReestrStatusFilterSet
     ordering = ['-date']
 
     def get_queryset(self):
         qs = super(ReestrStatusViewSet, self).get_queryset()
-        search_serializer = RegistriesStatusSearchSerializer(data=self.request.GET)
+        search_serializer = RegistriesStatusSearchSerializer(
+            data=self.request.GET)
         search_serializer.is_valid(raise_exception=True)
         if search_serializer.validated_data:
             qs = qs.filter(**search_serializer.validated_data)

@@ -105,6 +105,7 @@ class Registries(models.Model):
         return self.title_organ
 
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Государственный реестр аккредитованных ООС и МС'
         verbose_name_plural = 'Государственный реестр аккредитованных ООС и МС'
 
