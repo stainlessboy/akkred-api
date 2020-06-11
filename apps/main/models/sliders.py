@@ -53,5 +53,6 @@ class Slider(BaseModel):
         return self.title
 
     class Meta:
+        ordering = ['-id']
         verbose_name = 'Слайдер'
         verbose_name_plural = 'Слайдеры'

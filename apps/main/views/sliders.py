@@ -10,7 +10,6 @@ class SliderViewSet(viewsets.ModelViewSet):
     serializer_class = SliderSerializer
     search_fields = ['title']
     filter_fields = ['title']
-    ordering_fields = ['id', 'created_date']
 
     def get_permissions(self):
         if self.action == 'list':
