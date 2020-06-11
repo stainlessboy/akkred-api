@@ -10,6 +10,6 @@ class DocType(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['-id']
+        ordering = ['-order']
         verbose_name = 'Тип Документа'
         verbose_name_plural = 'Типы Документов'
