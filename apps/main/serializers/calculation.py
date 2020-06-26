@@ -6,11 +6,9 @@ from rest_framework import serializers
 class CalculationSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
     calculation_type = serializers.CharField(write_only=True)
-    number = serializers.IntegerField(write_only=True)
-    number_inspection = serializers.IntegerField(write_only=True,
-                                                 required=False)
-    sum = serializers.DecimalField(max_digits=11, decimal_places=2,
-                                   required=False)
+    number = serializers.FloatField(write_only=True)
+    number_inspection = serializers.FloatField(write_only=True, required=False)
+    sum = serializers.FloatField(required=False)
 
     def validate(self, attrs):
         errors = defaultdict(list)

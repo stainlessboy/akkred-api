@@ -95,12 +95,11 @@ def numberRecOS(value):
 class CalculationFourSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
     calculation_type = serializers.CharField(write_only=True, required=False)
-    numND = serializers.IntegerField(write_only=True, required=False)
-    numObj = serializers.IntegerField(write_only=True, required=False)
-    numStaff = serializers.IntegerField(write_only=True, required=False)
-    num_test = serializers.IntegerField(write_only=True, required=False)
-    sum = serializers.DecimalField(max_digits=11, decimal_places=2,
-                                   required=False)
+    numND = serializers.FloatField(write_only=True, required=False)
+    numObj = serializers.FloatField(write_only=True, required=False)
+    numStaff = serializers.FloatField(write_only=True, required=False)
+    num_test = serializers.FloatField(write_only=True, required=False)
+    sum = serializers.FloatField(required=False)
 
     def validate(self, attrs):
         errors = defaultdict(list)
