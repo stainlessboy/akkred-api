@@ -45,7 +45,8 @@ class RegistriesSerializer(serializers.ModelSerializer):
         if not self.instance and Registries.objects.filter(area=area).exists():
             errors['non_field_errors'].append(
                 'You can not create reestr with area')
-        if self.instance.area != area and Registries.objects.filter(area=area).exists():
+        if self.instance.area != area and Registries.objects.filter(
+                area=area).exists():
             errors['non_field_errors'].append(
                 'You can not create reestr with area')
 
@@ -55,21 +56,27 @@ class RegistriesSerializer(serializers.ModelSerializer):
         return attrs
 
     def to_representation(self, instance):
-        self.fields['code_nd'] = CodeNvdSelectSerializer(many=True, required=False)
+        self.fields['code_nd'] = CodeNvdSelectSerializer(many=True,
+                                                         required=False)
         self.fields['type_organ'] = TypeSelectSerializer()
         return super(RegistriesSerializer, self).to_representation(instance)
 
 
 class RegistriesSearchSerializer(serializers.Serializer):
-    search_number = serializers.CharField(source='number__icontains', required=False)
+    search_number = serializers.CharField(source='number__icontains',
+                                          required=False)
     search_inn = serializers.CharField(source='inn__icontains', required=False)
-    search_code = serializers.CharField(source='text__icontains', required=False)
-    search_title = serializers.CharField(source='title_organ__icontains', required=False)
+    search_code = serializers.CharField(source='text__icontains',
+                                        required=False)
+    search_title = serializers.CharField(source='title_organ__icontains',
+                                         required=False)
 
 
 class RegistriesStatusSearchSerializer(serializers.Serializer):
-    search_number = serializers.CharField(source='reestr__number__icontains', required=False)
-    search_title = serializers.CharField(source='reestr__title_organ__icontains', required=False)
+    search_number = serializers.CharField(source='reestr__number__icontains',
+                                          required=False)
+    search_title = serializers.CharField(
+        source='reestr__title_organ__icontains', required=False)
 
 
 class RegistriesStatusSerializer(serializers.ModelSerializer):
@@ -79,4 +86,5 @@ class RegistriesStatusSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         self.fields['reestr'] = RegistriesSelectSerializer()
-        return super(RegistriesStatusSerializer, self).to_representation(instance)
+        return super(RegistriesStatusSerializer, self).to_representation(
+            instance)

@@ -9,16 +9,12 @@ class DocumentSelectListSerializer(serializers.Serializer):
 
 
 class DocParentSerializer(serializers.ModelSerializer):
-    # documents = DocumentSelectListSerializer(many=True, required=False)
-
     class Meta:
         model = DocParent
         fields = '__all__'
 
 
 class DocTypeSerializer(serializers.ModelSerializer):
-    # documents = DocumentSelectListSerializer(many=True, required=False)
-
     class Meta:
         model = DocType
         fields = '__all__'

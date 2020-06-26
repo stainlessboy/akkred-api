@@ -14,7 +14,8 @@ class FileModelSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        instance: File = super(FileModelSerializer, self).create(validated_data)
+        instance: File = super(FileModelSerializer, self).create(
+            validated_data)
         instance.name = instance.file.name
         instance.content_type = instance.name.split('.')[-1]
         instance.save()

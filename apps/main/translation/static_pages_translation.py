@@ -2,7 +2,6 @@ from modeltranslation.translator import TranslationOptions, translator
 
 from main.models.static_pages import StaticPage
 from main.models.news import News
-from main.models.questions import Question
 from main.models.employees import Employee
 from main.models.type_organ import TypeOrgan
 from main.models.sliders import Slider
@@ -19,11 +18,6 @@ class StaticPagesTranslation(TranslationOptions):
 
 class NewsMedia(TranslationOptions):
     fields = ('title', 'text')
-    default_translate = False
-
-
-class QA(TranslationOptions):
-    fields = ('question', 'answer')
     default_translate = False
 
 
@@ -79,7 +73,6 @@ class CategoryDocumentForms(TranslationOptions):
 
 translator.register(StaticPage, StaticPagesTranslation)
 translator.register(News, NewsMedia)
-translator.register(Question, QA)
 translator.register(Employee, Employer)
 translator.register(TypeOrgan, TypeOrgans)
 translator.register(Slider, Sliders)

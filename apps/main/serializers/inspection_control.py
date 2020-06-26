@@ -20,4 +20,5 @@ class InspectionControlSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         self.fields['category'] = InspectionControlTypeSerializer()
-        return super(InspectionControlSerializer, self).to_representation(instance)
+        return super(InspectionControlSerializer, self).to_representation(
+            instance)

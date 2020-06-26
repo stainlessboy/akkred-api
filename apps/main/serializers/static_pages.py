@@ -7,4 +7,3 @@ class StaticPageModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaticPage
         exclude = ['modified_date']
-

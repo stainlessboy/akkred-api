@@ -1,6 +1,5 @@
 from main.models.region import Region
 from rest_framework import serializers
-from collections import defaultdict
 
 
 class RegionSelectSerializer(serializers.Serializer):
