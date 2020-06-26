@@ -17,5 +17,4 @@ from main.models.documents import Document, DocumentForm, CategoryDocumentForm
 from main.models.sliders import Slider
 from main.models.employees import Employee
 from main.models.directions import Directions
-from main.models.cooperation import Cooperation_one, Cooperation_two
 from main.models.code import Code, CodeType

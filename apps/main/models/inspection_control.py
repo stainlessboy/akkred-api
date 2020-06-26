@@ -45,8 +45,10 @@ class ICCategory(models.Model):
 
 class InspectionControl(models.Model):
     name = models.CharField(max_length=500)
-    category = models.ForeignKey('main.ICCategory', PROTECT, related_name='inspection_controls')
+    category = models.ForeignKey('main.ICCategory', PROTECT,
+                                 related_name='inspection_controls')
     file = models.FileField(upload_to=upload_name, null=True, blank=True)
+    order = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.name
