@@ -37,11 +37,13 @@ def upload_name(instance, filename):
 class News(BaseModel):
     title = models.CharField(max_length=500, null=False)
     text = RichTextUploadingField(blank=True, null=True)
-    image_main = models.ImageField(null=True, blank=True, upload_to=upload_name)
+    image_main = models.ImageField(null=True, blank=True,
+                                   upload_to=upload_name)
     created_date_by_admin = models.DateTimeField(null=True)
 
     def admin_photo(self):
-        return mark_safe('<img src="{}" width="100" />'.format(self.image_main.url))
+        return mark_safe(
+            '<img src="{}" width="100" />'.format(self.image_main.url))
 
     admin_photo.short_description = 'Image'
     admin_photo.allow_tags = True
@@ -53,14 +55,3 @@ class News(BaseModel):
 
     def __str__(self):
         return self.title
-
-
-# class NewsGallery(models.Model):
-#     news = models.ForeignKey('main.News', CASCADE, related_name='images')
-#     image = models.ImageField(null=True, blank=True, upload_to=upload_name)
-#
-#     def admin_photo(self):
-#         return mark_safe('<img src="{}" width="100" />'.format(self.image.url))
-#
-#     admin_photo.short_description = 'Image'
-#     admin_photo.allow_tags = True
