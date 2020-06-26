@@ -95,10 +95,10 @@ def numberRecOS(value):
 class CalculationFourSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
     calculation_type = serializers.CharField(write_only=True, required=False)
-    numND = serializers.FloatField(write_only=True, required=False)
+    numND = serializers.FloatField(write_only=True)
     numObj = serializers.FloatField(write_only=True, required=False)
     numStaff = serializers.FloatField(write_only=True, required=False)
-    num_test = serializers.FloatField(write_only=True, required=False)
+    # num_test = serializers.FloatField(write_only=True, required=False)
     sum = serializers.FloatField(required=False)
 
     def validate(self, attrs):
@@ -110,10 +110,11 @@ class CalculationFourSerializers(serializers.Serializer):
         calculation_type = attrs.get('calculation_type', None)
         num_test = attrs.get('num_test', None)
 
-        if type != 'inspection_control' and not numND:
-            errors['numND'].append('numND is required')
-        if type == 'inspection_control' and not num_test:
-            errors['num_test'].append('num_test is required')
+        # if type != 'inspection_control' and not numND:
+        #     errors['numND'].append('numND is required')
+        # if type == 'inspection_control' and not num_test:
+        #     errors['num_test'].append('num_test is required')
+
 
         if type != 'actualization' and not numStaff:
             errors['numStaff'].append('numStaff is required')
@@ -128,7 +129,7 @@ class CalculationFourSerializers(serializers.Serializer):
 
         sum = 0
         c = 1050000
-        num_test = validated_data.get('num_test', None)
+        # num_test = validated_data.get('num_test', None)
 
         # TODO accreditation // входные данные - numObj, numND, numStaff
         if validated_data['type'] == 'accreditation':
@@ -166,7 +167,7 @@ class CalculationFourSerializers(serializers.Serializer):
         # TODO inspection_control // входные данные - numStaff, num_test
         if validated_data['type'] == 'inspection_control':
             t1 = roundPrice(numStaff / 2.67)
-            t2 = numberRecOS(num_test)
+            t2 = numberRecOS(numND)
             num_day_total = t1 + t2 + 4
             sum = num_day_total * c
 
