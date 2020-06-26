@@ -1,12 +1,5 @@
 from django.contrib import admin
-from main.models import News \
-    , NewsGallery
-
-
-class NewsGalleryInline(admin.TabularInline):
-    model = NewsGallery
-    fields = ['image', 'admin_photo']
-    readonly_fields = ['admin_photo']
+from main.models import News
 
 
 @admin.register(News)
@@ -26,7 +19,4 @@ class Admin(admin.ModelAdmin):
         'url'
 
     ]
-    inlines = [NewsGalleryInline]
     readonly_fields = ['admin_photo']
-
-
