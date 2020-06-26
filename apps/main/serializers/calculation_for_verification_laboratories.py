@@ -71,10 +71,11 @@ def numberRecPL(value):
     else:
         return 3.5 + ceil((value - 8000) / 3000) / 2
 
+
 # ДЛЯ ПОВЕРОЧНЫХ ЛАБОРАТОРИЙ
 class CalculationThreeSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
-    calculation_type = serializers.CharField(write_only=True)
+    calculation_type = serializers.CharField(write_only=True, required=False)
     number = serializers.FloatField(write_only=True)
     number_inspection = serializers.FloatField(write_only=True, required=False)
     sum = serializers.FloatField(required=False)
@@ -85,7 +86,8 @@ class CalculationThreeSerializers(serializers.Serializer):
         type = attrs.get('type', None)
         calculation_type = attrs.get('calculation_type', None)
         num_test = attrs.get('number_inspection', None)
-        if type == 'actualization' and not calculation_type:
+        if type not in ['inspection_control',
+                        'actualization'] and not calculation_type:
             errors['calculation_type'].append('Error')
         if type == 'inspection_control' and not num_test:
             errors['number_inspection'].append('Error')

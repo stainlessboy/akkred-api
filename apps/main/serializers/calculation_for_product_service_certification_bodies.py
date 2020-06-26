@@ -110,6 +110,10 @@ class CalculationFourSerializers(serializers.Serializer):
         calculation_type = attrs.get('calculation_type', None)
         num_test = attrs.get('num_test', None)
 
+        if type not in ['inspection_control',
+                        'actualization'] and not calculation_type:
+            errors['calculation_type'].append('Error')
+
         # if type != 'inspection_control' and not numND:
         #     errors['numND'].append('numND is required')
         # if type == 'inspection_control' and not num_test:
