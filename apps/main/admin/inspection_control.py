@@ -5,7 +5,8 @@ from main.models import InspectionControl
 @admin.register(InspectionControl)
 class Admin(admin.ModelAdmin):
     list_display = ['name', 'name_uz']
-    filter_horizontal = ('category')
+    list_filter = ['category']
+
 
     fields = [
         'name_en',
