@@ -16,7 +16,6 @@ class Admin(admin.ModelAdmin):
         'text_uz',
         'image_main',
         'created_date_by_admin',
-        'url'
 
     ]
     readonly_fields = ['admin_photo']
