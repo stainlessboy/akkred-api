@@ -68,15 +68,13 @@ class CalculationSerializers(serializers.Serializer):
                 t = (number / 40)
                 num_day_total = t + 3
                 num_day_total = round(num_day_total, 2)
-
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / 26.67)
+                t1 = (number * 18 / 480)
                 t2 = (number / 60)
                 t3 = fixProblems(number)
                 num_day_total = t1 + t2 + t3 + 4
                 num_day_total = round(num_day_total, 2)
-
                 sum = num_day_total * c
 
         # TODO expansion // входные данные - numND
@@ -88,12 +86,11 @@ class CalculationSerializers(serializers.Serializer):
 
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / 26.67)
+                t1 = (number * 18 / 480)
                 t2 = (number / 60)
                 t3 = fixProblems(number)
                 num_day_total = t1 + t2 + t3 + 2
                 num_day_total = round(num_day_total, 2)
-
                 sum = num_day_total * c
 
         # TODO actualization // входные данные - numND
@@ -101,7 +98,6 @@ class CalculationSerializers(serializers.Serializer):
             t = (number / 240)
             num_day_total = t + 1
             num_day_total = round(num_day_total, 2)
-
             sum = num_day_total * c
         # TODO inspection_control // входные данные - numND, num_test
         if validated_data['type'] == 'inspection_control':
@@ -109,7 +105,6 @@ class CalculationSerializers(serializers.Serializer):
             t2 = numberRec(num_test)
             num_day_total = t1 + t2 + 4
             num_day_total = round(num_day_total, 2)
-
             sum = num_day_total * c
 
         validated_data.update(sum=sum)
