@@ -105,39 +105,51 @@ class CalculationThreeSerializers(serializers.Serializer):
         # TODO accreditation // входные данные - numSI
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
-                t = roundPrice(numSI / 19.2)
+                t = (numSI / 19.2)
                 num_day_total = t + 3
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblemsPL(numSI)
-                t2 = roundPrice(numSI / 19.2)
-                t3 = roundPrice(numSI / 8)
+                t2 = (numSI / 19.2)
+                t3 = (numSI / 8)
                 num_day_total = t1 + t2 + t3 + 4
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
 
         # TODO expansion // входные данные - numSI
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
-                t = roundPrice(numSI / 19.2)
+                t = (numSI / 19.2)
                 num_day_total = t + 1
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblemsPL(numSI)
-                t2 = roundPrice(numSI / 19.2)
-                t3 = roundPrice(numSI / 8)
+                t2 = (numSI / 19.2)
+                t3 = (numSI / 8)
                 num_day_total = t1 + t2 + t3 + 2
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
 
         # TODO actualization // входные данные - numSI
         if validated_data['type'] == 'actualization':
-            t = roundPrice(numSI / 240)
+            t = (numSI / 240)
             num_day_total = t + 1
+            num_day_total = round(num_day_total, 2)
+
             sum = num_day_total * c
         # TODO inspection_control // входные данные - numSI, num_test
         if validated_data['type'] == 'inspection_control':
-            t1 = roundPrice(numSI / 8)
+            t1 = (numSI / 8)
             t2 = numberRecPL(num_test)
             num_day_total = t1 + t2 + 4
+            num_day_total = round(num_day_total, 2)
+
             sum = num_day_total * c
 
         validated_data.update(sum=sum)

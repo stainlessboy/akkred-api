@@ -36,90 +36,100 @@ class CalculationSerializers(serializers.Serializer):
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 12)
-                if (t % 1) > 0 and (t % 1) <= 0.5:
-                    bal = 0.5
-                elif (t % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t = int(t) + bal
+                # if (t % 1) > 0 and (t % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t = int(t) + bal
                 num_day_total = t + 3
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = (number / (480 / 18))
-                if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
-                    bal = 0.5
-                elif (t1 % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t1 = int(t1) + bal
+                # if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t1 % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t1 = int(t1) + bal
                 t2 = (number / 60)
-                if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
-                    bal = 0.5
-                elif (t2 % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t2 = int(t2) + bal
+                # if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t2 % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t2 = int(t2) + bal
                 num_day_total = t1 + t2 + 4
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
 
         # TODO expansion
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
                 t = number / (480 / 12)
-                if (t % 1) > 0 and (t % 1) <= 0.5:
-                    bal = 0.5
-                elif (t % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t = int(t) + bal
+                # if (t % 1) > 0 and (t % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t = int(t) + bal
                 num_day_total = t + 1
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = (number / (480 / 18))
-                if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
-                    bal = 0.5
-                elif (t1 % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t1 = int(t1) + bal
+                # if (t1 % 1) > 0 and (t1 % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t1 % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t1 = int(t1) + bal
                 t2 = (number / 60)
-                if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
-                    bal = 0.5
-                elif (t2 % 1) == 0:
-                    bal = 0
-                else:
-                    bal = 1
-                t2 = int(t2) + bal
+                # if (t2 % 1) > 0 and (t2 % 1) <= 0.5:
+                #     bal = 0.5
+                # elif (t2 % 1) == 0:
+                #     bal = 0
+                # else:
+                #     bal = 1
+                # t2 = int(t2) + bal
                 num_day_total = t1 + t2 + 2
+                num_day_total = round(num_day_total, 2)
+
                 sum = num_day_total * c
 
         # TODO actualization
         if validated_data['type'] == 'actualization':
             t = number / (480 / 2)
-            if (t % 1) > 0 and (t % 1) <= 0.5:
-                bal = 0.5
-            elif (t % 1) == 0:
-                bal = 0
-            else:
-                bal = 1
-            t = int(t) + bal
+            # if (t % 1) > 0 and (t % 1) <= 0.5:
+            #     bal = 0.5
+            # elif (t % 1) == 0:
+            #     bal = 0
+            # else:
+            #     bal = 1
+            # t = int(t) + bal
             num_day_total = t + 1
+            num_day_total = round(num_day_total, 2)
+
             sum = num_day_total * c
         # TODO inspection_control
         if validated_data['type'] == 'inspection_control':
             t = number / 60
-            if (t % 1) > 0 and (t % 1) <= 0.5:
-                bal = 0.5
-            elif (t % 1) == 0:
-                bal = 0
-            else:
-                bal = 1
-            t = int(t) + bal
+            # if (t % 1) > 0 and (t % 1) <= 0.5:
+            #     bal = 0.5
+            # elif (t % 1) == 0:
+            #     bal = 0
+            # else:
+            #     bal = 1
+            # t = int(t) + bal
 
             from math import ceil
             if num_test <= 200:
@@ -140,6 +150,8 @@ class CalculationSerializers(serializers.Serializer):
                 num_day_rec = 4.5 + ceil((num_test - 8000) / 3000) / 2
 
             num_day_total = t + num_day_rec + 4
+            num_day_total = round(num_day_total, 2)
+
             sum = num_day_total * c
 
         validated_data.update(sum=sum)
