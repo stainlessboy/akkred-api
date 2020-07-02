@@ -117,7 +117,7 @@ class CalculationTwoSerializers(serializers.Serializer):
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblemsPL(numSI)
                 t2 = (numSI / 19.2)
-                t3 = (numSI / 5.33)
+                t3 = (numSI * 90 / 480)
                 num_day_total = t1 + t2 + t3 + 4
                 num_day_total = round(num_day_total, 2)
                 sum = num_day_total * c
@@ -133,7 +133,7 @@ class CalculationTwoSerializers(serializers.Serializer):
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblemsPL(numSI)
                 t2 = (numSI / 19.2)
-                t3 = (numSI / 5.33)
+                t3 = (numSI * 90 / 480)
                 num_day_total = t1 + t2 + t3 + 2
                 num_day_total = round(num_day_total, 2)
                 sum = num_day_total * c
