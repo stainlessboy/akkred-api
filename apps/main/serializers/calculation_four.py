@@ -140,14 +140,14 @@ class CalculationFourSerializers(serializers.Serializer):
             if validated_data['calculation_type'] == 'expertise':
                 t = (numObj * 3 + numND * 10) / 480
                 num_day_total = t + 3.5
-                num_day_total = roundPrice(num_day_total)
+                num_day_total = round(num_day_total)
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblems(numND)
                 t2 = (numND / 240)
                 t3 = (numStaff / 2.67)
                 num_day_total = t1 + t2 + t3 + 5
-                num_day_total = roundPrice(num_day_total)
+                num_day_total = round(num_day_total)
                 sum = num_day_total * c
 
         # TODO expansion // входные данные - numObj, numND, numStaff
@@ -155,28 +155,28 @@ class CalculationFourSerializers(serializers.Serializer):
             if validated_data['calculation_type'] == 'expertise':
                 t = (numObj * 3 + numND * 10) / 480
                 num_day_total = t + 1.5
-                num_day_total = roundPrice(num_day_total)
+                num_day_total = round(num_day_total)
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
                 t1 = fixProblems(numND)
                 t2 = (numND / 240)
                 t3 = (numStaff / 2.67)
                 num_day_total = t1 + t2 + t3 + 3
-                num_day_total = roundPrice(num_day_total)
+                num_day_total = round(num_day_total)
                 sum = num_day_total * c
 
         # TODO actualization // входные данные - numND
         if validated_data['type'] == 'actualization':
             t = (numND / 240)
             num_day_total = t + 1
-            num_day_total = roundPrice(num_day_total)
+            num_day_total = round(num_day_total)
             sum = num_day_total * c
         # TODO inspection_control // входные данные - numStaff, num_test
         if validated_data['type'] == 'inspection_control':
             t1 = (numStaff / 2.67)
             t2 = numberRecOS(numND)
             num_day_total = t1 + t2 + 4
-            num_day_total = roundPrice(num_day_total)
+            num_day_total = round(num_day_total)
             sum = num_day_total * c
 
         validated_data.update(sum=sum)
