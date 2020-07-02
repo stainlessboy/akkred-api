@@ -1,7 +1,37 @@
 from collections import defaultdict
+from math import ceil
 
 from rest_framework import serializers
 
+
+def fixProblems(value):
+    if (value <= 200):
+        return 1
+    elif (value <= 500):
+        return 2
+    else:
+        return 3
+
+
+# Функция для ИК
+
+def numberRec(value):
+    if value <= 200:
+        return 1.5
+    elif value <= 500:
+        return 2.0
+    elif value <= 1000:
+        return 2.5
+    elif value <= 2000:
+        return 3.0
+    elif value <= 3500:
+        return 3.5
+    elif value <= 5500:
+        return 4.0
+    elif value <= 8000:
+        return 4.5
+    else:
+        return 4.5 + ceil((value - 8000) / 3000) / 2
 
 class CalculationSerializers(serializers.Serializer):
     type = serializers.CharField(write_only=True)
@@ -32,76 +62,52 @@ class CalculationSerializers(serializers.Serializer):
         number = validated_data['number']
         num_test = validated_data.get('number_inspection', None)
 
-        # TODO accreditation
+        # TODO accreditation // входные данные - numPos
         if validated_data['type'] == 'accreditation':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / (480 / 12)
-
+                t = (number / 40)
                 num_day_total = t + 3
                 num_day_total = round(num_day_total, 2)
 
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / (480 / 18))
-
+                t1 = (number / 26.67)
                 t2 = (number / 60)
-
-                num_day_total = t1 + t2 + 4
+                t3 = fixProblems(number)
+                num_day_total = t1 + t2 + t3 + 4
                 num_day_total = round(num_day_total, 2)
 
                 sum = num_day_total * c
 
-        # TODO expansion
+        # TODO expansion // входные данные - numND
         if validated_data['type'] == 'expansion':
             if validated_data['calculation_type'] == 'expertise':
-                t = number / (480 / 12)
-
+                t = (number / 40)
                 num_day_total = t + 1
                 num_day_total = round(num_day_total, 2)
 
                 sum = num_day_total * c
             if validated_data['calculation_type'] == 'site':
-                t1 = (number / (480 / 18))
-
+                t1 = (number / 26.67)
                 t2 = (number / 60)
-
-                num_day_total = t1 + t2 + 2
+                t3 = fixProblems(number)
+                num_day_total = t1 + t2 + t3 + 2
                 num_day_total = round(num_day_total, 2)
 
                 sum = num_day_total * c
 
-        # TODO actualization
+        # TODO actualization // входные данные - numND
         if validated_data['type'] == 'actualization':
-            t = number / (480 / 2)
-
+            t = (number / 240)
             num_day_total = t + 1
             num_day_total = round(num_day_total, 2)
 
             sum = num_day_total * c
-        # TODO inspection_control
+        # TODO inspection_control // входные данные - numND, num_test
         if validated_data['type'] == 'inspection_control':
-            t = number / 60
-
-
-            from math import ceil
-            if num_test <= 200:
-                num_day_rec = 1.5
-            elif num_test > 200 and num_test <= 500:
-                num_day_rec = 2.0
-            elif num_test > 500 and num_test <= 1000:
-                num_day_rec = 2.5
-            elif num_test > 1000 and num_test <= 2000:
-                num_day_rec = 3.0
-            elif num_test > 2000 and num_test <= 3500:
-                num_day_rec = 3.5
-            elif num_test > 3500 and num_test <= 5500:
-                num_day_rec = 4.0
-            elif num_test > 550 and num_test <= 8000:
-                num_day_rec = 4.5
-            else:
-                num_day_rec = 4.5 + ceil((num_test - 8000) / 3000) / 2
-
-            num_day_total = t + num_day_rec + 4
+            t1 = (number / 60)
+            t2 = numberRec(num_test)
+            num_day_total = t1 + t2 + 4
             num_day_total = round(num_day_total, 2)
 
             sum = num_day_total * c
