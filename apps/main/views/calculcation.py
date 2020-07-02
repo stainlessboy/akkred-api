@@ -5,7 +5,7 @@ from rest_framework import permissions
 from main.serializers.calculation import CalculationSerializers
 from main.serializers.calculation_for_calibration_laboratories import CalculationTwoSerializers
 from main.serializers.calculation_for_verification_laboratories import CalculationThreeSerializers
-from main.serializers.calculation_for_product_service_certification_bodies import CalculationFourSerializers
+from main.serializers.calculation_four import CalculationFourSerializers
 
 
 class Calculation(GenericViewSet):
