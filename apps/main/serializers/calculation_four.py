@@ -108,6 +108,7 @@ class CalculationFourSerializers(serializers.Serializer):
         type = attrs.get('type', None)
         numND = attrs.get('numND', None)
         numStaff = attrs.get('numStaff', None)
+        numObj = attrs.get('numObj', None)
         calculation_type = attrs.get('calculation_type', None)
         num_test = attrs.get('num_test', None)
 
@@ -120,8 +121,18 @@ class CalculationFourSerializers(serializers.Serializer):
         if type == 'inspection_control' and not num_test:
             errors['num_test'].append('num_test is required')
 
-        if type != 'actualization' and not numStaff:
+        if calculation_type == 'site' and not numStaff:
             errors['numStaff'].append('numStaff is required')
+
+        if type == 'inspection_control' and not numStaff:
+            errors['numStaff'].append('numStaff is required')
+
+        if calculation_type == 'expertise' and not numObj:
+            errors['numObj'].append('numObj is required')
+
+
+        # if type != 'actualization' and not numStaff:
+        #     errors['numStaff'].append('numStaff is required')
         if errors:
             raise serializers.ValidationError(errors)
         return attrs
