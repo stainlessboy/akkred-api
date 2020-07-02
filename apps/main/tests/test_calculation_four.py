@@ -56,7 +56,7 @@ class CalculationTest(BaseTest):
         data = dict(
             type='actualization',
             numND=200,
-            calculation_type='site',
+            # calculation_type='site',
         )
         response = self.client.post(reverse(self.list_url), data)
         self.assertEqual(response.status_code, status.HTTP_200_OK,
@@ -66,7 +66,7 @@ class CalculationTest(BaseTest):
         data = dict(
             type='inspection_control',
             numStaff=200,
-            numND=14001,
+            num_test=14001,
             calculation_type='site',
         )
         response = self.client.post(reverse(self.list_url), data)
