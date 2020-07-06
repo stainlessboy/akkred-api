@@ -57,6 +57,8 @@ class DocumentSerializer(serializers.ModelSerializer):
                     form_list.append(dict(
                         id=form.id,
                         title=form.title,
+                        title_ru=form.title_ru,
+                        title_uz=form.title_uz,
                         category=form.category.id,
                         file=str(
                             'http://akkred.uz:8081/media/' + str(form.file)),
@@ -67,6 +69,8 @@ class DocumentSerializer(serializers.ModelSerializer):
                         category=dict(
                             id=category.id,
                             title=category.title,
+                            title_ru=category.title_ru,
+                            title_uz=category.title_uz,
                         ),
                         childrens=form_list
                     )
