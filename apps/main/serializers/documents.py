@@ -29,7 +29,7 @@ class DocumentFormSerializer(serializers.Serializer):
 
 
 class DocumentSerializer(serializers.ModelSerializer):
-    document_forms = DocumentFormSerializer(required=False, many=True)
+    document_forms = DocumentFormSerializer(required=False, many=True,)
     forms = serializers.SerializerMethodField(required=False)
 
     # TODO: 11 Для инспекционных органов
@@ -48,11 +48,9 @@ class DocumentSerializer(serializers.ModelSerializer):
         response = list()
 
         categories = CategoryDocumentForm.objects.all()
-        print(categories[0])
         all_forms = obj.document_forms.all()
         for category in categories:
             forms = all_forms.filter(category=category.id)
-
             if forms:
                 form_list = list()
                 for form in forms:
@@ -60,6 +58,8 @@ class DocumentSerializer(serializers.ModelSerializer):
                         id=form.id,
                         title=form.title,
                         category=form.category.id,
+                        file=str(
+                            'http://akkred.uz:8081/media/' + str(form.file)),
                     ))
 
                 response.append(
