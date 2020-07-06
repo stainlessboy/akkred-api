@@ -8,7 +8,8 @@ from main.models import Document, CategoryDocumentForm
 
 
 class LanguageViewSet(GenericViewSet):
-    url='http://akkred.uz:8081/'
+    url = 'http://akkred.uz:8081/'
+
     @action(['GET'], detail=False, permission_classes=[permissions.AllowAny])
     def menu(self, request):
         document = Document.objects.filter(id=89)[0]
@@ -71,7 +72,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -102,7 +103,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -147,7 +148,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -162,7 +163,7 @@ class LanguageViewSet(GenericViewSet):
                     title_ru=form.title,
                     title_en=form.title,
                     title_uz=form.title,
-                    url=str('http://akkred.uz:8081/media/'+str(form.file)),
+                    url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
                 ))
@@ -472,12 +473,6 @@ class LanguageViewSet(GenericViewSet):
                 title_uz='Buyurtma taqdim etish',
                 children=[
                     dict(
-                        url='/calculate',
-                        title_ru='Расчет стоимости работ по аккредитации',
-                        title_en='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
-                        title_uz='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
-                    ),
-                    dict(
                         title_ru='Для органов по сертификации',
                         title_en='Для органов по сертификации',
                         title_uz='Для органов по сертификации',
@@ -551,8 +546,13 @@ class LanguageViewSet(GenericViewSet):
                                 title_uz='Метрологические службы/лаборатории, проводящие аттестацию СО',
                                 children=form_list_metro_four
                             ),
-
                         ]
+                    ),
+                    dict(
+                        url='/calculate',
+                        title_ru='Расчет стоимости работ по аккредитации',
+                        title_en='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
+                        title_uz='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
                     ),
 
                 ]
