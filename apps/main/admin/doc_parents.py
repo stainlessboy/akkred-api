@@ -1,6 +1,6 @@
-
 from django.contrib import admin
-from main.models import DocParent
+from main.models import DocParent, CategoryDocumentForm
+
 
 @admin.register(DocParent)
 class Admin(admin.ModelAdmin):
@@ -12,3 +12,9 @@ class Admin(admin.ModelAdmin):
         'name_uz',
         'title',
     ]
+
+
+@admin.register(CategoryDocumentForm)
+class Admin(admin.ModelAdmin):
+    list_display = ['title', 'order']
+    search_fields = ['title']

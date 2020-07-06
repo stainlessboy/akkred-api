@@ -17,11 +17,9 @@ import main.admin.slider
 import main.admin.doc_parents
 import main.admin.doc_type
 import main.admin.directions
-from main.models import CategoryDocumentForm
 
 from main.models.region import Region
 from main.models.employees import Employee
 
 admin.site.register(Region)
 admin.site.register(Employee)
-admin.site.register(CategoryDocumentForm)

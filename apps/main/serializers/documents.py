@@ -48,6 +48,7 @@ class DocumentSerializer(serializers.ModelSerializer):
         response = list()
 
         categories = CategoryDocumentForm.objects.all()
+        print(categories[0])
         all_forms = obj.document_forms.all()
         for category in categories:
             forms = all_forms.filter(category=category.id)

@@ -66,11 +66,11 @@ class Document(BaseModel):
 
 
 class CategoryDocumentForm(models.Model):
-    order = models.PositiveIntegerField(default=0)
+    order = models.PositiveIntegerField(default=1)
     title = models.CharField(max_length=255)
 
     class Meta:
-        ordering = ['-order']
+        ordering = ['order']
         verbose_name = 'Категория Форма Документа '
         verbose_name_plural = 'Категория Форма Документа '
 
