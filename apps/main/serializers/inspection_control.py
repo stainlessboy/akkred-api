@@ -5,6 +5,8 @@ from main.models.inspection_control import InspectionControl, ICCategory
 class InspectionControlTypeSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
     name = serializers.ReadOnlyField()
+    name_uz = serializers.ReadOnlyField()
+    name_ru = serializers.ReadOnlyField()
 
 
 class ICCategorySerializer(serializers.ModelSerializer):
