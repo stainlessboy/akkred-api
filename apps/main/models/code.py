@@ -77,6 +77,14 @@ class Code(models.Model):
     NMS0020 = 'ms0020'
     NMS0021 = 'ms0021'
     NMS0022 = 'ms0022'
+    NMS0023 = 'ms0023'
+
+
+
+
+
+
+
     N060368 = '060368'
     N060167 = '060167'
 
@@ -149,6 +157,7 @@ class Code(models.Model):
         (NMS0020, 'ms0020'),
         (NMS0021, 'ms0021'),
         (NMS0022, 'ms0022'),
+        (NMS0023, 'ms0023'),
 
     )
 
