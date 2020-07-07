@@ -9,7 +9,7 @@ from rest_framework.response import Response
 
 class RegistriesViewSet(viewsets.ModelViewSet):
     model = Registries
-    queryset = Registries.objects.all()
+    queryset = Registries.objects.filter(is_public=True).all()
     serializer_class = RegistriesSerializer
     search_fields = ['number', 'inn', 'title_yurd_lisa', 'address_yurd_lisa',
                      'phone', 'email', 'web_site',

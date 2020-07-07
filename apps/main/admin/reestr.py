@@ -12,7 +12,8 @@ def export_csv(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename=mymodel.csv'
     writer = csv.writer(response, csv.excel)
-    response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
+    response.write(u'\ufeff'.encode(
+        'utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
     writer.writerow([
         smart_str(u"ID"),
         smart_str(u"Number"),
@@ -135,5 +136,6 @@ class Admin(admin.ModelAdmin):
     filter_horizontal = ('code_nd', 'directions')
     list_display = ['title_organ', 'type_organ', 'number']
     search_fields = ['number', 'title_organ', 'inn', 'id', 'code']
-    list_filter = ['region', 'type_organ', 'status', 'is_fact_address', 'accreditation_date']
+    list_filter = ['region', 'type_organ', 'status', 'is_fact_address',
+                   'accreditation_date', 'is_public']
     inlines = [RegistriesStatusInline]

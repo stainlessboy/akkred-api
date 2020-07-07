@@ -60,7 +60,8 @@ class Registries(models.Model):
         (COMPETENCE_INDEPENDENCE, 'Технич. компетентность и независимость'),
     )
 
-    itt_cd = models.CharField(max_length=255, null=True, blank=True, unique=True)
+    itt_cd = models.CharField(max_length=255, null=True, blank=True,
+                              unique=True)
     number = models.CharField(max_length=255, null=True)
     inn = models.CharField(max_length=455, null=True)
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
@@ -82,24 +83,34 @@ class Registries(models.Model):
     status_date = models.DateField(null=True)
     accreditation_date = models.DateField(null=True)
     accreditation_duration = models.DateField(null=True, blank=True)
-    accreditation_duration_text = models.CharField(max_length=1000, null=True, blank=True)
-    designation_of_the_fundamental_standard = models.CharField(max_length=455, null=True)
+    accreditation_duration_text = models.CharField(max_length=1000, null=True,
+                                                   blank=True)
+    designation_of_the_fundamental_standard = models.CharField(max_length=455,
+                                                               null=True)
 
     code = models.CharField(max_length=255, null=True)
 
     region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
-    code_nd = models.ManyToManyField('main.Code', related_name='registries', blank=True)
-    directions = models.ManyToManyField('main.Directions', related_name='registries', blank=True)
+    code_nd = models.ManyToManyField('main.Code', related_name='registries',
+                                     blank=True)
+    directions = models.ManyToManyField('main.Directions',
+                                        related_name='registries', blank=True)
     keywords = models.CharField(max_length=255)
     text = models.TextField(null=True, blank=True)
     area = models.CharField(max_length=255, unique=True)
     oked = models.CharField(max_length=255, null=True, blank=True)
     soogu = models.CharField(max_length=255, null=True, blank=True)
 
-    file_oblast = models.FileField(upload_to=upload_name, null=True, blank=True)
-    certificate = models.FileField(upload_to=upload_name, null=True, blank=True)
-    type_ownership = models.CharField(max_length=45, choices=TYPE_OWNERSHIP, null=True, blank=True)
-    type_accredited = models.CharField(max_length=45, choices=TYPE_ACCREDITED, null=True, blank=True)
+    file_oblast = models.FileField(upload_to=upload_name, null=True,
+                                   blank=True)
+    certificate = models.FileField(upload_to=upload_name, null=True,
+                                   blank=True)
+    type_ownership = models.CharField(max_length=45, choices=TYPE_OWNERSHIP,
+                                      null=True, blank=True)
+    type_accredited = models.CharField(max_length=45, choices=TYPE_ACCREDITED,
+                                       null=True, blank=True)
+
+    is_public = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title_organ
@@ -122,7 +133,8 @@ class CaseType(models.Model):
 
 
 class RegistriesStatus(models.Model):
-    reestr = models.ForeignKey('main.Registries', CASCADE, related_name='reestr_status')
+    reestr = models.ForeignKey('main.Registries', CASCADE,
+                               related_name='reestr_status')
     ACTIVE = 'active'
     INACTIVE = 'inactive'
     PAUSED = 'paused'
@@ -144,4 +156,5 @@ class RegistriesStatus(models.Model):
 
     date = models.DateField(null=True)
     note = models.CharField(max_length=500, null=True, blank=True)
-    case_type = models.ForeignKey('main.CaseType', CASCADE, related_name='reestr_status', null=True)
+    case_type = models.ForeignKey('main.CaseType', CASCADE,
+                                  related_name='reestr_status', null=True)
