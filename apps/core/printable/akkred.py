@@ -33,7 +33,9 @@ class AkkredPDF(object):
         created_date = data.date(data.now())
         self.data.update(
             title_organ=self.akkred.title_organ,
-            created_date=created_date
+            title_yurd_lisa=self.akkred.title_yurd_lisa,
+            address_organ=self.akkred.address_organ,
+            web_site=self.akkred.web_site
         )
 
     def generate(self):
