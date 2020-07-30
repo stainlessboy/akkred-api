@@ -35,7 +35,7 @@ class AkkredPDF(object):
             title_organ=self.akkred.title_organ,
             title_yurd_lisa=self.akkred.title_yurd_lisa,
             address_organ=self.akkred.address_organ,
-            web_site=self.akkred.web_site
+            address=self.akkred.address
         )
 
     def generate(self):

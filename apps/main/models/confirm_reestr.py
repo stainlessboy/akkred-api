@@ -48,7 +48,7 @@ class ConfirmReestr(BaseModel):
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
     phone = models.CharField(max_length=255, null=True)
     email = models.CharField(max_length=255, null=True)
-    web_site = models.CharField(max_length=255, null=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
     type_organ = models.ForeignKey('main.TypeOrgan', PROTECT,
                                    related_name='confirm_reestrs')
     title_organ = models.CharField(max_length=255)
