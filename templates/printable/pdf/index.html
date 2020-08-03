@@ -79,9 +79,15 @@
 
     }
 
-    .third {
-        text-align: center;
-        margin-bottom: 100px;
+
+    .qrSecond {
+        text-align: left;
+        margin-top: 150px;
+    }
+
+    .qrThird {
+        margin-top: 150px;
+
 
     }
 
@@ -121,8 +127,17 @@
         font-size: 12px;
     }
 
-    .endDiv{
-                font-size: 12px;
+    .endDiv {
+        font-size: 12px;
+
+
+    }
+
+
+    .qrDiv {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
 
 
     }
@@ -179,50 +194,68 @@
         </div>
 
 
+        <div class="firstMN">
+            <div class="firstN">Ilovoda keltirilgan maqullash sohasiga asosan
+                "Akkreditatsiya markaziya" DUK tomonidan
+            </div>
+
+            <div class="firstN"> O'z DSt 3410:2019 standarti talablariga
+                muvofiq baholanganligini va texnik jihatdan malakaliligi
+                maqullanganligini tasdiqlaydi
+            </div>
+        </div>
 
 
         <div class="firstMN">
-            <div class="firstN">Ilovoda keltirilgan akkreditatsiya sohasiga  asosan "Akkreditatsiya markaziya" DUK tomonidan
-            </div>
-
-            <div class="firstN"> O'z DSt 3410:2019 standarti talablariga muvofiq baholaganligi tasdiqlaydi
-            </div>
-        </div>
-
-
-         <div class="firstMN">
-            <div class="firstN">Maqullash sohasi ushbu maqullash tog'risida guvohnomaning
-                <br> ajralmas qismi hisoblanadi
+            <div class="firstN"><em>Maqullash sohasi ushbu maqullash tog'risida
+                guvohnomaning</em>
+                <br> <em>ajralmas qismi hisoblanadi</em>
             </div>
 
 
         </div>
 
 
+        {#        <div class="firstMN">#}
+        {#            <div class="firstN">Sinov laboratoriyasi ilovada keltirilgan#}
+        {#                maqullash sohasiga asosan <br>#}
+        {#                O'z DSt 3410:2019 standarti talablariga#}
+        {#                muvofiq#}
+        {#                baholaganligi <br>#}
+        {#                va texnik jihatdan maqullanganligi to'g'risida.#}
+        {#            </div>#}
+        {#            <div class="firstN"> </div>#}
+        {#        </div>#}
 
 
+        <div class="qrDiv">
 
 
-{#        <div class="firstMN">#}
-{#            <div class="firstN">Sinov laboratoriyasi ilovada keltirilgan#}
-{#                maqullash sohasiga asosan <br>#}
-{#                O'z DSt 3410:2019 standarti talablariga#}
-{#                muvofiq#}
-{#                baholaganligi <br>#}
-{#                va texnik jihatdan maqullanganligi to'g'risida.#}
-{#            </div>#}
-            {#            <div class="firstN"> </div>#}
-{#        </div>#}
+            <div>
+                <p>Reestrda ro'yxat raqami: {{ number }}</p>
+                <p>Reestrda ro'yxatga olingan sana: {{ accreditation_date }} yil</p>
+
+                <p>Qayta rasmiylashtirilgan sana : {{ reissue_date }} yil</p>
+                <p>Amal qilish muddati: {{ validity_date }} yil</p>
+            </div>
 
 
-        <div class="second">
-            <p>Reestrda ro'yxat raqami: ML.XXXХ</p>
-            <p>Reestrda ro'yxatga olingan sana: 24.05.2019 yil</p>
+            <div style="
+            margin-top:-20px;
+           ">
 
-            <p>Amal qilish muddati: 24.05.2019 yil</p>
+
+                <img style="width: 150px;
+            height: 150px;
+           "
+                     src="{% static "/pdf/assets/PNG/qr_code_PNG24.png" %}"
+                     alt="Image"/>
+
+
+            </div>
+
+
         </div>
-
-
 
 
         <div class="footer">
@@ -235,7 +268,6 @@
                     rasmiy veb-saytida (www.akkred.uz)
                     keltirilgan</em>
             </div>
-            {#            <h5>Date:{{ created_date }}</h5>#}
 
         </div>
     </div>

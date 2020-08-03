@@ -11,6 +11,17 @@ class Admin(admin.ModelAdmin):
     search_fields = ['title_organ']
     change_form_template = "entities/change_form.html"
 
+    fields = [
+        'title_organ',
+        'title_yurd_lisa',
+        'address_organ',
+        'address',
+        'number',
+        'accreditation_date',
+        'validity_date',
+        'reissue_date',
+    ]
+
     def response_change(self, request, obj):
         if "_make-unique" in request.POST:
             instance = obj

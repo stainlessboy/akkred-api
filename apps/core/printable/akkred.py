@@ -8,6 +8,7 @@ from django.template import loader
 from main.models import ConfirmReestr
 import datetime
 
+
 class AkkredPDF(object):
     is_choice = {
         True: 'ДА',
@@ -21,10 +22,10 @@ class AkkredPDF(object):
         self.data = dict()
         self.styles = self.get_stylesheets()
 
-
     def get_stylesheets(self):
         return [
             CSS(f'{settings.STATIC_ROOT}/pdf/assets/PNG/OZAS-1.png'),
+            CSS(f'{settings.STATIC_ROOT}/pdf/assets/PNG/qr_code_PNG24.png'),
 
         ]
 
@@ -35,7 +36,11 @@ class AkkredPDF(object):
             title_organ=self.akkred.title_organ,
             title_yurd_lisa=self.akkred.title_yurd_lisa,
             address_organ=self.akkred.address_organ,
-            address=self.akkred.address
+            address=self.akkred.address,
+            number=self.akkred.number,
+            accreditation_date=self.akkred.accreditation_date,
+            validity_date=self.akkred.validity_date,
+            reissue_date=self.akkred.reissue_date,
         )
 
     def generate(self):
