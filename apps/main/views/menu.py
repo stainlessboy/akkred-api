@@ -327,19 +327,39 @@ class LanguageViewSet(GenericViewSet):
                 title_en='Hujjatlar',
                 title_uz='Hujjatlar',
                 children=[
-                    dict(
-                        url='/documents?parents=1',
-                        title_ru='Документы Центра',
-                        title_en='Markaz hujjatlari',
-                        title_uz='Markaz hujjatlari',
-
-                    ),
+                    # dict(
+                    #     url='/documents?parents=1',
+                    #     title_ru='Документы Центра',
+                    #     title_en='Markaz hujjatlari',
+                    #     title_uz='Markaz hujjatlari',
+                    #
+                    # ),
                     dict(
                         url='/documents?parents=3',
                         title_ru='Нормативно-правовые акты',
                         title_en='Normativ-huquqiy hujjatlar',
                         title_uz='Normativ-huquqiy hujjatlar',
 
+                    ),
+                    dict(
+                        title_ru='Документы Центра',
+                        title_en='Markaz hujjatlari',
+                        title_uz='Markaz hujjatlari',
+                        children=[
+                            dict(
+                                url='/documents?parents=1',
+                                title_ru='Akkreditasiya hujjatlari',
+                                title_en='Akkreditasiya hujjatlari',
+                                title_uz='Akkreditasiya hujjatlari',
+                            ),
+                            dict(
+                                url='/documents?parents=7',
+                                title_ru='Ma`qullash hujjatlari',
+                                title_en='Ma`qullash hujjatlari',
+                                title_uz='Ma`qullash hujjatlari',
+                            )
+
+                        ]
                     ),
                     dict(
                         title_ru='Международные документы',
