@@ -348,13 +348,13 @@ class LanguageViewSet(GenericViewSet):
                         children=[
                             dict(
                                 url='/documents?parents=1',
-                                title_ru='Akkreditasiya hujjatlari',
+                                title_ru='Документы аккредитации',
                                 title_en='Akkreditasiya hujjatlari',
                                 title_uz='Akkreditasiya hujjatlari',
                             ),
                             dict(
                                 url='/documents?parents=7',
-                                title_ru='Ma`qullash hujjatlari',
+                                title_ru='Документы одобрение',
                                 title_en='Ma`qullash hujjatlari',
                                 title_uz='Ma`qullash hujjatlari',
                             )
