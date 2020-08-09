@@ -20,6 +20,17 @@ class Admin(admin.ModelAdmin):
         'accreditation_date',
         'validity_date',
         'reissue_date',
+        'inn',
+        'phone',
+        'email',
+        'web_site',
+        'full_name_supervisor_ao',
+        'is_fact_address',
+        'phone_ao',
+        'email_ao',
+        'status',
+        'status_date',
+        'accreditation_duration',
     ]
 
     def response_change(self, request, obj):

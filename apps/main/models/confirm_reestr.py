@@ -32,6 +32,20 @@ def upload_name(instance, filename):
 
 
 class ConfirmReestr(BaseModel):
+    ACTIVE = 'active'
+    INACTIVE = 'inactive'
+    PAUSED = 'paused'
+    EXTENDED = 'extended'
+    TEMPORARILY_RESUMED = 'temporarily_resumed'
+
+    STATUS_TYPES = (
+        (ACTIVE, 'Действующий'),
+        (INACTIVE, 'Прекращен'),
+        (PAUSED, 'Приостановлен'),
+        (EXTENDED, 'Продлен'),
+        (TEMPORARILY_RESUMED, 'Временно возобновлен'),
+    )
+
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
     title_organ = models.CharField(max_length=255)
 
@@ -53,6 +67,20 @@ class ConfirmReestr(BaseModel):
                                     verbose_name='Qayta rasmiylashtirilgan sana')
     file_oblast = models.FileField(upload_to=upload_name, null=True,
                                    blank=True)
+
+    # TODO
+    inn = models.CharField(max_length=455, null=True)
+    phone = models.CharField(max_length=255, null=True)
+    email = models.CharField(max_length=255, null=True)
+    web_site = models.CharField(max_length=255, null=True, blank=True)
+    full_name_supervisor_ao = models.CharField(max_length=255, null=True)
+    is_fact_address = models.BooleanField(default=False)
+    phone_ao = models.CharField(max_length=255, null=True, blank=True)
+    email_ao = models.CharField(max_length=255, null=True, blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_TYPES,
+                              default=INACTIVE)
+    status_date = models.DateField(null=True)
+    accreditation_duration = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.title_organ
