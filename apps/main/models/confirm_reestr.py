@@ -46,6 +46,14 @@ class ConfirmReestr(BaseModel):
         (TEMPORARILY_RESUMED, 'Временно возобновлен'),
     )
 
+    PUBLIC = 'public'
+    PRIVATE = 'private'
+
+    TYPE_OWNERSHIP = (
+        (PUBLIC, 'государственный'),
+        (PRIVATE, 'частный'),
+    )
+
     title_yurd_lisa = models.CharField(max_length=1000, null=True)
     title_organ = models.CharField(max_length=255)
 
@@ -65,8 +73,6 @@ class ConfirmReestr(BaseModel):
 
     reissue_date = models.DateField(null=True,
                                     verbose_name='Qayta rasmiylashtirilgan sana')
-    file_oblast = models.FileField(upload_to=upload_name, null=True,
-                                   blank=True)
 
     # TODO
     inn = models.CharField(max_length=455, null=True)
@@ -81,6 +87,23 @@ class ConfirmReestr(BaseModel):
                               default=INACTIVE)
     status_date = models.DateField(null=True)
     accreditation_duration = models.DateField(null=True, blank=True)
+
+    # TODO PUBLIC
+    type_organ = models.ForeignKey('main.TypeOrgan', PROTECT,null=True)
+    designation_of_the_fundamental_standard = models.CharField(max_length=455,
+                                                               null=True)
+    directions = models.ManyToManyField('main.Directions', blank=True)
+    text = models.TextField(null=True, blank=True)
+    oked = models.CharField(max_length=255, null=True, blank=True)
+    soogu = models.CharField(max_length=255, null=True, blank=True)
+
+    file_oblast = models.FileField(upload_to=upload_name, null=True,
+                                   blank=True)
+    region = models.ForeignKey('main.Region', PROTECT, null=True, blank=True)
+    type_ownership = models.CharField(max_length=45, choices=TYPE_OWNERSHIP,
+                                      null=True, blank=True)
+
+    is_public = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title_organ

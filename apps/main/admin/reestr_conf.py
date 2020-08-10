@@ -31,6 +31,15 @@ class Admin(admin.ModelAdmin):
         'status',
         'status_date',
         'accreditation_duration',
+        'type_organ',
+        'designation_of_the_fundamental_standard',
+        'directions',
+        'text',
+        'oked',
+        'soogu',
+        'region',
+        'type_ownership',
+        'is_public',
     ]
 
     def response_change(self, request, obj):
