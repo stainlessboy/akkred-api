@@ -32,15 +32,20 @@ class AkkredPDF(object):
     def merge_info(self):
         from datetime import datetime as data
         created_date = data.date(data.now())
+        accreditation_date = self.akkred.accreditation_date.strftime(
+            '%d-%m-%Y')
+        validity_date = self.akkred.validity_date.strftime('%d-%m-%Y')
+        reissue_date = self.akkred.reissue_date.strftime('%d-%m-%Y')
+
         self.data.update(
             title_organ=self.akkred.title_organ,
             title_yurd_lisa=self.akkred.title_yurd_lisa,
             address_organ=self.akkred.address_organ,
             address=self.akkred.address,
             number=self.akkred.number,
-            accreditation_date=self.akkred.accreditation_date,
-            validity_date=self.akkred.validity_date,
-            reissue_date=self.akkred.reissue_date,
+            accreditation_date=accreditation_date,
+            validity_date=validity_date,
+            reissue_date=reissue_date,
         )
 
     def generate(self):
