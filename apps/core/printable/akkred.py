@@ -33,9 +33,9 @@ class AkkredPDF(object):
         from datetime import datetime as data
         created_date = data.date(data.now())
         accreditation_date = self.akkred.accreditation_date.strftime(
-            '%d-%m-%Y')
-        validity_date = self.akkred.validity_date.strftime('%d-%m-%Y')
-        reissue_date = self.akkred.reissue_date.strftime('%d-%m-%Y')
+            '%d.%m.%Y')
+        validity_date = self.akkred.validity_date.strftime('%d.%m.%Y')
+        reissue_date = self.akkred.reissue_date.strftime('%d.%m.%Y')
 
         self.data.update(
             title_organ=self.akkred.title_organ,
@@ -46,7 +46,7 @@ class AkkredPDF(object):
             accreditation_date=accreditation_date,
             validity_date=validity_date,
             reissue_date=reissue_date,
-            qr_code='http://127.0.0.1:8000/media/{}'.format(
+            qr_code='http://akkred.uz:8081/media/{}'.format(
                 self.akkred.qr_code),
         )
 
