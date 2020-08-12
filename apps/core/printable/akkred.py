@@ -48,6 +48,8 @@ class AkkredPDF(object):
             reissue_date=reissue_date,
             qr_code='http://akkred.uz:8081/media/{}'.format(
                 self.akkred.qr_code),
+            # qr_code='http://127.0.0.1:8000/media/{}'.format(
+            #     self.akkred.qr_code),
         )
 
     def generate(self):

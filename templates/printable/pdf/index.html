@@ -145,8 +145,13 @@
         display: flex;
         justify-content: space-between;
         margin-top: 100px;
+        font-size: 13px;
 
 
+    }
+
+    .qrDivText {
+    margin-bottom: 5px;
     }
 
     .addrees {
@@ -234,22 +239,22 @@
 
 
             <div>
-                <p>Reestrda ro'yxat raqami: {{ number }}</p>
-                <p>Reestrda ro'yxatga olingan sana: {{ accreditation_date }}
-                    yil</p>
+                <div class="qrDivText">Reestrda ro'yxat raqami: {{ number }}</div>
+                <div class="qrDivText">Reestrda ro'yxatga olingan sana: {{ accreditation_date }}
+                    yil</div>
 
-                <p>Qayta rasmiylashtirilgan sana : {{ reissue_date }} yil</p>
-                <p>Amal qilish muddati: {{ validity_date }} yil</p>
+                <div class="qrDivText">Qayta rasmiylashtirilgan sana : {{ reissue_date }} yil</div>
+                <div class="qrDivText">Amal qilish muddati: {{ validity_date }} yil</div>
             </div>
 
 
             <div style="
-            {#margin-top: 20px;#}
+            margin-top: -20px;
            ">
 
 
-                <img style="width: 150px;
-            height: 150px;
+                <img style="width: 100px;
+            height: 100px;
            "
                         {#                     src="{% static "/pdf/assets/PNG/qr_code_PNG24.png" %}"#}
                      src="{{ qr_code }}"
