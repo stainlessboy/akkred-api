@@ -13,6 +13,7 @@ class Admin(admin.ModelAdmin):
     change_form_template = "entities/change_form.html"
 
     fields = [
+        'area',
         'title_organ',
         'title_yurd_lisa',
         'address_organ',

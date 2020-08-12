@@ -107,6 +107,7 @@ class ConfirmReestr(BaseModel):
                                 upload_to=upload_name)
     certificate = models.FileField(upload_to=upload_name, null=True,
                                    blank=True)
+    area = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.title_organ

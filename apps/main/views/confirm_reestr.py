@@ -10,9 +10,12 @@ from rest_framework import viewsets, permissions, status
 
 class ConfirmReestrViewSet(viewsets.ModelViewSet):
     model = ConfirmReestr
-    queryset = ConfirmReestr.objects.all()
+    queryset = ConfirmReestr.objects.filter(is_public=True).all()
     serializer_class = ConfirmReestrModelSerializer
     ordering_fields = ['id']
+
+    lookup_field = 'area'
+    ordering = ['-number']
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve', 'pdf']:
