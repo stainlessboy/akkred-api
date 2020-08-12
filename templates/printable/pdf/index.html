@@ -65,7 +65,7 @@
 
     .main {
         margin-top: 20px;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
         text-align: center;
         margin-right: -30px;
         margin-left: -30px;
@@ -124,14 +124,14 @@
         margin-left: 70px;
         margin-right: 70px;
         margin-top: 8px;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .addreesSize {
         margin-left: 70px;
         margin-right: 70px;
         margin-top: 8px;
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .endDiv {
@@ -151,7 +151,7 @@
     }
 
     .qrDivText {
-    margin-bottom: 5px;
+        margin-bottom: 5px;
     }
 
     .addrees {
@@ -172,15 +172,20 @@
         </div>
 
 
-        <div class="first">
-            <h1>
-                MA'QULLASH
-            </h1>
-        </div>
-        <div class="first">
-            <h1>
-                TO'G'RISIDA GUVOHNOMA
-            </h1>
+        <div style="
+            margin-bottom: 50px;
+           ">
+
+            <div class="first">
+                <h1>
+                    MA'QULLASH
+                </h1>
+            </div>
+            <div class="first">
+                <h1>
+                    TO'G'RISIDA GUVOHNOMA
+                </h1>
+            </div>
         </div>
 
 
@@ -212,15 +217,15 @@
         </div>
 
 
-
-
         <div class="firstMN">
-            <div class="firstN">ilovada keltirilgan maqullash sohasiga asosan
-                "Akkreditatsiya markazi" DUK tomonidan
+            <div class="firstN"><strong>ilovada keltirilgan maqullash sohasiga
+                asosan
+                "Akkreditatsiya markazi" DUK tomonidan</strong>
             </div>
 
-            <div class="firstN"> texnik jihatdan malakaliligi maqullanganligini
-                tasdiqlaydi
+            <div class="firstN"><strong> texnik jihatdan malakaliligi
+                maqullanganligini
+                tasdiqlaydi</strong>
             </div>
         </div>
 
@@ -239,12 +244,19 @@
 
 
             <div>
-                <div class="qrDivText">Reestrda ro'yxat raqami: {{ number }}</div>
-                <div class="qrDivText">Reestrda ro'yxatga olingan sana: {{ accreditation_date }}
-                    yil</div>
+                <div class="qrDivText">Reestrda ro'yxat
+                    raqami: {{ number }}</div>
+                <div class="qrDivText">Reestrda ro'yxatga olingan
+                    sana: {{ accreditation_date }}
+                    yil
+                </div>
 
-                <div class="qrDivText">Qayta rasmiylashtirilgan sana : {{ reissue_date }} yil</div>
-                <div class="qrDivText">Amal qilish muddati: {{ validity_date }} yil</div>
+                <div class="qrDivText">Qayta rasmiylashtirilgan sana
+                    : {{ reissue_date }} yil
+                </div>
+                <div class="qrDivText">Amal qilish muddati: {{ validity_date }}
+                    yil
+                </div>
             </div>
 
 
