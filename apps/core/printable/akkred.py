@@ -46,6 +46,8 @@ class AkkredPDF(object):
             accreditation_date=accreditation_date,
             validity_date=validity_date,
             reissue_date=reissue_date,
+            qr_code='http://127.0.0.1:8000/media/{}'.format(
+                self.akkred.qr_code),
         )
 
     def generate(self):

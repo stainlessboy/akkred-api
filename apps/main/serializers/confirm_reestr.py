@@ -14,4 +14,5 @@ class ConfirmReestrModelSerializer(serializers.ModelSerializer):
                    'soogu',
                    'type_ownership',
                    'title_yurd_lisa',
+                   'qr_code',
                    ]

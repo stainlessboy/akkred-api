@@ -23,8 +23,7 @@
     #background {
         width: 22cm;
         height: 30cm;
-        {#background: #d1f7eb;#}
-        background: #FFF;
+    {#background: #d1f7eb;#} background: #FFF;
         position: absolute;
         margin: 0 -3cm;
         top: 0;
@@ -128,6 +127,13 @@
         font-size: 12px;
     }
 
+    .addreesSize {
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
     .endDiv {
         font-size: 12px;
 
@@ -143,22 +149,27 @@
 
     }
 
+    .addrees {
+        margin-top: -15px;
+    }
+
 </style>
 <body>
 <div id="background">
     <div class="wrapper">
         <div class="main">
             <h1>
-{#                "Akkreditasiya markazi" Davlat unitar korxonasi#}
                 "Akkreditasiya markazi" DUK
             </h1>
-            <div>Toshkent shahri Mustaqillik shox ko'chasi 105</div>
+            <div class="addrees">Toshkent shahri Mustaqillik shox ko'chasi
+                105
+            </div>
         </div>
 
 
         <div class="first">
             <h1>
-                MAQULLASH
+                MA'QULLASH
             </h1>
         </div>
         <div class="first">
@@ -179,7 +190,7 @@
         </div>
 
         <div class="first">
-            <h3>mas'ulat cheklangan jamiyatning </h3>
+            <h4>mas'ulat cheklangan jamiyatning </h4>
         </div>
 
         <div class="title">
@@ -187,7 +198,7 @@
         </div>
 
 
-        <div class="firstMN">
+        <div class="addreesSize">
             <div class="firstN">(Yuridik manzil: {{ address_organ }}
             </div>
 
@@ -196,30 +207,18 @@
         </div>
 
 
-{#        <div class="firstMN">#}
-{#            <div class="firstN">Ilovoda keltirilgan maqullash sohasiga asosan#}
-{#                "Akkreditatsiya markaziya" DUK tomonidan#}
-{#            </div>#}
-{##}
-{#            <div class="firstN"> O'z DSt 3410:2019 standarti talablariga#}
-{#                muvofiq baholanganligini va texnik jihatdan malakaliligi#}
-{#                maqullanganligini tasdiqlaydi#}
-{#            </div>#}
-{#        </div>#}
-
-
 
 
         <div class="firstMN">
             <div class="firstN">ilovada keltirilgan maqullash sohasiga asosan
+                <br>
                 "Akkreditatsiya markazi" DUK tomonidan
             </div>
 
-            <div class="firstN"> texnik jihatdan malakaliligi maqullanganligini tasdiqlaydi
+            <div class="firstN"> texnik jihatdan malakaliligi maqullanganligini
+                tasdiqlaydi
             </div>
         </div>
-
-
 
 
         <div class="firstMN">
@@ -232,15 +231,13 @@
         </div>
 
 
-
-
-
         <div class="qrDiv">
 
 
             <div>
                 <p>Reestrda ro'yxat raqami: {{ number }}</p>
-                <p>Reestrda ro'yxatga olingan sana: {{ accreditation_date }} yil</p>
+                <p>Reestrda ro'yxatga olingan sana: {{ accreditation_date }}
+                    yil</p>
 
                 <p>Qayta rasmiylashtirilgan sana : {{ reissue_date }} yil</p>
                 <p>Amal qilish muddati: {{ validity_date }} yil</p>
@@ -248,14 +245,15 @@
 
 
             <div style="
-            margin-top:-20px;
+            {#margin-top: 20px;#}
            ">
 
 
                 <img style="width: 150px;
             height: 150px;
            "
-                     src="{% static "/pdf/assets/PNG/qr_code_PNG24.png" %}"
+                        {#                     src="{% static "/pdf/assets/PNG/qr_code_PNG24.png" %}"#}
+                     src="{{ qr_code }}"
                      alt="Image"/>
 
 

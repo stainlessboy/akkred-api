@@ -9,6 +9,7 @@ from main.models import ConfirmReestr
 class Admin(admin.ModelAdmin):
     list_display = ['title_organ']
     search_fields = ['title_organ']
+    filter_horizontal = ('directions',)
     change_form_template = "entities/change_form.html"
 
     fields = [
@@ -31,7 +32,6 @@ class Admin(admin.ModelAdmin):
         'status',
         'status_date',
         'accreditation_duration',
-        'type_organ',
         'designation_of_the_fundamental_standard',
         'directions',
         'text',
@@ -40,6 +40,9 @@ class Admin(admin.ModelAdmin):
         'region',
         'type_ownership',
         'is_public',
+        'file_oblast',
+        'certificate',
+        'qr_code',
     ]
 
     def response_change(self, request, obj):
