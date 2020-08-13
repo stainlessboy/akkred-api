@@ -354,7 +354,7 @@ class LanguageViewSet(GenericViewSet):
                             ),
                             dict(
                                 url='/documents?parents=7',
-                                title_ru='Документы одобрение',
+                                title_ru='Документы одобрения',
                                 title_en='Ma`qullash hujjatlari',
                                 title_uz='Ma`qullash hujjatlari',
                             )
@@ -455,6 +455,12 @@ class LanguageViewSet(GenericViewSet):
                         title_ru='Государственный реестр аккредитованных ООС и МС',
                         title_en='Akkreditatsiya qilingan MBO va MX davlat reestri',
                         title_uz='Akkreditatsiya qilingan MBO va MX davlat reestri',
+                    ),
+                    dict(
+                        url='/reestr-confirm',
+                        title_ru='Реестр одобренных лабораторий',
+                        title_en='Реестр одобренных лабораторий',
+                        title_uz='Реестр одобренных лабораторий',
                     ),
                     dict(
                         url='/news',
