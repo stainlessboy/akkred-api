@@ -54,8 +54,13 @@ class ConfirmReestr(BaseModel):
         (PRIVATE, 'частный'),
     )
 
-    title_yurd_lisa = models.CharField(max_length=1000, null=True)
-    title_organ = models.CharField(max_length=255)
+    title_yurd_lisa = models.CharField(max_length=1000, null=True,
+                                       verbose_name='sinov laboratoriyasi nomi')
+    title_organ = models.CharField(max_length=255,
+                                   verbose_name='Yuridik shaxs nomi')
+    title_organ_type = models.CharField(max_length=255,
+                                        verbose_name='Yuridik shaxs mulkchilik shakli',
+                                        null=True)
 
     address = models.CharField(max_length=255, null=True,
                                verbose_name='Joylashgan manzil')
@@ -86,7 +91,6 @@ class ConfirmReestr(BaseModel):
     status = models.CharField(max_length=20, choices=STATUS_TYPES,
                               default=INACTIVE)
     status_date = models.DateField(null=True)
-    accreditation_duration = models.DateField(null=True, blank=True)
 
     # TODO PUBLIC
     designation_of_the_fundamental_standard = models.CharField(max_length=455,

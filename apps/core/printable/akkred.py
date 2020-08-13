@@ -40,6 +40,7 @@ class AkkredPDF(object):
         self.data.update(
             title_organ=self.akkred.title_organ,
             title_yurd_lisa=self.akkred.title_yurd_lisa,
+            title_organ_type=self.akkred.title_organ_type,
             address_organ=self.akkred.address_organ,
             address=self.akkred.address,
             number=self.akkred.number,
