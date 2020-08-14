@@ -14,7 +14,7 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
     serializer_class = ConfirmReestrModelSerializer
     ordering_fields = ['id']
 
-    lookup_field = 'area'
+    # lookup_field = 'area'
     ordering = ['-number']
 
     def get_permissions(self):
