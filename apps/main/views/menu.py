@@ -354,8 +354,8 @@ class LanguageViewSet(GenericViewSet):
                             ),
                             dict(
                                 url='/documents?parents=7',
-                                title_ru='Документы одобрения',
-                                title_en='Ma`qullash hujjatlari',
+                                # title_ru='Документы одобрения',
+                                # title_en='Ma`qullash hujjatlari',
                                 title_uz='Ma`qullash hujjatlari',
                             )
 
