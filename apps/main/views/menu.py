@@ -467,7 +467,7 @@ class LanguageViewSet(GenericViewSet):
                         url='/reestr-confirm',
                         # title_ru='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                         # title_en='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
-                        title_uz='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
+                        title_uz=' Ma’qullangan laboratoriyalar reestri',
                     ),
 
                 ]
