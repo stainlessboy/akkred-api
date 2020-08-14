@@ -456,18 +456,19 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Akkreditatsiya qilingan MBO va MX davlat reestri',
                         title_uz='Akkreditatsiya qilingan MBO va MX davlat reestri',
                     ),
+
+                    dict(
+                        url='/news',
+                        title_ru='Все новости',
+                        title_en='Barcha yangiliklar',
+                        title_uz='Barcha yangiliklar',
+                    ),
                     dict(
                         url='/reestr-confirm',
                         # title_ru='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                         # title_en='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                         title_uz='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                     ),
-                    dict(
-                        url='/news',
-                        title_ru='Все новости',
-                        title_en='Barcha yangiliklar',
-                        title_uz='Barcha yangiliklar',
-                    )
 
                 ]
 
