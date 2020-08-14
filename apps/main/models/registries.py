@@ -60,7 +60,7 @@ class Registries(models.Model):
         (COMPETENCE_INDEPENDENCE, 'Технич. компетентность и независимость'),
     )
 
-    itt_cd = models.CharField(max_length=255, null=True, blank=True,
+    itt_cd = models.CharField(max_length=500, null=True, blank=True,
                               unique=True)
     number = models.CharField(max_length=255, null=True)
     inn = models.CharField(max_length=455, null=True)

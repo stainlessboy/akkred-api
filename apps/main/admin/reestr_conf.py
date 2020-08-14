@@ -3,6 +3,8 @@ from django.contrib import admin
 from core.printable.akkred import AkkredPDF
 from core.rest_framework.printable_responses import pdf_response
 from main.models import ConfirmReestr
+from django.forms import TextInput, Textarea
+from django.db import models
 
 
 @admin.register(ConfirmReestr)
@@ -45,6 +47,10 @@ class Admin(admin.ModelAdmin):
         'certificate',
         'qr_code',
     ]
+
+    formfield_overrides = {
+        models.CharField: {'widget': Textarea(attrs={'rows': 4, 'cols': 40})},
+    }
 
     def response_change(self, request, obj):
         if "_make-unique" in request.POST:
