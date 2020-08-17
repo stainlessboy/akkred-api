@@ -1,5 +1,6 @@
 from rest_framework.decorators import action
 
+from main.filters.reestr_confirm import ConfirmReestrFilterSet
 from main.models.confirm_reestr import ConfirmReestr
 from main.serializers.confirm_reestr import ConfirmReestrModelSerializer
 from core.printable.akkred import AkkredPDF
@@ -14,7 +15,13 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
     serializer_class = ConfirmReestrModelSerializer
     ordering_fields = ['id']
 
-    # lookup_field = 'area'
+    search_fields = ['number', 'inn',
+                     'phone', 'email',
+                     'title_organ', 'code',
+                     'text', ]
+
+    lookup_field = 'area'
+    filter_class = ConfirmReestrFilterSet
     ordering = ['-number']
 
     def get_permissions(self):
@@ -23,10 +30,10 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
         return super(ConfirmReestrViewSet, self).get_permissions()
 
     @action(['GET'], detail=True)
-    def pdf(self, request, pk):
+    def pdf(self, request, area):
         queryset = self.get_queryset()
         try:
-            instance = queryset.get(pk=pk)
+            instance = queryset.get(area=area)
             pdf_file = AkkredPDF(instance, request)
             pdf_file.generate()
             return pdf_response(pdf_file.get_output(), f' Akkred.pdf')
