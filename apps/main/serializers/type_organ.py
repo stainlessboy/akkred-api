@@ -23,5 +23,6 @@ class TypeOrganModelSerializer(serializers.ModelSerializer):
 
     def get_count(self, obj):
         count = obj.registry.filter(
-            status__in=[Registries.ACTIVE, Registries.EXTENDED]).count()
+            status__in=[Registries.ACTIVE, Registries.EXTENDED],
+            is_public=True).count()
         return count
