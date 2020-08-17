@@ -17,9 +17,11 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
     serializer_class = ConfirmReestrModelSerializer
     ordering_fields = ['id']
 
-    search_fields = ['number', 'inn',
-                     'phone', 'email',
-                     'title_organ', 'code',
+    search_fields = ['number',
+                     'inn',
+                     'phone',
+                     'email',
+                     'title_organ',
                      'text', ]
 
     lookup_field = 'area'
