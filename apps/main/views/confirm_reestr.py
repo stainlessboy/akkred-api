@@ -22,7 +22,7 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
                      'title_organ', 'code',
                      'text', ]
 
-    # lookup_field = 'area'
+    lookup_field = 'area'
     filter_class = ConfirmReestrFilterSet
     ordering = ['-number']
 
