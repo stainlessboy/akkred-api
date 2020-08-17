@@ -8,6 +8,8 @@ from core.rest_framework.printable_responses import pdf_response
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions, status
 
+from main.serializers.registries import RegistriesConfirmSearchSerializer
+
 
 class ConfirmReestrViewSet(viewsets.ModelViewSet):
     model = ConfirmReestr
@@ -28,6 +30,15 @@ class ConfirmReestrViewSet(viewsets.ModelViewSet):
         if self.action in ['list', 'retrieve', 'pdf']:
             return [permissions.AllowAny()]
         return super(ConfirmReestrViewSet, self).get_permissions()
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        search_serializer = RegistriesConfirmSearchSerializer(
+            data=self.request.GET)
+        search_serializer.is_valid(raise_exception=True)
+        if search_serializer.validated_data:
+            qs = qs.filter(**search_serializer.validated_data)
+        return qs
 
     @action(['GET'], detail=True)
     def pdf(self, request, area):

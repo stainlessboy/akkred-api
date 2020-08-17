@@ -72,6 +72,12 @@ class RegistriesSearchSerializer(serializers.Serializer):
                                          required=False)
 
 
+class RegistriesConfirmSearchSerializer(serializers.Serializer):
+    search_number = serializers.CharField(source='number__icontains',
+                                          required=False)
+    search_inn = serializers.CharField(source='inn__icontains', required=False)
+
+
 class RegistriesStatusSearchSerializer(serializers.Serializer):
     search_number = serializers.CharField(source='reestr__number__icontains',
                                           required=False)
