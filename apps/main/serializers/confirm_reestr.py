@@ -18,10 +18,10 @@ class ConfirmReestrModelSerializer(serializers.ModelSerializer):
                    ]
 
     def to_representation(self, instance):
-        self.fields['reissue_date'] = serializers.DateTimeField(
+        self.fields['reissue_date'] = serializers.DateField(
             format="%d.%m.%Y")
-        self.fields['accreditation_date'] = serializers.DateTimeField(
+        self.fields['accreditation_date'] = serializers.DateField(
             format="%d.%m.%Y")
-        self.fields['validity_date'] = serializers.DateTimeField(
+        self.fields['validity_date'] = serializers.DateField(
             format="%d.%m.%Y")
         return super().to_representation(instance)
