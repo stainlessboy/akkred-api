@@ -56,6 +56,10 @@ class ConfirmReestr(BaseModel):
 
     title_yurd_lisa = models.CharField(max_length=1000, null=True,
                                        verbose_name='sinov laboratoriyasi nomi')
+    title_organ_short = models.CharField(max_length=255,
+                                         verbose_name='Sokrashenniy title yur lisa',
+                                         null=True)
+
     title_organ = models.CharField(max_length=255,
                                    verbose_name='Yuridik shaxs nomi')
     title_organ_type = models.CharField(max_length=255,
