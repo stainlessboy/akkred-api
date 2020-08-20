@@ -231,7 +231,8 @@
 
 
         <div class="firstMN">
-            <div class="firstN"><em>Ma'qullash sohasi ushbu ma'qullash tog'risida
+            <div class="firstN"><em>Ma'qullash sohasi ushbu ma'qullash
+                tog'risida
                 guvohnomaning</em>
                 <br> <em>ajralmas qismi hisoblanadi</em>
             </div>
@@ -250,9 +251,14 @@
                     sana: {{ accreditation_date }}
                     yil
                 </div>
+                {% if is_reissue_date %}
+                    <div class="qrDivText">Qayta rasmiylashtirilgan
+                        sana: {{ reissue_date }} yil
+                    </div>
 
-                <div class="qrDivText">Qayta rasmiylashtirilgan sana: {{ reissue_date }} yil
-                </div>
+                {% endif %}
+                {#                <div class="qrDivText">Qayta rasmiylashtirilgan sana: {{ reissue_date }} yil#}
+                {#                </div>#}
                 <div class="qrDivText">Amal qilish muddati: {{ validity_date }}
                     yil
                 </div>

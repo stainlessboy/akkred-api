@@ -38,6 +38,7 @@ class Admin(admin.ModelAdmin):
         'accreditation_date',
         'validity_date',
         'reissue_date',
+        'is_reissue_date',
         'designation_of_the_fundamental_standard',
         'directions',
         'text',

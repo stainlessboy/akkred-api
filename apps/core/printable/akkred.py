@@ -41,6 +41,7 @@ class AkkredPDF(object):
             title_organ=self.akkred.title_organ,
             title_yurd_lisa=self.akkred.title_yurd_lisa,
             title_organ_type=self.akkred.title_organ_type,
+            is_reissue_date=self.akkred.is_reissue_date,
             address_organ=self.akkred.address_organ,
             address=self.akkred.address,
             number=self.akkred.number,

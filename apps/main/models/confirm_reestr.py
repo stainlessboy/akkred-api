@@ -83,6 +83,8 @@ class ConfirmReestr(BaseModel):
     reissue_date = models.DateField(null=True,
                                     verbose_name='Qayta rasmiylashtirilgan sana')
 
+    is_reissue_date = models.BooleanField(default=True)
+
     # TODO
     inn = models.CharField(max_length=455, null=True)
     phone = models.CharField(max_length=255, null=True)
