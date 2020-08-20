@@ -24,4 +24,6 @@ class ConfirmReestrModelSerializer(serializers.ModelSerializer):
             format="%d.%m.%Y")
         self.fields['validity_date'] = serializers.DateField(
             format="%d.%m.%Y")
+        self.fields['status_date'] = serializers.DateField(
+            format="%d.%m.%Y")
         return super().to_representation(instance)
