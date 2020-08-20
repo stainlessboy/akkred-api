@@ -1,5 +1,5 @@
 from core.django.model import BaseModel
-from django.db.models import PROTECT
+from django.db.models import PROTECT, CASCADE
 import datetime
 import uuid
 
@@ -125,3 +125,29 @@ class ConfirmReestr(BaseModel):
     class Meta:
         verbose_name = 'Реестр одобренных лабораторий'
         verbose_name_plural = 'Реестр одобренных лабораторий'
+
+
+class ConfirmReestrStatus(models.Model):
+    reestr_confirm = models.ForeignKey('main.ConfirmReestr', CASCADE)
+    ACTIVE = 'active'
+    INACTIVE = 'inactive'
+    PAUSED = 'paused'
+    DONE = 'done'
+    RENEWED = 'renewed'
+    EXTENDED = 'extended'
+    OA_REDUCTION = 'OA_REDUCTION'
+    STATUS_TYPES = (
+        (ACTIVE, 'Возобновлено'),
+        (INACTIVE, 'Прекращено'),
+        (PAUSED, 'Приостановлено'),
+        (DONE, 'Подтверждено'),
+        (EXTENDED, 'Продлен'),
+        (RENEWED, 'Переоформлено'),
+        (OA_REDUCTION, 'Сокращение ОА'),
+    )
+    status = models.CharField(max_length=20, choices=STATUS_TYPES,
+                              default=INACTIVE)
+
+    date = models.DateField(null=True)
+    note = models.CharField(max_length=500, null=True, blank=True)
+    case_type = models.ForeignKey('main.CaseType', CASCADE, null=True)

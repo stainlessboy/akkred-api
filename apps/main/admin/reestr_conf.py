@@ -2,16 +2,27 @@ from django.contrib import admin
 
 from core.printable.akkred import AkkredPDF
 from core.rest_framework.printable_responses import pdf_response
-from main.models import ConfirmReestr
+from main.models import ConfirmReestr, ConfirmReestrStatus
 from django.forms import TextInput, Textarea
 from django.db import models
+
+
+class RegistriesStatusInline(admin.TabularInline):
+    model = ConfirmReestrStatus
+    fields = ['date',
+              'status',
+              'case_type',
+              'note']
 
 
 @admin.register(ConfirmReestr)
 class Admin(admin.ModelAdmin):
     list_display = ['title_organ']
-    search_fields = ['title_organ']
     filter_horizontal = ('directions',)
+    search_fields = ['number', 'title_organ', 'inn', 'id', 'code']
+    list_filter = ['region', 'status', 'is_fact_address',
+                   'is_public']
+    inlines = [RegistriesStatusInline]
     change_form_template = "entities/change_form.html"
 
     fields = [
