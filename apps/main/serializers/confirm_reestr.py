@@ -13,7 +13,6 @@ class ConfirmReestrModelSerializer(serializers.ModelSerializer):
                    'oked',
                    'soogu',
                    'type_ownership',
-                   'title_yurd_lisa',
                    'qr_code',
                    ]
 
