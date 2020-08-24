@@ -17,3 +17,4 @@ from main.models.sliders import Slider
 from main.models.employees import Employee
 from main.models.directions import Directions
 from main.models.code import Code, CodeType
+from main.models.authorized_reestr import AuthorizedReestr

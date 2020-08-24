@@ -17,6 +17,7 @@ import main.admin.slider
 import main.admin.doc_parents
 import main.admin.doc_type
 import main.admin.directions
+import main.admin.authorized_reestr
 
 from main.models.region import Region
 from main.models.employees import Employee
