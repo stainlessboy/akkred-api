@@ -469,6 +469,13 @@ class LanguageViewSet(GenericViewSet):
                         # title_en='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                         title_uz=' Ma’qullangan laboratoriyalar reestri',
                     ),
+                    dict(
+                        title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
+                        url=str(
+                            'http://akkred.uz:8081/media/file/pdf/2020-08/ad181d28-1c42-4c43-8deb-de1a5454091e.pdf'),
+                        external=True,
+
+                    )
 
                 ]
 
