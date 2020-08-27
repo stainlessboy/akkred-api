@@ -465,9 +465,11 @@ class LanguageViewSet(GenericViewSet):
                     ),
                     dict(
                         url='/reestr-confirm',
-                        # title_ru='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
-                        # title_en='Texnik jihatdan malakaliligi maʼqullangan sinov laboratoriyalarining reestri',
                         title_uz=' Ma’qullangan laboratoriyalar reestri',
+                    ),
+                    dict(
+                        url='/reestr-auth',
+                        title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
                     ),
                     dict(
                         title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
