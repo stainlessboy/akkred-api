@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
+from main.views.authorized_reestr import AuthorizedReestrViewSet
 from main.views.calculcation import Calculation
 from main.views.confirm_reestr import ConfirmReestrViewSet
 from main.views.doc_parents import DocParentViewSet, DocTypeViewSet, \
@@ -38,6 +39,7 @@ router.register('registries', RegistriesViewSet, 'registries')
 router.register('reestr-info', ReestrInfoUserViewSet, 'reestr-info')
 router.register('sat-quest', SatisfactionQuestionnaireViewSet, 'sat-quest')
 router.register('reestr-conf', ConfirmReestrViewSet, 'reestr-conf')
+router.register('reestr-auth', AuthorizedReestrViewSet, 'reestr-auth')
 router.register('calculation', Calculation, 'calculation')
 router.register('inspection-category', ICCategoryViewSet,
                 'inspection-category')
