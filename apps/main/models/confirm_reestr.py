@@ -120,7 +120,7 @@ class ConfirmReestr(BaseModel):
     area = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
-        return self.title_organ
+        return self.number
 
     class Meta:
         verbose_name = 'Реестр одобренных лабораторий'

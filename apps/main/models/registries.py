@@ -113,7 +113,7 @@ class Registries(models.Model):
     is_public = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.title_organ
+        return self.number
 
     class Meta:
         ordering = ['-id']
