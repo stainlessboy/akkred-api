@@ -123,6 +123,7 @@ class ConfirmReestr(BaseModel):
         return self.number
 
     class Meta:
+        ordering = ['number']
         verbose_name = 'Реестр одобренных лабораторий'
         verbose_name_plural = 'Реестр одобренных лабораторий'
 
