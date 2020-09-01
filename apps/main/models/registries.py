@@ -116,7 +116,7 @@ class Registries(models.Model):
         return self.number
 
     class Meta:
-        ordering = ['-id']
+        ordering = ['-number']
         verbose_name = 'Государственный реестр аккредитованных ООС и МС'
         verbose_name_plural = 'Государственный реестр аккредитованных ООС и МС'
 
