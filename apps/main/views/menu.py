@@ -253,6 +253,12 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Korrupsiyaga qarshi kurashish',
                         title_uz='Korrupsiyaga qarshi kurashish',
                     ),
+                    dict(
+                        url='/static/youth',
+                        title_ru='Противодействие коррупции',
+                        title_en='Молодежная политика',
+                        title_uz='Yoshlar siyosati',
+                    ),
                     # dict(
                     #     url='',
                     #     title_ru='',
