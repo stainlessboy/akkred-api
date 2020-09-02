@@ -11,7 +11,13 @@ class AuthorizedReestrViewSet(viewsets.ModelViewSet):
     ordering_fields = ['id']
 
     search_fields = ['title_organ',
-                     'inn']
+                     'ministry_office',
+                     'name_of_the_conformity_assessment_body',
+                     'field_of_activity',
+                     'the_type_document_issued',
+                     'authorized_document',
+                     'mandatory_document',
+                     ]
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
