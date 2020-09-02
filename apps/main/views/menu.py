@@ -255,8 +255,7 @@ class LanguageViewSet(GenericViewSet):
                     ),
                     dict(
                         url='/static/youth',
-                        title_ru='Противодействие коррупции',
-                        title_en='Молодежная политика',
+                        title_ru='Молодежная политика',
                         title_uz='Yoshlar siyosati',
                     ),
                     # dict(
@@ -592,9 +591,9 @@ class LanguageViewSet(GenericViewSet):
                     ),
                     dict(
                         url='/calculate',
-                        title_ru='Расчет стоимости работ по аккредитации',
-                        title_en='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
-                        title_uz='Akkreditatsiya boʻyicha ishlar narhini hisoblash',
+                        title_ru='Расчет стоимости работ',
+                        title_en='Ishlar narhini hisoblash',
+                        title_uz='Ishlar narhini hisoblash',
                     ),
 
                 ]
