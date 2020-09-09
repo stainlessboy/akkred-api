@@ -229,14 +229,14 @@ class LanguageViewSet(GenericViewSet):
                             dict(
                                 url='/static/techMain',
                                 title_ru='О технических комитетах',
-                                title_en='О технических комитетах',
-                                title_uz='О технических комитетах',
+                                title_en='Tehnik qo`mitalar',
+                                title_uz='Tehnik qo`mitalar',
 
                             ),
                             dict(
                                 url='/static/tech5',
                                 title_ru='Технический комитет «Метрология»',
-                                title_en='Технический комитет «Метрология»',
+                                title_en='"Metrologiya" texnik qo`mitasi',
                                 title_uz='Технический комитет «Метрология»',
                             ),
                             dict(
