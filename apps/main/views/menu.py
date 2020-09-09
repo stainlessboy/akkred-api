@@ -25,7 +25,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_metro_one.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     # url=form.file,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
@@ -40,8 +40,7 @@ class LanguageViewSet(GenericViewSet):
             for form in metro_two:
                 form_list_metro_two.append(dict(
                     title_ru=form.title,
-                    title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     # url=form.file,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
@@ -57,7 +56,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_metro_three.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -71,7 +70,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_metro_four.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -87,7 +86,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_organ_product.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -102,7 +101,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_organ_system_manage.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -117,7 +116,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_personal.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -132,7 +131,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_laboratories.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -147,7 +146,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_inspection.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -162,7 +161,7 @@ class LanguageViewSet(GenericViewSet):
                 form_list_provid_program.append(dict(
                     title_ru=form.title,
                     title_en=form.title,
-                    title_uz=form.title,
+                    title_uz=form.title_uz,
                     url=str('http://akkred.uz:8081/media/' + str(form.file)),
                     external=True,
 
@@ -515,25 +514,24 @@ class LanguageViewSet(GenericViewSet):
                 children=[
                     dict(
                         title_ru='Для органов по сертификации',
-                        title_en='Для органов по сертификации',
-                        title_uz='Для органов по сертификации',
+                        title_uz='Sertifikatlashtirish organlari uchun',
                         children=[
                             dict(
                                 title_ru=' Органы по сертификации продукции',
                                 title_en=' Органы по сертификации продукции',
-                                title_uz=' Органы по сертификации продукции',
+                                title_uz='Mahsulotlarni sertifikatlashtirish organlari',
                                 children=form_list_organ_product
                             ),
                             dict(
                                 title_ru='Органы по сертификации систем менеджмента',
                                 title_en='Органы по сертификации систем менеджмента',
-                                title_uz='Органы по сертификации систем менеджмента',
+                                title_uz='Menejment tizimlarini sertifikatlashtirish organlari',
                                 children=form_list_organ_system_manage
                             ),
                             dict(
                                 title_ru='Органы по сертификации персонала',
                                 title_en='Органы по сертификации персонала',
-                                title_uz='Органы по сертификации персонала',
+                                title_uz='Hodimlarni sertifikatlashtirish organlari',
                                 children=form_list_personal
                             ),
 
@@ -543,48 +541,48 @@ class LanguageViewSet(GenericViewSet):
                     dict(
                         title_ru='Для провайдеров программ проверки квалификации',
                         title_en='Для провайдеров программ проверки квалификации',
-                        title_uz='Для провайдеров программ проверки квалификации',
+                        title_uz='Malakani tekshiruvchi provayderlar uchun',
                         children=form_list_provid_program
                     ),
                     dict(
                         title_ru='Для лабораторий',
                         title_en='Для лабораторий',
-                        title_uz='Для лабораторий',
+                        title_uz='Sinov laboratoriyalari uchun',
                         children=form_list_laboratories
                     ),
                     dict(
                         title_ru='Для инспекционных органов',
                         title_en='Для инспекционных органов',
-                        title_uz='Для инспекционных органов',
+                        title_uz='Inspeksiya organlari uchun',
                         children=form_list_inspection
                     ),
                     dict(
                         title_ru='Метрологические службы',
                         title_en='Метрологические службы',
-                        title_uz='Метрологические службы',
+                        title_uz='Metrologiya hizmatlariuchun',
                         children=[
                             dict(
                                 title_ru=' Метрологические службы/лаборатории, проводящие калибровку средств измерений',
                                 title_en=' Метрологические службы/лаборатории, проводящие калибровку средств измерений',
-                                title_uz=' Метрологические службы/лаборатории, проводящие калибровку средств измерений',
+                                title_uz='Kalibrlash laboratoriyalari/metrologik xizmatlari',
                                 children=form_list_metro_one
                             ),
                             dict(
                                 title_ru='Метрологические службы/лаборатории, проводящие поверку средств измерений',
                                 title_en='Метрологические службы/лаборатории, проводящие поверку средств измерений',
-                                title_uz='Метрологические службы/лаборатории, проводящие поверку средств измерений',
+                                title_uz='Oʻlchash vositalarni qiyoslash metrologiya xizmati/laboratoriyasi',
                                 children=form_list_metro_two
                             ),
                             dict(
                                 title_ru='Метрологические службы/лаборатории, проводящие аттестацию МВИ',
                                 title_en='Метрологические службы/лаборатории, проводящие аттестацию МВИ',
-                                title_uz='Метрологические службы/лаборатории, проводящие аттестацию МВИ',
+                                title_uz='O‘lchashlarni bajarish uslubiyatlarni attestatsiya qilish metrologiya xizmati/laboratoriyasi',
                                 children=form_list_metro_three
                             ),
                             dict(
                                 title_ru='Метрологические службы/лаборатории, проводящие аттестацию СО',
                                 title_en='Метрологические службы/лаборатории, проводящие аттестацию СО',
-                                title_uz='Метрологические службы/лаборатории, проводящие аттестацию СО',
+                                title_uz='Standart namunalarni attestatsiya qilish metrologiya xizmati/laboratoriyasi',
                                 children=form_list_metro_four
                             ),
                         ]
