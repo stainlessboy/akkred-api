@@ -34,3 +34,9 @@ class Admin(admin.ModelAdmin):
         'status',
         'file',
     ]
+
+
+@admin.register(DocumentForm)
+class Admin(admin.ModelAdmin):
+    list_display = ['title_uz', 'title_ru']
+    search_fields = ['title_en', 'title_ru', 'title_uz']
