@@ -81,7 +81,8 @@ class ConfirmReestr(BaseModel):
                                      verbose_name='Amal qilish muddati')
 
     reissue_date = models.DateField(null=True,
-                                    verbose_name='Qayta rasmiylashtirilgan sana')
+                                    verbose_name='Qayta rasmiylashtirilgan sana',
+                                    blank=True)
 
     is_reissue_date = models.BooleanField(default=True)
 
