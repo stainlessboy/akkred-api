@@ -10,6 +10,11 @@ class ReestrInfoUserViewSet(viewsets.ModelViewSet):
     serializer_class = ReestrInfoUserSerializer
     ordering_fields = ['id', 'create_date']
 
+    search_fields = [
+        'title',
+        'number',
+    ]
+
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
             return [permissions.AllowAny()]
