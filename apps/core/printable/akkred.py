@@ -35,7 +35,10 @@ class AkkredPDF(object):
         accreditation_date = self.akkred.accreditation_date.strftime(
             '%d.%m.%Y')
         validity_date = self.akkred.validity_date.strftime('%d.%m.%Y')
-        reissue_date = self.akkred.reissue_date.strftime('%d.%m.%Y')
+        if self.akkred.reissue_date:
+            reissue_date = self.akkred.reissue_date.strftime('%d.%m.%Y')
+        else:
+            reissue_date = None
 
         self.data.update(
             title_organ=self.akkred.title_organ,
