@@ -475,13 +475,13 @@ class LanguageViewSet(GenericViewSet):
                         url='/reestr-auth',
                         title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
                     ),
-                    dict(
-                        title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
-                        url=str(
-                            'http://akkred.uz:8081/media/file/pdf/2020-08/ad181d28-1c42-4c43-8deb-de1a5454091e.pdf'),
-                        external=True,
-
-                    )
+                    # dict(
+                    #     title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
+                    #     url=str(
+                    #         'http://akkred.uz:8081/media/file/pdf/2020-08/ad181d28-1c42-4c43-8deb-de1a5454091e.pdf'),
+                    #     external=True,
+                    #
+                    # )
 
                 ]
 
@@ -587,12 +587,12 @@ class LanguageViewSet(GenericViewSet):
                             ),
                         ]
                     ),
-                    dict(
-                        url='/calculate',
-                        title_ru='Расчет стоимости работ',
-                        title_en='Ishlar narhini hisoblash',
-                        title_uz='Ishlar narhini hisoblash',
-                    ),
+                    # dict(
+                    #     url='/calculate',
+                    #     title_ru='Расчет стоимости работ',
+                    #     title_en='Ishlar narhini hisoblash',
+                    #     title_uz='Ishlar narhini hisoblash',
+                    # ),
 
                 ]
             ),
