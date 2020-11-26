@@ -587,12 +587,12 @@ class LanguageViewSet(GenericViewSet):
                             ),
                         ]
                     ),
-                    # dict(
-                    #     url='/calculate',
-                    #     title_ru='Расчет стоимости работ',
-                    #     title_en='Ishlar narhini hisoblash',
-                    #     title_uz='Ishlar narhini hisoblash',
-                    # ),
+                    dict(
+                        url='/calculate',
+                        title_ru='Расчет стоимости работ',
+                        title_en='Ishlar narhini hisoblash',
+                        title_uz='Ishlar narhini hisoblash',
+                    ),
 
                 ]
             ),
