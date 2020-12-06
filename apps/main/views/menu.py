@@ -482,6 +482,14 @@ class LanguageViewSet(GenericViewSet):
                     #     external=True,
                     #
                     # )
+                    dict(
+                        title_ru='ПЕРЕЧЕНЬ видов продукции, подлежащих обязательной сертификации, которых в настоящее время отсутствует аккредитованных органов по сертификации.',
+                        title_uz='Majburiy tartibda sertifikatlanadigan, lekin bugungi kunda akkreditatsiyadan oʼtgan sertifikatlashtirish organi mavjud boʼlmagan mahsulot turlari ROʼYXАTI',
+                        url=str(
+                            'http://akkred.uz//media/file/compressed/2020-12/cff797b4-b7d9-4309-8989-4758d7de1b86.zip'),
+                        external=True,
+
+                    )
 
                 ]
 
