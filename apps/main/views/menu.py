@@ -470,11 +470,9 @@ class LanguageViewSet(GenericViewSet):
                     dict(
                         url='/reestr-confirm',
                         title_uz=' Ma’qullangan laboratoriyalar reestri',
+                        title_ru=' Ma’qullangan laboratoriyalar reestri',
                     ),
-                    dict(
-                        url='/reestr-auth',
-                        title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
-                    ),
+
                     # dict(
                     #     title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
                     #     url=str(
@@ -486,10 +484,14 @@ class LanguageViewSet(GenericViewSet):
                         title_ru='ПЕРЕЧЕНЬ видов продукции, подлежащих обязательной сертификации, которых в настоящее время отсутствует аккредитованных органов по сертификации.',
                         title_uz='Majburiy tartibda sertifikatlanadigan, lekin bugungi kunda akkreditatsiyadan oʼtgan sertifikatlashtirish organi mavjud boʼlmagan mahsulot turlari ROʼYXАTI',
                         url=str(
-                            'http://akkred.uz:8081/media/file/compressed/2020-12/cff797b4-b7d9-4309-8989-4758d7de1b86.zip'),
+                            'http://akkred.uz:8081/media/file/pdf/2020-12/c94b2799-ca69-4a2f-8694-8b977304de16.pdf'),
                         external=True,
 
-                    )
+                    ),
+                    dict(
+                        url='/reestr-auth',
+                        title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
+                    ),
 
                 ]
 
