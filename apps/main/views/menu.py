@@ -252,6 +252,13 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Korrupsiyaga qarshi kurashish',
                         title_uz='Korrupsiyaga qarshi kurashish',
                     ),
+
+                    dict(
+                        url='/static/international',
+                        title_ru='Сотрудничество',
+                        title_en='Hamkorlik',
+                        title_uz='Hamkorlik',
+                    ),
                     dict(
                         url='/static/youth',
                         title_ru='Молодежная политика',
@@ -275,44 +282,44 @@ class LanguageViewSet(GenericViewSet):
                 title_en='Faoliyat',
                 title_uz='Faoliyat',
                 children=[
+                    # dict(
+                    #     title_ru='Проверка квалификации',
+                    #     title_en='Malakani tekshirish',
+                    #     title_uz='Malakani tekshirish',
+                    #     children=[
+                    #         dict(
+                    #             url='/static/qualification1',
+                    #             title_ru='Что такое проверка квалификации и для чего она нужна?',
+                    #             title_en='Malakani tekshirish nima va u nima uchun kerak?',
+                    #             title_uz='Malakani tekshirish nima va u nima uchun kerak?',
+                    #         ),
+                    #         dict(
+                    #             url='/static/qualification2',
+                    #             title_ru='Политика Центра по аккредитации в отношении участия заявителей и аккредитованных лабораторий в проверках квалификации',
+                    #             title_en='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
+                    #             title_uz='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
+                    #         ),
+                    #         dict(
+                    #             url='/static/qualification3',
+                    #             title_ru='Информация об аккредитованных провайдерах проверки квалификации в Республике Узбекистан',
+                    #             title_en='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
+                    #             title_uz='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
+                    #         ),
+                    #         dict(
+                    #             url='/static/qualification4',
+                    #             title_ru='Информация о провайдерах и программах проверки квалификации зарубежных стран',
+                    #             title_en='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
+                    #             title_uz='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
+                    #         )
+                    #
+                    #     ]
+                    #
+                    # ),
                     dict(
-                        title_ru='Проверка квалификации',
-                        title_en='Malakani tekshirish',
-                        title_uz='Malakani tekshirish',
-                        children=[
-                            dict(
-                                url='/static/qualification1',
-                                title_ru='Что такое проверка квалификации и для чего она нужна?',
-                                title_en='Malakani tekshirish nima va u nima uchun kerak?',
-                                title_uz='Malakani tekshirish nima va u nima uchun kerak?',
-                            ),
-                            dict(
-                                url='/static/qualification2',
-                                title_ru='Политика Центра по аккредитации в отношении участия заявителей и аккредитованных лабораторий в проверках квалификации',
-                                title_en='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
-                                title_uz='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
-                            ),
-                            dict(
-                                url='/static/qualification3',
-                                title_ru='Информация об аккредитованных провайдерах проверки квалификации в Республике Узбекистан',
-                                title_en='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
-                                title_uz='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
-                            ),
-                            dict(
-                                url='/static/qualification4',
-                                title_ru='Информация о провайдерах и программах проверки квалификации зарубежных стран',
-                                title_en='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
-                                title_uz='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
-                            )
-
-                        ]
-
-                    ),
-                    dict(
-                        url='/static/international',
-                        title_ru='Сотрудничество',
-                        title_en='Hamkorlik',
-                        title_uz='Hamkorlik',
+                        url='/static/accred',
+                        title_ru='Аккредитация',
+                        title_en='Akkreditatsiya',
+                        title_uz='Akkreditatsiya',
                     ),
                     # dict(
                     #     url='/news',
@@ -405,9 +412,9 @@ class LanguageViewSet(GenericViewSet):
                         children=[
                             dict(
                                 url='/static/service1',
-                                title_ru='Органы по сертификации продукции по OʻzDSt ISO/IEC 17065',
-                                title_en='OʻzDSt ISO/IEC 17065 boʻyicha sertifikatlashtirish organlari',
-                                title_uz='OʻzDSt ISO/IEC 17065 boʻyicha sertifikatlashtirish organlari',
+                                title_ru='Органы по сертификации продукции по ISO/IEC 17065:2012',
+                                title_en='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
+                                title_uz='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
                             ),
                             dict(
                                 url='/static/service2',
@@ -441,6 +448,39 @@ class LanguageViewSet(GenericViewSet):
                             )
 
                         ]
+                    ),
+                    dict(
+                        title_ru='Проверка квалификации',
+                        title_en='Malakani tekshirish',
+                        title_uz='Malakani tekshirish',
+                        children=[
+                            dict(
+                                url='/static/qualification1',
+                                title_ru='Что такое проверка квалификации и для чего она нужна?',
+                                title_en='Malakani tekshirish nima va u nima uchun kerak?',
+                                title_uz='Malakani tekshirish nima va u nima uchun kerak?',
+                            ),
+                            dict(
+                                url='/static/qualification2',
+                                title_ru='Политика Центра по аккредитации в отношении участия заявителей и аккредитованных лабораторий в проверках квалификации',
+                                title_en='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
+                                title_uz='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
+                            ),
+                            dict(
+                                url='/static/qualification3',
+                                title_ru='Информация об аккредитованных провайдерах проверки квалификации в Республике Узбекистан',
+                                title_en='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
+                                title_uz='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
+                            ),
+                            dict(
+                                url='/static/qualification4',
+                                title_ru='Информация о провайдерах и программах проверки квалификации зарубежных стран',
+                                title_en='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
+                                title_uz='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
+                            )
+
+                        ]
+
                     ),
                     dict(
                         url='/inspection',
