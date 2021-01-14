@@ -507,11 +507,7 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Barcha yangiliklar',
                         title_uz='Barcha yangiliklar',
                     ),
-                    dict(
-                        url='/reestr-confirm',
-                        title_uz=' Ma’qullangan laboratoriyalar reestri',
-                        # title_ru=' Ma’qullangan laboratoriyalar reestri',
-                    ),
+
 
                     # dict(
                     #     title_uz='Muvofiqlikni baholash bo’yicha vakolatli organlarning reestri',
@@ -527,6 +523,11 @@ class LanguageViewSet(GenericViewSet):
                             'http://akkred.uz:8081/media/file/pdf/2020-12/c94b2799-ca69-4a2f-8694-8b977304de16.pdf'),
                         external=True,
 
+                    ),
+                    dict(
+                        url='/reestr-confirm',
+                        title_uz=' Ma’qullangan laboratoriyalar reestri',
+                        # title_ru=' Ma’qullangan laboratoriyalar reestri',
                     ),
                     dict(
                         url='/reestr-auth',
