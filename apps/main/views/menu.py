@@ -510,7 +510,7 @@ class LanguageViewSet(GenericViewSet):
                     dict(
                         url='/reestr-confirm',
                         title_uz=' Ma’qullangan laboratoriyalar reestri',
-                        title_ru=' Ma’qullangan laboratoriyalar reestri',
+                        # title_ru=' Ma’qullangan laboratoriyalar reestri',
                     ),
 
                     # dict(
