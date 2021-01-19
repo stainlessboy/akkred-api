@@ -321,6 +321,11 @@ class LanguageViewSet(GenericViewSet):
                         title_en='Akkreditatsiya',
                         title_uz='Akkreditatsiya',
                     ),
+                    dict(
+                        url='/static/training',
+                        title_ru='Обучение',
+                        title_uz="O'quv kurslari",
+                    ),
                     # dict(
                     #     url='/news',
                     #     title_ru='Все новости',
