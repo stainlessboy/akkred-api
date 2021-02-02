@@ -282,44 +282,57 @@ class LanguageViewSet(GenericViewSet):
                 title_en='Faoliyat',
                 title_uz='Faoliyat',
                 children=[
-                    # dict(
-                    #     title_ru='Проверка квалификации',
-                    #     title_en='Malakani tekshirish',
-                    #     title_uz='Malakani tekshirish',
-                    #     children=[
-                    #         dict(
-                    #             url='/static/qualification1',
-                    #             title_ru='Что такое проверка квалификации и для чего она нужна?',
-                    #             title_en='Malakani tekshirish nima va u nima uchun kerak?',
-                    #             title_uz='Malakani tekshirish nima va u nima uchun kerak?',
-                    #         ),
-                    #         dict(
-                    #             url='/static/qualification2',
-                    #             title_ru='Политика Центра по аккредитации в отношении участия заявителей и аккредитованных лабораторий в проверках квалификации',
-                    #             title_en='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
-                    #             title_uz='Akkreditatsiya markazining ariza beruvchilar va akkreditatsiya qilingan laboratoriyalarning malakalarini tekshirishda ishtirok etishiga oid siyosati',
-                    #         ),
-                    #         dict(
-                    #             url='/static/qualification3',
-                    #             title_ru='Информация об аккредитованных провайдерах проверки квалификации в Республике Узбекистан',
-                    #             title_en='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
-                    #             title_uz='Oʻzbekiston Respublikasida akkreditatsiya qilingan malakani tekshiruvchi provayderlar toʻgʻrisida ma’lumot',
-                    #         ),
-                    #         dict(
-                    #             url='/static/qualification4',
-                    #             title_ru='Информация о провайдерах и программах проверки квалификации зарубежных стран',
-                    #             title_en='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
-                    #             title_uz='Xorijiy mamlakatlarning malakani tekshiruvchi provayderlari va dasturlari haqida ma’lumot',
-                    #         )
-                    #
-                    #     ]
-                    #
-                    # ),
                     dict(
-                        url='/static/accred',
+                        # url='/static/accred',
                         title_ru='Аккредитация',
                         title_en='Akkreditatsiya',
                         title_uz='Akkreditatsiya',
+                        children=[
+                            dict(
+                                title_ru='Общая информация по схемам аккредитации',
+                                title_en='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
+                                title_uz='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
+                                children=[
+                                    dict(
+                                        url='/static/service1',
+                                        title_ru='Органы по сертификации продукции по ISO/IEC 17065:2012',
+                                        title_en='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
+                                        title_uz='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
+                                    ),
+                                    dict(
+                                        url='/static/service2',
+                                        title_ru='Органы по сертификации систем менеджмента по ISO/IEC 17021-1:2015',
+                                        title_en='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
+                                        title_uz='Boshqarish tizimlarini sertifikatlash organlari ISO/IEC 17021-1:2015',
+                                    ),
+                                    dict(
+                                        url='/static/service3',
+                                        title_ru='Органы по сертификации персонала по ISO/IEC 17024:2012',
+                                        title_en='Xodimlarni sertifikatlash organlari ISO/IEC 17024:2012',
+                                        title_uz='Xodimlarni sertifikatlash organlari ISO/IEC 17024:2012',
+                                    ),
+                                    dict(
+                                        url='/static/service4',
+                                        title_ru='Испытательные лаборатории по ISO/IEC 17025:2017',
+                                        title_en='Sinov laboratoriyalari ISO/IEC 17025:2017',
+                                        title_uz='Sinov laboratoriyalari ISO/IEC 17025:2017',
+                                    ),
+                                    dict(
+                                        url='/static/service5',
+                                        title_ru='Инспекционные органы по ISO/IEC 17020:2012',
+                                        title_en='ISO/IEC 17020:2012 boʻyicha nazorat organlari',
+                                        title_uz='ISO/IEC 17020:2012 boʻyicha nazorat organlari',
+                                    ),
+                                    dict(
+                                        url='/static/service6',
+                                        title_ru='Провайдеры программ проверки квалификации по ISO/IEC 17043:2010',
+                                        title_en='ISO/IEC 17043:2010 boʻyicha malakani sinovchi dasturlar provayderlari',
+                                        title_uz='ISO/IEC 17043:2010 boʻyicha malakani sinovchi dasturlar provayderlari',
+                                    )
+
+                                ]
+                            )
+                        ]
                     ),
                     dict(
                         url='/static/training',
@@ -343,13 +356,6 @@ class LanguageViewSet(GenericViewSet):
                 title_en='Hujjatlar',
                 title_uz='Hujjatlar',
                 children=[
-                    # dict(
-                    #     url='/documents?parents=1',
-                    #     title_ru='Документы Центра',
-                    #     title_en='Markaz hujjatlari',
-                    #     title_uz='Markaz hujjatlari',
-                    #
-                    # ),
                     dict(
                         url='/documents?parents=3',
                         title_ru='Нормативно-правовые акты',
@@ -410,50 +416,50 @@ class LanguageViewSet(GenericViewSet):
                 title_en='Ma`lumotlar',
                 title_uz='Ma`lumotlar',
                 children=[
-                    dict(
-                        title_ru='Общая информация по схемам аккредитации',
-                        title_en='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
-                        title_uz='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
-                        children=[
-                            dict(
-                                url='/static/service1',
-                                title_ru='Органы по сертификации продукции по ISO/IEC 17065:2012',
-                                title_en='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
-                                title_uz='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
-                            ),
-                            dict(
-                                url='/static/service2',
-                                title_ru='Органы по сертификации систем менеджмента по OʻzDSt ISO/IEC 17021',
-                                title_en='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
-                                title_uz='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
-                            ),
-                            dict(
-                                url='/static/service3',
-                                title_ru='Органы по сертификации персонала по OʻzDSt ISO/IEC 17024',
-                                title_en='OʻzDSt ISO / IEC 17024 boʻyicha xodimlarni sertifikatlashtirish organlari',
-                                title_uz='OʻzDSt ISO / IEC 17024 boʻyicha xodimlarni sertifikatlashtirish organlari',
-                            ),
-                            dict(
-                                url='/static/service4',
-                                title_ru='Испытательные лаборатории по OʻzDSt ISO/IEC 17025',
-                                title_en='OʻzDSt ISO / IEC 17025 boʻyicha sinov laboratoriyalari',
-                                title_uz='OʻzDSt ISO / IEC 17025 boʻyicha sinov laboratoriyalari',
-                            ),
-                            dict(
-                                url='/static/service5',
-                                title_ru='Инспекционные органы по OʻzDSt ISO/IEC 17020 ',
-                                title_en='OʻzDSt ISO / IEC 17020 boʻyicha inspeksiya organlari',
-                                title_uz='OʻzDSt ISO / IEC 17020 boʻyicha inspeksiya organlari',
-                            ),
-                            dict(
-                                url='/static/service6',
-                                title_ru='Провайдеры программ проверки квалификации по OʻzDSt ISO/IEC 17043',
-                                title_en='OʻzDSt ISO / IEC 17043 boʻyicha malakani tekshirish dasturlari provayderlari',
-                                title_uz='OʻzDSt ISO / IEC 17043 boʻyicha malakani tekshirish dasturlari provayderlari',
-                            )
-
-                        ]
-                    ),
+                    # dict(
+                    #     title_ru='Общая информация по схемам аккредитации',
+                    #     title_en='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
+                    #     title_uz='Akkreditatsiya sxemalari haqida umumiy maʻlumot',
+                    #     children=[
+                    #         dict(
+                    #             url='/static/service1',
+                    #             title_ru='Органы по сертификации продукции по ISO/IEC 17065:2012',
+                    #             title_en='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
+                    #             title_uz='Mahsulotlarni sertifikatlash organlari ISO/IEC 17065:2012',
+                    #         ),
+                    #         dict(
+                    #             url='/static/service2',
+                    #             title_ru='Органы по сертификации систем менеджмента по ISO/IEC 17021-1:2015',
+                    #             title_en='OʻzDSt ISO / IEC 17021 boʻyicha menejment tizimlarini sertifikatlash organlari',
+                    #             title_uz='Boshqarish tizimlarini sertifikatlash organlari ISO/IEC 17021-1:2015',
+                    #         ),
+                    #         dict(
+                    #             url='/static/service3',
+                    #             title_ru='Органы по сертификации персонала по ISO/IEC 17024:2012',
+                    #             title_en='Xodimlarni sertifikatlash organlari ISO/IEC 17024:2012',
+                    #             title_uz='Xodimlarni sertifikatlash organlari ISO/IEC 17024:2012',
+                    #         ),
+                    #         dict(
+                    #             url='/static/service4',
+                    #             title_ru='Испытательные лаборатории по ISO/IEC 17025:2017',
+                    #             title_en='Sinov laboratoriyalari ISO/IEC 17025:2017',
+                    #             title_uz='Sinov laboratoriyalari ISO/IEC 17025:2017',
+                    #         ),
+                    #         dict(
+                    #             url='/static/service5',
+                    #             title_ru='Инспекционные органы по ISO/IEC 17020:2012',
+                    #             title_en='ISO/IEC 17020:2012 boʻyicha nazorat organlari',
+                    #             title_uz='ISO/IEC 17020:2012 boʻyicha nazorat organlari',
+                    #         ),
+                    #         dict(
+                    #             url='/static/service6',
+                    #             title_ru='Провайдеры программ проверки квалификации по ISO/IEC 17043:2010',
+                    #             title_en='ISO/IEC 17043:2010 boʻyicha malakani sinovchi dasturlar provayderlari',
+                    #             title_uz='ISO/IEC 17043:2010 boʻyicha malakani sinovchi dasturlar provayderlari',
+                    #         )
+                    #
+                    #     ]
+                    # ),
                     dict(
                         title_ru='Проверка квалификации',
                         title_en='Malakani tekshirish',
